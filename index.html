@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abraham // Ethical Hacker</title>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="img/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="img/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="img/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="img/favicon/site.webmanifest" />
+  <style>
+    body {
+      margin: 0;
+      background: #0f0f0f;
+      color: #00ffcc;
+      font-family: 'Share Tech Mono', monospace;
+    }
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: radial-gradient(circle at center, #0f0f0f, #000);
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.5rem;
+      color: #00ffcc;
+      animation: typewriter 4s steps(30) 1s 1 normal both;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: .15em solid #00ffcc;
+    }
+    @keyframes typewriter {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #121212;
+      gap: 2rem;
+      padding: 1rem;
+    }
+    nav a {
+      color: #00ffcc;
+      text-decoration: none;
+      font-size: 1.1rem;
+    }
+    nav a:hover {
+      text-shadow: 0 0 5px #00ffcc;
+    }
+    section {
+      padding: 2rem;
+    }
+    .card {
+      background: #1a1a1a;
+      border: 1px solid #00ffcc44;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 10px;
+    }
+    .card:hover {
+      box-shadow: 0 0 10px #00ffcc88;
+    }
+    .hi {
+      background: #1a1a1a;
+      border: 1px solid #00ffcc44;
+      padding: 0.5rem;
+      margin-bottom: 0.5rem;
+      margin-left: 41.5rem;
+      border-radius: 10px;
+    }
+    .hi:hover {
+      box-shadow: 0 0 4px #00ffcc88;
+    }
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 1rem;
+    }
+    .tool {
+      background: #1f1f1f;
+      padding: 1rem;
+      text-align: center;
+      border: 1px solid #00ffcc22;
+      transition: 0.3s;
+    }
+    .tool:hover {
+      box-shadow: 0 0 6px #00ffcc;
+      transform: scale(1.05);
+    }
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+    input, textarea, button {
+      background: #000;
+      color: #00ffcc;
+      border: 1px solid #00ffcc;
+      padding: 0.5rem;
+      width: auto;
+      margin-top: 1rem;
+      font-family: 'Share Tech Mono', monospace;
+    }
+    button:hover {
+      background: #00ffcc;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>&lt;Hello/&gt;</h1>
+    <div class="typewriter">I'm <Neo-Virex>Neo-Virex</Neo-Virex> – Security Professional</div>
+    <p>Securing the digital frontier, one byte at a time.</p>
+    <button style="background:#000000;color:#31f6df;"><h2>// View Projects</h2></button>
+  </header>
+  <nav>
+    <a href="#about">&lt;About&gt;</a>
+    <a href="https://abr-ahamis.github.io/">&lt;Writeups&gt;</a>
+    <a href="#tools">&lt;Tools Used&gt;</a>
+    <a href="#projects">&lt;Projects&gt;</a>
+    <a href="#contact">&lt;Contact&gt;</a>
+  </nav>
+
+<section id="about"> 
+  <div class="card">
+    <h2>// About Me</h2>
+    <p># Terminal Output:</p>
+    <pre>
+&gt; Name: Abraham
+&gt; Role: Penetration Tester | Security Researcher
+&gt; Certs: Security+ | Cisco: Introduction to Cybersecurity | 2024-&-2023 THM Certs
+&gt; TryHackMe: Top 3% | 50+ finished rooms | 63233 | 2
+&gt; HackTheBox: challenges player 
+&gt; Background: deep curiosity for electronics and technology from a young age. He spent his time exploring devices. 
+&gt; story: From a young age, I was fascinated by technology and began exploring how devices and systems work. 
+   &gt; I taught myself ethical hacking using tools like Termux, Kali Linux, Metasploit, and phishing frameworks, 
+   &gt; and I continue to grow my skills in penetration testing, networking, and cybersecurity to one day build my own cybersecurity company.
+    </pre>
+
+    <!-- Quote section aligned to the right -->
+    <div style="text-align: right;">
+      <h2>// Quote</h2>
+      <pre>&gt; The problem is not the problem; the problem is your attitude about the problem.</pre>
+      <pre>&gt; by: Captain Jack Sparrow</pre>
+    </div>
+  </div>
+</section>
+
+
+
+  <section id="tools">
+    <div class="card">
+      <h2>// Tools Used</h2>
+      <div class="tools-grid">
+        <div class="tool">Kali Linux</div>
+        <div class="tool">Nmap</div>
+        <div class="tool">Metasploit</div>
+        <div class="tool">Wireshark</div>
+        <div class="tool">Python</div>
+        <div class="tool">Burp Suite</div>
+        <div class="tool">Hydra</div>
+        <div class="tool">Aircrack-ng</div>
+      </div>
+    </div>
+  </section>
+<section id="projects">
+  <div class="card">
+    <h2>// Projects</h2>
+
+    <div class="card">
+      <h3>CTF Writeups</h3>
+      <p>Writeups of challenges solved in HackTheBox and TryHackMe. Markdown styled with code snippets and solutions.</p>
+      <a href="https://abr-ahamis.github.io/" style="color: #d5d5d5;">[View]</a>
+    </div>
+
+    <div class="card">
+      <h3>Python-and-C-Keyloggers</h3>
+      <p>Simple Python Keylogger</p>
+      <a href="https://github.com/Abr-ahamis/Python-and-C-Keyloggers" style="color: #d5d5d5;">[GitHub]</a>
+    </div>
+
+    <div class="card">
+      <h3>Network.py</h3>
+      <p>Python-based network security tool designed to perform packet sniffing and Address Resolution Protocol (ARP) spoofing.</p>
+      <a href="https://github.com/Abr-ahamis/Network.py" style="color: #d5d5d5;">[GitHub]</a>
+    </div>
+
+    <div class="card">
+      <h3>Firewall-project</h3>
+      <p>A modular phishing simulator built with Python and Flask. Simulates real-world attack vectors for training.</p>
+      <a href="https://github.com/Abr-ahamis/Firewall-project" style="color: #d5d5d5;">[GitHub]</a>
+    </div>
+
+    <div class="card">
+      <h3>Image-Stego-Encryptor</h3>
+      <p>A GUI-based image encryption tool that demonstrates pixel-level manipulation to encrypt and decrypt an image using arithmetic transformation and mirror flipping.</p>
+      <a href="https://github.com/Abr-ahamis/Image-Stego-Encryptor" style="color: #d5d5d5;">[GitHub]</a>
+    </div>
+
+    <div class="card">
+      <h3>Password_Checker</h3>
+      <p>Checks password strength and vulnerability using a local database and simple Python logic.</p>
+      <a href="https://github.com/Abr-ahamis/Password_Checker_02" style="color: #d5d5d5;">[GitHub]</a>
+    </div>
+
+    <div class="card">
+      <h3>Front-End-Website</h3>
+      <p>School project: a basic front-end website interface built with HTML, CSS, and JavaScript.</p>
+      <a href="https://github.com/Abr-ahamis/Front-End-Website" style="color: #d5d5d5;">[GitHub]</a>
+    </div>
+
+    <div class="card">
+      <h3>Phishing Framework</h3>
+      <p>A modular phishing simulator built with Python and Flask. Simulates real-world attack vectors for training.</p>
+      <a href="https://github.com/Abr-ahamis/Front-End-Website" style="color: #d5d5d5;">[GitHub]</a>
+    </div>
+
+  </div>
+</section>
+
+
+  <section id="contact">
+    <div class="card">
+      <h2>// Contact</h2>
+      <p>Social: 
+        <a href="https://github.com/Abr-ahamis"  style="color: #d5d5d5;">GitHub</a> | 
+        <a href="#"  style="color: #d5d5d5;">LinkedIn</a> | 
+        <a href="#"  style="color: #d5d5d5;">Twitter</a>
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <p>// Stay rooted & stay safe.</p>
+  </footer>
+</body>
+</html>
