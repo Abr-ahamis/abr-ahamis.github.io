@@ -74,35 +74,40 @@
 <body class="bg-hacker-darker font-tech text-hacker-primary">
   <!-- Terminal-style header -->
   <header class="min-h-screen gradient-bg flex flex-col items-center justify-center text-center px-4 py-20 relative overflow-hidden">
-    <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjMDAwMDAwIj48L3JlY3Q+CjxwYXRoIGQ9Ik0wIDVMNSAwWk02IDRMNCA2Wk0tMSAxTDEgLTFaIiBzdHJva2U9IiMxMTExMTEiIHN0cm9rZS13aWR0aD0iMSI+PC9wYXRoPgo8L3N2Zz4=');"></div>
-    
-    <div class="relative z-10 max-w-4xl mx-auto">
-      <h1 class="text-4xl md:text-6xl font-bold mb-6 glow-text typewriter">
-        &lt;Hello World/&gt;
-      </h1>
-      <div class="text-xl md:text-2xl mb-8 flex items-center justify-center">
-        <span class="text-hacker-secondary mr-2">root@Neo-Virex:~$</span> 
-        <span class="typewriter">I'm Abraham - Security Researcher</span>
-        <span class="terminal-cursor">|</span>
-      </div>
-      <p class="text-lg md:text-xl mb-12 opacity-80">Penetration Tester | CTF Player | Security Enthusiast</p>
-      
-      <div class="flex flex-wrap justify-center gap-4">
-        <a href="#about" class="px-8 py-3 border-2 border-hacker-primary text-hacker-primary hover:bg-hacker-primary hover:text-hacker-darker font-medium transition-all duration-300">
-          Explore
-        </a>
-        <a href="#contact" class="px-8 py-3 bg-hacker-primary text-hacker-darker hover:bg-hacker-secondary font-medium transition-all duration-300">
-          Contact Me
-        </a>
-      </div>
+  <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml;base64,...');"></div>
+
+  <div class="relative z-10 w-full max-w-4xl mx-auto px-2">
+    <h1 class="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 glow-text typewriter break-words leading-tight">
+      &lt;Hello World/&gt;
+    </h1>
+
+    <div class="text-base sm:text-xl md:text-2xl mb-8 flex flex-wrap items-center justify-center max-w-full text-center">
+      <span class="text-hacker-secondary mr-2">root@Neo-Virex:~$</span>
+      <span class="typewriter block sm:inline max-w-full overflow-hidden whitespace-normal break-words">I'm Abraham - Security Researcher</span>
+      <span class="terminal-cursor">|</span>
     </div>
-    
-    <div class="absolute bottom-10 left-0 right-0 flex justify-center animate-bounce">
-      <a href="#about" class="text-2xl text-hacker-primary opacity-70 hover:opacity-100">
-        <i class="fas fa-chevron-down"></i>
+
+    <p class="text-sm sm:text-lg md:text-xl mb-12 opacity-80 px-2">
+      Penetration Tester | CTF Player | Security Enthusiast
+    </p>
+
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="#about" class="px-6 py-2 sm:px-8 sm:py-3 border-2 border-hacker-primary text-hacker-primary hover:bg-hacker-primary hover:text-hacker-darker font-medium transition-all duration-300">
+        Explore
+      </a>
+      <a href="#contact" class="px-6 py-2 sm:px-8 sm:py-3 bg-hacker-primary text-hacker-darker hover:bg-hacker-secondary font-medium transition-all duration-300">
+        Contact Me
       </a>
     </div>
-  </header>
+  </div>
+
+  <div class="absolute bottom-10 left-0 right-0 flex justify-center animate-bounce">
+    <a href="#about" class="text-2xl text-hacker-primary opacity-70 hover:opacity-100">
+      <i class="fas fa-chevron-down"></i>
+    </a>
+  </div>
+</header>
+
 
   <!-- Navigation -->
   <nav class="bg-hacker-dark sticky top-0 z-50 shadow-lg shadow-black/50">
@@ -115,6 +120,7 @@
           <a href="#about" class="hover:text-hacker-secondary transition-colors">About</a>
           <a href="#skills" class="hover:text-hacker-secondary transition-colors">Skills</a>
           <a href="#projects" class="hover:text-hacker-secondary transition-colors">Projects</a>
+          <a href="https://neo-virex.github.io/" class="hover:text-hacker-secondary transition-colors">Blog</a>
           <a href="#contact" class="hover:text-hacker-secondary transition-colors">Contact</a>
         </div>
         <button class="md:hidden text-xl focus:outline-none" id="menu-toggle">
@@ -127,6 +133,7 @@
           <a href="#about" class="hover:text-hacker-secondary transition-colors">About</a>
           <a href="#skills" class="hover:text-hacker-secondary transition-colors">Skills</a>
           <a href="#projects" class="hover:text-hacker-secondary transition-colors">Projects</a>
+          <a href="#contact" class="hover:text-hacker-secondary transition-colors">Blog</a>
           <a href="#contact" class="hover:text-hacker-secondary transition-colors">Contact</a>
         </div>
       </div>
@@ -517,13 +524,13 @@
                 <a href="https://github.com/Abr-ahamis" class="w-10 h-10 rounded-full bg-hacker-primary/10 flex items-center justify-center text-hacker-primary hover:bg-hacker-primary hover:text-hacker-darker transition-colors">
                   <i class="fab fa-github"></i>
                 </a>
-                <a href="www.linkedin.com/in/abr-ahamis" class="w-10 h-10 rounded-full bg-hacker-primary/10 flex items-center justify-center text-hacker-primary hover:bg-hacker-primary hover:text-hacker-darker transition-colors">
+                <a href="https://linkedin.com/in/abr-ahamis" class="w-10 h-10 rounded-full bg-hacker-primary/10 flex items-center justify-center text-hacker-primary hover:bg-hacker-primary hover:text-hacker-darker transition-colors">
                   <i class="fab fa-linkedin-in"></i>
                 </a>
-                <a href="https://x.com/neo_virex" class="w-10 h-10 rounded-full bg-hacker-primary/10 flex items-center justify-center text-hacker-primary hover:bg-hacker-primary hover:text-hacker-darker transition-colors">
+                <a href="https://x.com/abr-ahamis" class="w-10 h-10 rounded-full bg-hacker-primary/10 flex items-center justify-center text-hacker-primary hover:bg-hacker-primary hover:text-hacker-darker transition-colors">
                   <i class="fab fa-twitter"></i>
                 </a>
-                <a href="https://discord.gg/Brc9tbzw" class="w-10 h-10 rounded-full bg-hacker-primary/10 flex items-center justify-center text-hacker-primary hover:bg-hacker-primary hover:text-hacker-darker transition-colors">
+                <a href="https://discord.gg/@abr-ahamis" class="w-10 h-10 rounded-full bg-hacker-primary/10 flex items-center justify-center text-hacker-primary hover:bg-hacker-primary hover:text-hacker-darker transition-colors">
                   <i class="fab fa-discord"></i>
                 </a>
               </div>
