@@ -1,637 +1,578 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Neo Virex // Ethical Hacker</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="icon" type="image/png" href="img/favicon/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="img/favicon/favicon.svg" />
-  <link rel="shortcut icon" href="img/favicon/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png" />
-  <link rel="manifest" href="img/favicon/site.webmanifest" />
-  <style>
-    @keyframes terminalBlink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
-    }
-    .terminal-cursor {
-      animation: terminalBlink 1s infinite;
-    }
-    .glow-text {
-      text-shadow: 0 0 8px rgba(0, 255, 204, 0.7);
-    }
-    .card-hover-effect {
-      transition: all 0.3s ease;
-    }
-    .card-hover-effect:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0, 255, 204, 0.1);
-    }
-    .typewriter {
-      overflow: hidden;
-      white-space: nowrap;
-      animation: typing 3.5s steps(40, end);
-    }
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
-    }
-    .gradient-bg {
-      background: linear-gradient(135deg, #0f0f0f 0%, #121212 50%, #0a0a0a 100%);
-    }
-    .tool-icon {
-      transition: all 0.3s ease;
-    }
-    .tool-icon:hover {
-      transform: scale(1.2);
-      filter: drop-shadow(0 0 8px rgba(0, 255, 204, 0.7));
-    }
-  </style>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            hacker: {
-              primary: '#00ffcc',
-              secondary: '#00cc99',
-              dark: '#0f0f0f',
-              darker: '#080808',
-              light: '#1a1a1a',
-            },
-          },
-          fontFamily: {
-            'tech': ['Fira Code', 'Share Tech Mono', 'monospace'],
-          },
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neo-Virex | Cybersecurity & Tech Portfolio</title>
+    <script src="https://cdn.tailwindcss.com">
+
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="img/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="img/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="img/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="img/favicon/site.webmanifest" />
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a192f;
+            color: #ccd6f6;
         }
-      }
-    }
-  </script>
+        .nav-link:hover {
+            color: #64ffda;
+        }
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #64ffda;
+        }
+        .hero-btn:hover {
+            background-color: rgba(100, 255, 218, 0.1);
+        }
+        .contact-input:focus {
+            outline: none;
+            border-color: #64ffda;
+        }
+        .tooltip {
+            position: relative;
+        }
+        .tooltip-text {
+            visibility: hidden;
+            width: 120px;
+            background-color: #112240;
+            color: #ccd6f6;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -60px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .tooltip:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+    </style>
 </head>
-<body class="bg-hacker-darker font-tech text-hacker-primary">
-  <!-- Terminal-style header -->
-  <header class="min-h-screen gradient-bg flex flex-col items-center justify-center text-center px-4 py-20 relative overflow-hidden">
-  <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml;base64,...');"></div>
-
-  <div class="relative z-10 w-full max-w-4xl mx-auto px-2">
-    <h1 class="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 glow-text typewriter break-words leading-tight">
-      &lt;Hello World/&gt;
-    </h1>
-
-    <div class="text-base sm:text-xl md:text-2xl mb-8 flex flex-wrap items-center justify-center max-w-full text-center">
-      <span class="text-hacker-secondary mr-2">root@Neo-Virex:~$</span>
-      <span class="typewriter block sm:inline max-w-full overflow-hidden whitespace-normal break-words">I'm Abraham - Security Researcher</span>
-      <span class="terminal-cursor">|</span>
-    </div>
-
-    <p class="text-sm sm:text-lg md:text-xl mb-12 opacity-80 px-2">
-      Penetration Tester | CTF Player | Security Enthusiast
-    </p>
-
-    <div class="flex flex-wrap justify-center gap-4">
-      <a href="#about" class="px-6 py-2 sm:px-8 sm:py-3 border-2 border-hacker-primary text-hacker-primary hover:bg-hacker-primary hover:text-hacker-darker font-medium transition-all duration-300">
-        Explore
-      </a>
-      <a href="#contact" class="px-6 py-2 sm:px-8 sm:py-3 bg-hacker-primary text-hacker-darker hover:bg-hacker-secondary font-medium transition-all duration-300">
-        Contact Me
-      </a>
-    </div>
-  </div>
-
-  <div class="absolute bottom-10 left-0 right-0 flex justify-center animate-bounce">
-    <a href="#about" class="text-2xl text-hacker-primary opacity-70 hover:opacity-100">
-      <i class="fas fa-chevron-down"></i>
-    </a>
-  </div>
-</header>
-
-
-  <!-- Navigation -->
-  <nav class="bg-hacker-dark sticky top-0 z-50 shadow-lg shadow-black/50">
-    <div class="container mx-auto px-4">
-      <div class="flex justify-between items-center py-4">
-        <div class="text-xl font-bold">
-          <span class="text-hacker-primary">Neo</span><span class="text-hacker-secondary">Virex</span>
-        </div>
-        <div class="hidden md:flex space-x-8">
-          <a href="#about" class="hover:text-hacker-secondary transition-colors">About</a>
-          <a href="#skills" class="hover:text-hacker-secondary transition-colors">Skills</a>
-          <a href="#projects" class="hover:text-hacker-secondary transition-colors">Projects</a>
-          <a href="https://neo-virex.vercel.app/" class="hover:text-hacker-secondary transition-colors">Blog</a>
-          <a href="#contact" class="hover:text-hacker-secondary transition-colors">Contact</a>
-        </div>
-        <button class="md:hidden text-xl focus:outline-none" id="menu-toggle">
-          <i class="fas fa-bars"></i>
-        </button>
-      </div>
-      <!-- Mobile menu -->
-      <div class="md:hidden hidden py-4 border-t border-hacker-light" id="mobile-menu">
-        <div class="flex flex-col space-y-4">
-          <a href="#about" class="hover:text-hacker-secondary transition-colors">About</a>
-          <a href="#skills" class="hover:text-hacker-secondary transition-colors">Skills</a>
-          <a href="#projects" class="hover:text-hacker-secondary transition-colors">Projects</a>
-          <a href="https://neo-virex.vercel.app/" class="hover:text-hacker-secondary transition-colors">Blog</a>
-          <a href="#contact" class="hover:text-hacker-secondary transition-colors">Contact</a>
-        </div>
-      </div>
-    </div>
-  </nav>
-
-  <!-- About Section -->
-  <section id="about" class="py-20 px-4">
-    <div class="container mx-auto max-w-6xl">
-      <div class="bg-hacker-dark border border-hacker-light rounded-xl p-8 card-hover-effect">
-        <div class="flex items-center mb-6">
-          <div class="w-12 h-12 rounded-full bg-hacker-primary flex items-center justify-center text-hacker-darker mr-4">
-            <i class="fas fa-user-secret text-2xl"></i>
-          </div>
-          <h2 class="text-3xl font-bold">
-            <span class="text-hacker-primary">#</span> About Me
-          </h2>
-        </div>
-        
-        <div class="grid md:grid-cols-2 gap-8">
-          <div>
-            <div class="bg-hacker-darker p-6 rounded-lg border border-hacker-light mb-6">
-              <div class="flex items-center mb-4">
-                <span class="text-hacker-secondary mr-2">$</span>
-                <h3 class="text-xl font-medium">Terminal Output</h3>
-              </div>
-              <div class="space-y-2 text-sm">
-                <p><span class="text-hacker-secondary">&gt;</span> Name: <span class="text-hacker-primary">Abraham</span></p>
-                <p><span class="text-hacker-secondary">&gt;</span> Role: <span class="text-hacker-primary">Penetration Tester | Security Researcher</span></p>
-                <p><span class="text-hacker-secondary">&gt;</span> Certs: <span class="text-hacker-primary">Security+ | Cisco: Intro to Cybersecurity</span></p>
-                <p><span class="text-hacker-secondary">&gt;</span> TryHackMe: <span class="text-hacker-primary">Top 3% | 50+ rooms</span></p>
-                <p><span class="text-hacker-secondary">&gt;</span> HackTheBox: <span class="text-hacker-primary">Challenges Player</span></p>
-              </div>
+<body class="min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-[#0a192f]/90 backdrop-blur-sm z-50 shadow-lg">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-[#64ffda]">Abraham</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link text-sm font-medium hover:text-[#64ffda] transition">Home</a>
+                <a href="#about" class="nav-link text-sm font-medium hover:text-[#64ffda] transition">About</a>
+                <a href="#skills" class="nav-link text-sm font-medium hover:text-[#64ffda] transition">Skills</a>
+                <a href="#projects" class="nav-link text-sm font-medium hover:text-[#64ffda] transition">Projects</a>
+                <a href="#experience" class="nav-link text-sm font-medium hover:text-[#64ffda] transition">Experience</a>
+                <a href="#contact" class="nav-link text-sm font-medium hover:text-[#64ffda] transition">Contact</a>
             </div>
+            <button class="md:hidden text-xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center pt-20">
+        <div class="max-w-6xl mx-auto px-6 py-20 md:py-0">
+            <div class="fade-in">
+                <p class="text-[#64ffda] mb-4">Hi, my name is</p>
+                <h1 class="text-4xl md:text-6xl font-bold text-[#ccd6f6] mb-4">Abraham.</h1>
+                <h2 class="text-3xl md:text-5xl font-bold text-[#8892b0] mb-6">I secure systems and optimize workflows.</h2>
+                <p class="text-[#8892b0] max-w-2xl mb-8">
+                    I'm a self-taught technology professional based in Addis Ababa, Ethiopia, passionate about cybersecurity, ethical hacking, and leveraging technology to boost productivity.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#contact" class="hero-btn border border-[#64ffda] text-[#64ffda] px-6 py-3 rounded transition">Get In Touch</a>
+                    <a href="#" class="hero-btn border border-[#8892b0] text-[#8892b0] px-6 py-3 rounded transition">Download CV</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-[#112240]">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="section-title text-3xl font-bold text-[#ccd6f6] mb-12">About Me</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <p class="text-[#8892b0] mb-4">
+                        My journey into technology started at a young age, when I loved exploring how computers worked. I began by creating simple 2D games using Python, experimenting with tools, and learning through trial and error.
+                    </p>
+                    <p class="text-[#8892b0] mb-4">
+                        As I got older, I became deeply interested in cybersecurity building scripts, testing systems, and researching how to protect them. Later, I joined Skill Surge Academy, where I received hands-on training in ethical hacking, network security, and real-world tools like Metasploit, Wireshark, and Burp Suite.
+                    </p>
+                    <p class="text-[#8892b0] mb-4">
+                        I'm now ranked in the top 3% on TryHackMe and actively practice CTFs on Hack The Box. I've created automation tools, phishing simulations, and multiple websites from scratch. I'm experienced with both Windows and Linux, and constantly learning new ways to improve my skills.
+                    </p>
+                    <p class="text-[#8892b0]">
+                        Today, I focus on cybersecurity and automation, aiming to make technology both secure and efficient. I'm always looking for new projects, challenges, or collaborations to grow further.
+                    </p>
+                </div>
+                <div class="flex justify-center fade-in">
+                    <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-[#64ffda]">
+                        <img src="img/main.jpg" alt="Abraham" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="section-title text-3xl font-bold text-[#ccd6f6] mb-12">Skills & Expertise</h2>
             
-            <div class="bg-hacker-darker p-6 rounded-lg border border-hacker-light">
-              <div class="flex items-center mb-4">
-                <span class="text-hacker-secondary mr-2">$</span>
-                <h3 class="text-xl font-medium">Background</h3>
-              </div>
-              <p class="text-sm">
-                From a young age, I was fascinated by technology and began exploring how devices and systems work. I taught myself ethical hacking using tools like Termux, Kali Linux, Metasploit, and phishing frameworks. I continue to grow my skills in penetration testing, networking, and cybersecurity to one day build my own cybersecurity company.
-              </p>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- General Tech Skills -->
+                <div class="bg-[#112240] p-8 rounded-lg shadow-lg fade-in">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-laptop-code text-2xl text-[#64ffda] mr-4"></i>
+                        <h3 class="text-xl font-bold text-[#ccd6f6]">General Tech & Productivity</h3>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <div class="skill-card tooltip bg-[#0a192f] p-4 rounded-lg transition cursor-pointer">
+                            <i class="fab fa-microsoft text-2xl text-[#64ffda] mb-2"></i>
+                            <p class="text-sm">Microsoft Office</p>
+                            <span class="tooltip-text">Word, Excel, PowerPoint</span>
+                        </div>
+                        <div class="skill-card tooltip bg-[#0a192f] p-4 rounded-lg transition cursor-pointer">
+                            <i class="fas fa-file-alt text-2xl text-[#64ffda] mb-2"></i>
+                            <p class="text-sm">Notion</p>
+                            <span class="tooltip-text">Documentation & Organization</span>
+                        </div>
+                        <div class="skill-card tooltip bg-[#0a192f] p-4 rounded-lg transition cursor-pointer">
+                            <i class="fab fa-google text-2xl text-[#64ffda] mb-2"></i>
+                            <p class="text-sm">Google Docs</p>
+                            <span class="tooltip-text">Collaboration Tools</span>
+                        </div>
+                        <div class="skill-card tooltip bg-[#0a192f] p-4 rounded-lg transition cursor-pointer">
+                            <i class="fas fa-tasks text-2xl text-[#64ffda] mb-2"></i>
+                            <p class="text-sm">Trello</p>
+                            <span class="tooltip-text">Project Management</span>
+                        </div>
+                        <div class="skill-card tooltip bg-[#0a192f] p-4 rounded-lg transition cursor-pointer">
+                            <i class="fas fa-keyboard text-2xl text-[#64ffda] mb-2"></i>
+                            <p class="text-sm">Typing</p>
+                            <span class="tooltip-text">Fast Typing Speed</span>
+                        </div>
+                        <div class="skill-card tooltip bg-[#0a192f] p-4 rounded-lg transition cursor-pointer">
+                            <i class="fas fa-folder text-2xl text-[#64ffda] mb-2"></i>
+                            <p class="text-sm">File Management</p>
+                            <span class="tooltip-text">Organization</span>
+                        </div>
+                        <div class="skill-card tooltip bg-[#0a192f] p-4 rounded-lg transition cursor-pointer">
+                            <i class="fas fa-tools text-2xl text-[#64ffda] mb-2"></i>
+                            <p class="text-sm">Troubleshooting</p>
+                            <span class="tooltip-text">PC Issues</span>
+                        </div>
+                        <div class="skill-card tooltip bg-[#0a192f] p-4 rounded-lg transition cursor-pointer">
+                            <i class="fas fa-download text-2xl text-[#64ffda] mb-2"></i>
+                            <p class="text-sm">Software Install</p>
+                            <span class="tooltip-text">Configuration</span>
+                        </div>
+                        <div class="skill-card tooltip bg-[#0a192f] p-4 rounded-lg transition cursor-pointer">
+                            <i class="fas fa-robot text-2xl text-[#64ffda] mb-2"></i>
+                            <p class="text-sm">AI Tools</p>
+                            <span class="tooltip-text">ChatGPT, etc.</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Cybersecurity Skills -->
+                <div class="bg-[#112240] p-8 rounded-lg shadow-lg fade-in">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-shield-alt text-2xl text-[#64ffda] mr-4"></i>
+                        <h3 class="text-xl font-bold text-[#ccd6f6]">Cybersecurity & Ethical Hacking</h3>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <div class="skill-card tooltip bg-[#0a192f] p-4 rounded-lg transition cursor-pointer">
+                            <i class="fab fa-linux text-2xl text-[#64ffda] mb-2"></i>
+                            <p class="text-sm">Kali Linux</p>
+                            <span class="tooltip-text">Penetration Testing</span>
+                        </div>
+                        <div class="skill-card tooltip bg-[#0a192f] p-4 rounded-lg transition cursor-pointer">
+                            <i class="fas fa-network-wired text-2xl text-[#64ffda] mb-2"></i>
+                            <p class="text-sm">Wireshark</p>
+                            <span class="tooltip-text">Network Analysis</span>
+                        </div>
+                        <div class="skill-card tooltip bg-[#0a192f] p-4 rounded-lg transition cursor-pointer">
+                            <i class="fas fa-search text-2xl text-[#64ffda] mb-2"></i>
+                            <p class="text-sm">Nmap</p>
+                            <span class="tooltip-text">Network Scanning</span>
+                        </div>
+                        <div class="skill-card tooltip bg-[#0a192f] p-4 rounded-lg transition cursor-pointer">
+                            <i class="fas fa-lock text-2xl text-[#64ffda] mb-2"></i>
+                            <p class="text-sm">Hydra</p>
+                            <span class="tooltip-text">Password Cracking</span>
+                        </div>
+                        <div class="skill-card tooltip bg-[#0a192f] p-4 rounded-lg transition cursor-pointer">
+                            <i class="fas fa-database text-2xl text-[#64ffda] mb-2"></i>
+                            <p class="text-sm">sqlmap</p>
+                            <span class="tooltip-text">SQL Injection</span>
+                        </div>
+                        <div class="skill-card tooltip bg-[#0a192f] p-4 rounded-lg transition cursor-pointer">
+                            <i class="fas fa-globe text-2xl text-[#64ffda] mb-2"></i>
+                            <p class="text-sm">Nikto</p>
+                            <span class="tooltip-text">Web Scanning</span>
+                        </div>
+                        <div class="skill-card tooltip bg-[#0a192f] p-4 rounded-lg transition cursor-pointer">
+                            <i class="fas fa-code text-2xl text-[#64ffda] mb-2"></i>
+                            <p class="text-sm">Bash & Python</p>
+                            <span class="tooltip-text">Scripting</span>
+                        </div>
+                        <div class="skill-card tooltip bg-[#0a192f] p-4 rounded-lg transition cursor-pointer">
+                            <i class="fas fa-bug text-2xl text-[#64ffda] mb-2"></i>
+                            <p class="text-sm">Metasploit</p>
+                            <span class="tooltip-text">Exploitation</span>
+                        </div>
+                        <div class="skill-card tooltip bg-[#0a192f] p-4 rounded-lg transition cursor-pointer">
+                            <i class="fas fa-shield-virus text-2xl text-[#64ffda] mb-2"></i>
+                            <p class="text-sm">Web App Security</p>
+                            <span class="tooltip-text">Scanning & Exploitation</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          
-          <div>
-            <div class="bg-hacker-darker p-6 rounded-lg border border-hacker-light h-full">
-              <div class="flex items-center mb-4">
-                <span class="text-hacker-secondary mr-2">$</span>
-                <h3 class="text-xl font-medium">Philosophy</h3>
-              </div>
-              <blockquote class="border-l-4 border-hacker-primary pl-4 mb-6 italic">
-                "The problem is not the problem; the problem is your attitude about the problem."
-                <footer class="mt-2 not-italic text-hacker-secondary">— Captain Jack Sparrow</footer>
-              </blockquote>
-              
-              <div class="flex items-center mb-4">
-                <span class="text-hacker-secondary mr-2">$</span>
-                <h3 class="text-xl font-medium">Current Focus</h3>
-              </div>
-              <ul class="space-y-2 text-sm">
-                <li class="flex items-center">
-                  <span class="w-2 h-2 bg-hacker-primary rounded-full mr-2"></span>
-                  Web Application Security
-                </li>
-                <li class="flex items-center">
-                  <span class="w-2 h-2 bg-hacker-primary rounded-full mr-2"></span>
-                  Network Penetration Testing
-                </li>
-                <li class="flex items-center">
-                  <span class="w-2 h-2 bg-hacker-primary rounded-full mr-2"></span>
-                  CTF Challenges
-                </li>
-                <li class="flex items-center">
-                  <span class="w-2 h-2 bg-hacker-primary rounded-full mr-2"></span>
-                  Security Research
-                </li>
-              </ul>
-            </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Skills Section -->
-  <section id="skills" class="py-20 px-4 bg-hacker-dark">
-    <div class="container mx-auto max-w-6xl">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl font-bold mb-4">
-          <span class="text-hacker-primary">#</span> Skills & Tools
-        </h2>
-        <p class="max-w-2xl mx-auto opacity-80">Technologies I work with to identify and mitigate security vulnerabilities</p>
-      </div>
-      
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-        <!-- Pentesting Tools -->
-        <div class="bg-hacker-darker p-6 rounded-xl border border-hacker-light card-hover-effect">
-          <div class="flex items-center mb-4">
-            <div class="w-10 h-10 rounded-md bg-hacker-primary/10 flex items-center justify-center text-hacker-primary mr-3">
-              <i class="fas fa-shield-alt"></i>
-            </div>
-            <h3 class="text-lg font-medium">Pentesting</h3>
-          </div>
-          <ul class="space-y-2 text-sm">
-            <li class="flex items-center">
-              <span class="text-hacker-secondary mr-2">></span>
-              Kali Linux
-            </li>
-            <li class="flex items-center">
-              <span class="text-hacker-secondary mr-2">></span>
-              Metasploit
-            </li>
-            <li class="flex items-center">
-              <span class="text-hacker-secondary mr-2">></span>
-              Burp Suite
-            </li>
-            <li class="flex items-center">
-              <span class="text-hacker-secondary mr-2">></span>
-              Nmap
-            </li>
-          </ul>
-        </div>
-        
-        <!-- Programming -->
-        <div class="bg-hacker-darker p-6 rounded-xl border border-hacker-light card-hover-effect">
-          <div class="flex items-center mb-4">
-            <div class="w-10 h-10 rounded-md bg-hacker-primary/10 flex items-center justify-center text-hacker-primary mr-3">
-              <i class="fas fa-code"></i>
-            </div>
-            <h3 class="text-lg font-medium">Programming</h3>
-          </div>
-          <ul class="space-y-2 text-sm">
-            <li class="flex items-center">
-              <span class="text-hacker-secondary mr-2">></span>
-              Python
-            </li>
-            <li class="flex items-center">
-              <span class="text-hacker-secondary mr-2">></span>
-              Bash
-            </li>
-            <li class="flex items-center">
-              <span class="text-hacker-secondary mr-2">></span>
-              JavaScript
-            </li>
-            <li class="flex items-center">
-              <span class="text-hacker-secondary mr-2">></span>
-              C
-            </li>
-          </ul>
-        </div>
-        
-        <!-- Networking -->
-        <div class="bg-hacker-darker p-6 rounded-xl border border-hacker-light card-hover-effect">
-          <div class="flex items-center mb-4">
-            <div class="w-10 h-10 rounded-md bg-hacker-primary/10 flex items-center justify-center text-hacker-primary mr-3">
-              <i class="fas fa-network-wired"></i>
-            </div>
-            <h3 class="text-lg font-medium">Networking</h3>
-          </div>
-          <ul class="space-y-2 text-sm">
-            <li class="flex items-center">
-              <span class="text-hacker-secondary mr-2">></span>
-              Wireshark
-            </li>
-            <li class="flex items-center">
-              <span class="text-hacker-secondary mr-2">></span>
-              Aircrack-ng
-            </li>
-            <li class="flex items-center">
-              <span class="text-hacker-secondary mr-2">></span>
-              TCPDump
-            </li>
-            <li class="flex items-center">
-              <span class="text-hacker-secondary mr-2">></span>
-              Hydra
-            </li>
-          </ul>
-        </div>
-        
-        <!-- Other Skills -->
-        <div class="bg-hacker-darker p-6 rounded-xl border border-hacker-light card-hover-effect">
-          <div class="flex items-center mb-4">
-            <div class="w-10 h-10 rounded-md bg-hacker-primary/10 flex items-center justify-center text-hacker-primary mr-3">
-              <i class="fas fa-tools"></i>
-            </div>
-            <h3 class="text-lg font-medium">Other Skills</h3>
-          </div>
-          <ul class="space-y-2 text-sm">
-            <li class="flex items-center">
-              <span class="text-hacker-secondary mr-2">></span>
-              OSINT
-            </li>
-            <li class="flex items-center">
-              <span class="text-hacker-secondary mr-2">></span>
-              Cryptography
-            </li>
-            <li class="flex items-center">
-              <span class="text-hacker-secondary mr-2">></span>
-              Forensics
-            </li>
-            <li class="flex items-center">
-              <span class="text-hacker-secondary mr-2">></span>
-              Web Exploitation
-            </li>
-          </ul>
-        </div>
-      </div>
-      
-      <!-- Tool Icons -->
-      <div class="mt-16">
-        <h3 class="text-xl font-medium mb-8 text-center">Tools I Use</h3>
-        <div class="flex flex-wrap justify-center gap-8">
-          <div class="text-center tool-icon">
-            <i class="fab fa-linux text-4xl mb-2"></i>
-            <p>Kali</p>
-          </div>
-          <div class="text-center tool-icon">
-            <i class="fas fa-terminal text-4xl mb-2"></i>
-            <p>Termux</p>
-          </div>
-          <div class="text-center tool-icon">
-            <i class="fab fa-python text-4xl mb-2"></i>
-            <p>Python</p>
-          </div>
-          <div class="text-center tool-icon">
-            <i class="fas fa-network-wired text-4xl mb-2"></i>
-            <p>Wireshark</p>
-          </div>
-          <div class="text-center tool-icon">
-            <i class="fas fa-lock text-4xl mb-2"></i>
-            <p>Metasploit</p>
-          </div>
-          <div class="text-center tool-icon">
-            <i class="fas fa-code-branch text-4xl mb-2"></i>
-            <p>Git</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects" class="py-20 px-4">
-    <div class="container mx-auto max-w-6xl">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl font-bold mb-4">
-          <span class="text-hacker-primary">#</span> Projects
-        </h2>
-        <p class="max-w-2xl mx-auto opacity-80">A selection of my security-related projects and writeups</p>
-      </div>
-      
-      <div class="grid md:grid-cols-2 gap-8">
-        <!-- CTF Writeups -->
-        <div class="bg-hacker-dark p-8 rounded-xl border border-hacker-light card-hover-effect group">
-          <div class="flex items-start mb-6">
-            <div class="w-12 h-12 rounded-lg bg-hacker-primary/10 flex items-center justify-center text-hacker-primary mr-4 group-hover:bg-hacker-primary group-hover:text-hacker-darker transition-colors">
-              <i class="fas fa-flag text-xl"></i>
-            </div>
-            <div>
-              <h3 class="text-xl font-medium mb-2">CTF Writeups</h3>
-              <p class="text-sm opacity-80 mb-4">Detailed solutions for TryHackMe and HackTheBox challenges</p>
-            </div>
-          </div>
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="px-3 py-1 bg-hacker-primary/10 text-xs rounded-full">TryHackMe</span>
-            <span class="px-3 py-1 bg-hacker-primary/10 text-xs rounded-full">HackTheBox</span>
-            <span class="px-3 py-1 bg-hacker-primary/10 text-xs rounded-full">Walkthroughs</span>
-          </div>
-          <a href="https://neo-virex.vercel.app/" class="inline-flex items-center text-hacker-primary hover:text-hacker-secondary transition-colors">
-            View Project <i class="fas fa-arrow-right ml-2"></i>
-          </a>
-        </div>
-        
-        <!-- Network.py -->
-        <div class="bg-hacker-dark p-8 rounded-xl border border-hacker-light card-hover-effect group">
-          <div class="flex items-start mb-6">
-            <div class="w-12 h-12 rounded-lg bg-hacker-primary/10 flex items-center justify-center text-hacker-primary mr-4 group-hover:bg-hacker-primary group-hover:text-hacker-darker transition-colors">
-              <i class="fas fa-project-diagram text-xl"></i>
-            </div>
-            <div>
-              <h3 class="text-xl font-medium mb-2">Network.py</h3>
-              <p class="text-sm opacity-80 mb-4">Python-based network security tool for packet sniffing and ARP spoofing</p>
-            </div>
-          </div>
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="px-3 py-1 bg-hacker-primary/10 text-xs rounded-full">Python</span>
-            <span class="px-3 py-1 bg-hacker-primary/10 text-xs rounded-full">Scapy</span>
-            <span class="px-3 py-1 bg-hacker-primary/10 text-xs rounded-full">Networking</span>
-          </div>
-          <a href="https://github.com/Abr-ahamis/Network.py" class="inline-flex items-center text-hacker-primary hover:text-hacker-secondary transition-colors">
-            View on GitHub <i class="fas fa-arrow-right ml-2"></i>
-          </a>
-        </div>
-        
-        <!-- Image Stego Encryptor -->
-        <div class="bg-hacker-dark p-8 rounded-xl border border-hacker-light card-hover-effect group">
-          <div class="flex items-start mb-6">
-            <div class="w-12 h-12 rounded-lg bg-hacker-primary/10 flex items-center justify-center text-hacker-primary mr-4 group-hover:bg-hacker-primary group-hover:text-hacker-darker transition-colors">
-              <i class="fas fa-image text-xl"></i>
-            </div>
-            <div>
-              <h3 class="text-xl font-medium mb-2">Image Stego Encryptor</h3>
-              <p class="text-sm opacity-80 mb-4">GUI tool for image encryption using pixel manipulation and steganography</p>
-            </div>
-          </div>
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="px-3 py-1 bg-hacker-primary/10 text-xs rounded-full">Python</span>
-            <span class="px-3 py-1 bg-hacker-primary/10 text-xs rounded-full">Tkinter</span>
-            <span class="px-3 py-1 bg-hacker-primary/10 text-xs rounded-full">Steganography</span>
-          </div>
-          <a href="https://github.com/Abr-ahamis/Image-Stego-Encryptor" class="inline-flex items-center text-hacker-primary hover:text-hacker-secondary transition-colors">
-            View on GitHub <i class="fas fa-arrow-right ml-2"></i>
-          </a>
-        </div>
-        
-        <!-- Password Checker -->
-        <div class="bg-hacker-dark p-8 rounded-xl border border-hacker-light card-hover-effect group">
-          <div class="flex items-start mb-6">
-            <div class="w-12 h-12 rounded-lg bg-hacker-primary/10 flex items-center justify-center text-hacker-primary mr-4 group-hover:bg-hacker-primary group-hover:text-hacker-darker transition-colors">
-              <i class="fas fa-key text-xl"></i>
-            </div>
-            <div>
-              <h3 class="text-xl font-medium mb-2">Password Checker</h3>
-              <p class="text-sm opacity-80 mb-4">Tool to check password strength against common vulnerabilities</p>
-            </div>
-          </div>
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="px-3 py-1 bg-hacker-primary/10 text-xs rounded-full">Python</span>
-            <span class="px-3 py-1 bg-hacker-primary/10 text-xs rounded-full">Security</span>
-            <span class="px-3 py-1 bg-hacker-primary/10 text-xs rounded-full">Hashing</span>
-          </div>
-          <a href="https://github.com/Abr-ahamis/Password_Checker_02" class="inline-flex items-center text-hacker-primary hover:text-hacker-secondary transition-colors">
-            View on GitHub <i class="fas fa-arrow-right ml-2"></i>
-          </a>
-        </div>
-      </div>
-      
-      <div class="text-center mt-16">
-        <a href="https://github.com/Abr-ahamis" class="inline-flex items-center px-6 py-3 border border-hacker-primary text-hacker-primary hover:bg-hacker-primary hover:text-hacker-darker transition-colors rounded-lg">
-          <i class="fab fa-github mr-2"></i> View All Projects on GitHub
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="py-20 px-4 bg-hacker-dark">
-    <div class="container mx-auto max-w-4xl">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl font-bold mb-4">
-          <span class="text-hacker-primary">#</span> Get In Touch
-        </h2>
-        <p class="max-w-2xl mx-auto opacity-80">I'm always interested in discussing security projects, collaborations, or job opportunities</p>
-      </div>
-      
-      <div class="bg-hacker-darker p-8 rounded-xl border border-hacker-light">
-        <div class="grid md:grid-cols-2 gap-8">
-          <div>
-            <h3 class="text-xl font-medium mb-6">Contact Information</h3>
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-[#112240]">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="section-title text-3xl font-bold text-[#ccd6f6] mb-12">Featured Projects</h2>
             
-            <div class="space-y-6">
-              <div class="flex items-start">
-                <div class="w-10 h-10 rounded-md bg-hacker-primary/10 flex items-center justify-center text-hacker-primary mr-4">
-                  <i class="fas fa-envelope"></i>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- General Tech Projects -->
+                <div class="fade-in">
+                    <h3 class="text-xl font-bold text-[#64ffda] mb-6 flex items-center">
+                        <i class="fas fa-laptop-code mr-3"></i> General Tech Projects
+                    </h3>
+                    
+                    <div class="bg-[#0a192f] p-6 rounded-lg shadow-lg mb-6 transition hover:shadow-xl">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h4 class="text-lg font-bold text-[#ccd6f6]">Productivity Templates</h4>
+                                <p class="text-sm text-[#8892b0]">Notion & Office Templates</p>
+                            </div>
+                            <i class="fas fa-file-alt text-2xl text-[#64ffda]"></i>
+                        </div>
+                        <p class="text-[#8892b0] mb-4">
+                            A collection of customizable templates for Notion, Excel, and Word designed to streamline workflows, organize information, and boost productivity for individuals and teams across a wide range of tasks and projects.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-[#112240] text-[#64ffda] px-3 py-1 rounded-full">Notion</span>
+                            <span class="text-xs bg-[#112240] text-[#64ffda] px-3 py-1 rounded-full">Excel</span>
+                            <span class="text-xs bg-[#112240] text-[#64ffda] px-3 py-1 rounded-full">Word</span>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-[#0a192f] p-6 rounded-lg shadow-lg transition hover:shadow-xl">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h4 class="text-lg font-bold text-[#ccd6f6]">Tech Helpdesk Solutions</h4>
+                                <p class="text-sm text-[#8892b0]">Troubleshooting Guides</p>
+                            </div>
+                            <i class="fas fa-headset text-2xl text-[#64ffda]"></i>
+                        </div>
+                        <p class="text-[#8892b0] mb-4">
+                            Comprehensive troubleshooting guides and documentation for common tech issues, developed through years of providing IT support to friends and family. Covers problems across devices and platforms, with clear steps and practical tips to help users resolve issues quickly and effectively.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-[#112240] text-[#64ffda] px-3 py-1 rounded-full">Troubleshooting</span>
+                            <span class="text-xs bg-[#112240] text-[#64ffda] px-3 py-1 rounded-full">Documentation</span>
+                            <span class="text-xs bg-[#112240] text-[#64ffda] px-3 py-1 rounded-full">User Support</span>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                  <h4 class="font-medium mb-1">Email</h4>
-                  <p class="text-sm opacity-80">abrhameshetu948@gmail.com</p>
-                </div>
-              </div>
-              
-              <div class="flex items-start">
-                <div class="w-10 h-10 rounded-md bg-hacker-primary/10 flex items-center justify-center text-hacker-primary mr-4">
-                  <i class="fas fa-map-marker-alt"></i>
-                </div>
-                <div>
-                  <h4 class="font-medium mb-1">Location</h4>
-                  <p class="text-sm opacity-80">Based in MaRs</p>
-                </div>
-              </div>
-            </div>
-            
-            <div class="mt-10">
-              <h3 class="text-xl font-medium mb-6">Connect With Me</h3>
-              <div class="flex space-x-4">
-                <a href="https://github.com/Abr-ahamis" class="w-10 h-10 rounded-full bg-hacker-primary/10 flex items-center justify-center text-hacker-primary hover:bg-hacker-primary hover:text-hacker-darker transition-colors">
-                  <i class="fab fa-github"></i>
-                </a>
-                <a href="https://linkedin.com/in/abr-ahamis" class="w-10 h-10 rounded-full bg-hacker-primary/10 flex items-center justify-center text-hacker-primary hover:bg-hacker-primary hover:text-hacker-darker transition-colors">
-                  <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://x.com/abr-ahamis" class="w-10 h-10 rounded-full bg-hacker-primary/10 flex items-center justify-center text-hacker-primary hover:bg-hacker-primary hover:text-hacker-darker transition-colors">
-                  <i class="fab fa-twitter"></i>
-                </a>
-                <a href="https://discord.gg/@abr-ahamis" class="w-10 h-10 rounded-full bg-hacker-primary/10 flex items-center justify-center text-hacker-primary hover:bg-hacker-primary hover:text-hacker-darker transition-colors">
-                  <i class="fab fa-discord"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-          
-          <div>
-            <h3 class="text-xl font-medium mb-6">Send a Message</h3>
-            <form action="https://formspree.io/f/xgvywgvg" method="POST" class="space-y-4">
-              <div>
-                <label for="name" class="block text-sm font-medium mb-1">Name</label>
-                <input type="text" name="name" id="name" required class="w-full bg-hacker-darker border border-hacker-light rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-hacker-primary">
-              </div>
-              <div>
-                <label for="email" class="block text-sm font-medium mb-1">Email</label>
-                <input type="email" name="email" id="email" required class="w-full bg-hacker-darker border border-hacker-light rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-hacker-primary">
-              </div>
-              <div>
-                <label for="message" class="block text-sm font-medium mb-1">Message</label>
-                <textarea name="message" id="message" rows="4" required class="w-full bg-hacker-darker border border-hacker-light rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-hacker-primary"></textarea>
-              </div>
-              <button type="submit" class="w-full bg-hacker-primary text-hacker-darker py-3 rounded-md font-medium hover:bg-hacker-secondary transition-colors">
-                Send Message
-              </button>
-            </form>
 
-          </div>
+                <!-- Cybersecurity Projects -->
+                <div class="fade-in">
+                    <h3 class="text-xl font-bold text-[#64ffda] mb-6 flex items-center">
+                        <i class="fas fa-shield-alt mr-3"></i> Cybersecurity Projects
+                    </h3>
+                    <a href="https://neo-virex.vercel.app/posts/CTF_Building/">
+                        <div class="bg-[#0a192f] p-6 rounded-lg shadow-lg mb-6 transition hover:shadow-xl">
+                            <div class="flex justify-between items-start mb-4">
+                                <div>
+                                    <h4 class="text-lg font-bold text-[#ccd6f6]">Bunna CTF</h4>
+                                  <p class="text-sm text-[#8892b0]">A Linux-based CTF project</p>
+                                </div>
+                                <i class="fas fa-wifi text-2xl text-[#64ffda]"></i>
+                            </div>
+                            <p class="text-[#8892b0] mb-4">
+                                A comprehensive Capture The Flag (CTF) challenge series named “Bunna”, designed with realistic network segmentation, progressive narrative, and layered technical puzzles covering steganography, web exploitation, privilege escalation, and more.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-xs bg-[#112240] text-[#64ffda] px-3 py-1 rounded-full">Linux</span>
+                                <span class="text-xs bg-[#112240] text-[#64ffda] px-3 py-1 rounded-full">challenges</span>
+                                <span class="text-xs bg-[#112240] text-[#64ffda] px-3 py-1 rounded-full">Exploit</span>
+                                <span class="text-xs bg-[#112240] text-[#64ffda] px-3 py-1 rounded-full">Encryption</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://github.com/Abr-ahamis/Neo-Recon">
+                        <div class="bg-[#0a192f] p-6 rounded-lg shadow-lg transition hover:shadow-xl">
+                            <div class="flex justify-between items-start mb-4">
+                                <div>
+                                    <h4 class="text-lg font-bold text-[#ccd6f6]">AI-powered CTF Assistant</h4>
+                                    <p class="text-sm text-[#8892b0]">Capture The Flag Helper Tool</p>
+                                </div>
+                                <i class="fas fa-robot text-2xl text-[#64ffda]"></i>
+                            </div>
+                            <p class="text-[#8892b0] mb-4">
+                                Neo-Recon is a fully automated, terminal-based pentesting and CTF assistant built in Bash. It offers live recon, vuln scanning, exploitation, password cracking, and reverse shell generation—all in one modular tool. Made for ethical hackers, students, and infosec enthusiasts needing speed, automation, and results.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-xs bg-[#112240] text-[#64ffda] px-3 py-1 rounded-full">Kali Linux</span>
+                                <span class="text-xs bg-[#112240] text-[#64ffda] px-3 py-1 rounded-full">Wireshark</span>
+                                <span class="text-xs bg-[#112240] text-[#64ffda] px-3 py-1 rounded-full">nmap</span>
+                                <span class="text-xs bg-[#112240] text-[#64ffda] px-3 py-1 rounded-full">Hydra</span>
+                                <span class="text-xs bg-[#112240] text-[#64ffda] px-3 py-1 rounded-full">searchsploit</span>
+                            </div>
+                        </div>
+                    </a>
+                    </div>
+                </div>
+                <div class="flex justify-center mt-10">
+                    <div class="flex space-x-4">
+                        <a href="https://github.com/Abr-ahamis?tab=repositories" class="hero-btn border border-[#64ffda] text-[#64ffda] font-bold px-6 py-3 rounded transition">All Projects</a>
+                        <a href="https://neo-virex.vercel.app/" class="hero-btn border border-[#64ffda] text-[#64ffda]  font-bold px-6 py-3 rounded transition">Blog Page</a>
+                    </div>
+                </div>
+
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
-  <footer class="py-8 text-center border-t border-hacker-light">
-    <div class="container mx-auto px-4">
-      <div class="flex justify-center space-x-6 mb-6">
-        <a href="#" class="text-hacker-primary hover:text-hacker-secondary transition-colors">
-          <i class="fab fa-github"></i>
-        </a>
-        <a href="#" class="text-hacker-primary hover:text-hacker-secondary transition-colors">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-        <a href="#" class="text-hacker-primary hover:text-hacker-secondary transition-colors">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a href="#" class="text-hacker-primary hover:text-hacker-secondary transition-colors">
-          <i class="fab fa-discord"></i>
-        </a>
-      </div>
-      <p class="text-sm opacity-70">
-        &copy; 2023 Neo Virex. All rights reserved. | Stay rooted & stay safe.
-      </p>
-    </div>
-  </footer>
+    <!-- Experience Section -->
+    <section id="experience" class="py-20">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="section-title text-3xl font-bold text-[#ccd6f6] mb-12">Experience</h2>
+            
+            <div class="bg-[#112240] p-8 rounded-lg shadow-lg fade-in">
+                <div class="border-l-2 border-[#64ffda] pl-6">
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold text-[#ccd6f6] mb-1">Skill Surge Academy</h3>
+                        <p class="text-[#64ffda] mb-2">📅 March 2024 - March 2025 | Addis Ababa, Ethiopia</p>
+                        <p class="text-[#8892b0]">
+                            Participated in intensive red team labs focusing on exploitation, privilege escalation, and network enumeration
+                        </p>
+                        <p>
+                            Worked with tools like Burp Suite, Metasploit, Wireshark, and Kali Linux. Built and tested custom payloads and hardened Linux machines
+                        </p>
+                        <p>
+                            Developed hands-on experience in both offensive and defensive cybersecurity techniques
+                        </p>
+                    </div>
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold text-[#ccd6f6] mb-1">Cybersecurity Learner & Lab Analyst</h3>
+                        <p class="text-[#64ffda] mb-2">📅 March 2023 – Present | 🌍 TryHackMe — Remote 
+                        </p>
+                        <p class="text-[#8892b0]">
+                            Completed over 100+ cybersecurity labs and ranked in the top 3% globally
+                        </p>
+                        <p>
+                            Practiced real-world techniques including brute-force (Hydra), SQL injection (SQLmap), and hash cracking (John the Ripper)
+                        </p>
+                        <p>
+                            Improved skills in network attack simulation and privilege escalation
+                        </p>
+                    </div>
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold text-[#ccd6f6] mb-1">Independent Cybersecurity Researcher</h3>
+                        <p class="text-[#64ffda] mb-2">📅 2021 - Present | Addis Ababa, Ethiopia</p>
+                        <p class="text-[#8892b0]">
+                            Built personal home labs using Termux and Kali Linux
+                        </p>
+                        <p>
+                            Created automation tools in Bash and Python to perform network scanning, web form brute-force, and recon
+                        </p>
+                        <p>
+                            Simulated phishing attacks using tools like Zphisher, Gophish, and SocialFish
+                        </p>
+                        <p>
+                            Gained in-depth understanding of attack chains and real-time threat simulation
+                        </p>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold text-[#ccd6f6] mb-1">Key Achievements</h3>
+                        <ul class="list-disc list-inside text-[#8892b0] space-y-2">
+                            <li>✅ Advert of Cyber Certification – 2025</li>
+                            <li>✅ TryHackMe Cybersecurity Challenge Completion</li>
+                            <li>✅ API Fundamentals Certification – API University</li>
+                            <li>✅ Ethical Hacking Tools Mastery – EH University (Mobile Application)</li>
+                            <li>✅ Cisco Cybersecurity Certification</li>
+                            <li>✅ Advert of Cyber Certification – 2024</li>
+                            <li>🔧 Developed expertise in cybersecurity tools and techniques through dedicated study and practical application</li>
+                            <li>🧠 Created productivity solutions that have helped dozens of people organize their work more effectively</li>
+                            <li>🛠️ Provided tech support and troubleshooting for over 50 individuals, solving hardware and software issues</li>
+                            <li>💼 Built a personal learning system that enables rapid acquisition of new technical skills</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-bold text-[#ccd6f6] mb-1">Continuous Learning</h3>
+                        <p class="text-[#8892b0] mb-4">
+                            I'm constantly expanding my knowledge through online courses, documentation, and hands-on experimentation. Current focus areas include:
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-[#0a192f] text-[#64ffda] px-3 py-1 rounded-full">Advanced Penetration Testing</span>
+                            <span class="text-xs bg-[#0a192f] text-[#64ffda] px-3 py-1 rounded-full">Python Automation</span>
+                            <span class="text-xs bg-[#0a192f] text-[#64ffda] px-3 py-1 rounded-full">Cloud Security</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <script>
-    // Mobile menu toggle
-    document.getElementById('menu-toggle').addEventListener('click', function() {
-      const menu = document.getElementById('mobile-menu');
-      menu.classList.toggle('hidden');
-    });
+    <!-- Contact Section -->
+     <section id="contact" class="py-20 bg-[#112240]">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="section-title text-3xl font-bold text-[#ccd6f6] mb-12">Get In Touch</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-stretch">
 
-    // Typewriter effect for terminal text
-    const terminalTexts = [
-      "I'm Neo Virex - Security Researcher",
-      "I'm a Penetration Tester",
-      "I'm a CTF Player",
-      "I'm a Security Enthusiast"
-    ];
-    let currentTextIndex = 0;
-    const terminalElement = document.querySelector('.typewriter');
-    
-    function changeTerminalText() {
-      currentTextIndex = (currentTextIndex + 1) % terminalTexts.length;
-      terminalElement.textContent = terminalTexts[currentTextIndex];
-      terminalElement.style.animation = 'none';
-      setTimeout(() => {
-        terminalElement.style.animation = 'typing 3.5s steps(40, end)';
-      }, 10);
-    }
-    
-    setInterval(changeTerminalText, 4000);
-  </script>
-  <script>
-  const form = document.querySelector("form");
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const response = await fetch(form.action, {
-      method: "POST",
-      body: new FormData(form),
-      headers: {
-        Accept: "application/json"
-      }
-    });
-    if (response.ok) {
-      alert("✅ Message sent!");
-      form.reset();
-    } else {
-      alert("❌ Failed to send message.");
-    }
-  });
-</script>
+                <!-- Left side: Contact info -->
+                <div class="fade-in h-full flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-[#ccd6f6] mb-6">Let's work together</h3>
+                        <p class="text-[#8892b0] mb-8">
+                            I'm currently looking for new opportunities in cybersecurity, IT support, or technology-related roles. Whether you have a question, want to discuss a project, or just want to say hi, I'll do my best to get back to you!
+                        </p>
+
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-envelope text-[#64ffda] mr-4 text-xl"></i>
+                                <span class="text-[#8892b0]">abrhameshetu948@gmail.com</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-map-marker-alt text-[#64ffda] mr-4 text-xl"></i>
+                                <span class="text-[#8892b0]">Addis Ababa, Ethiopia</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 flex space-x-4">
+                        <a href="https://linkedin.com/in/abr-hamis" target="_blank" class="w-10 h-10 rounded-full border border-[#64ffda] text-[#64ffda] flex items-center justify-center hover:bg-[#64ffda] hover:text-[#0a192f] transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/Abr-ahamis" target="_blank" class="w-10 h-10 rounded-full border border-[#64ffda] text-[#64ffda] flex items-center justify-center hover:bg-[#64ffda] hover:text-[#0a192f] transition">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://neo-virex.vercel.app" target="_blank" class="w-10 h-10 rounded-full border border-[#64ffda] text-[#64ffda] flex items-center justify-center hover:bg-[#64ffda] hover:text-[#0a192f] transition">
+                            <i class="fas fa-globe"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right side: Tech Quote + cool design -->
+                <div class="flex flex-col h-full items-center justify-center bg-[#0a192f] rounded-lg p-8 shadow-lg border border-[#64ffda] max-w-md mx-auto">
+                    <blockquote class="text-lg italic text-[#64ffda] text-center">
+                        “Code is like humor. When you have to explain it, it’s bad.”  
+                        <span class="block mt-2 text-sm text-[#8892b0]">– Cory House</span>
+                    </blockquote>
+
+                    <pre class="mt-6 text-[#64ffda] text-center font-mono leading-none select-none" style="font-size: 14px;">
+        _____
+     .-'     '-.
+    /           \
+   |  .--. .--.  |
+   | ( "" Y "" ) |
+   |  '--' '--'  |
+   |             |
+    \  \___/  /
+     '-.___.-'
+      /     \
+     /       \
+    |         |
+    |         |
+     \       /
+      '.___.'
+                    </pre>
+                    
+                    <p class="mt-4 text-sm text-[#8892b0] text-center">Keep coding, keep growing 🚀</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-[#233554]">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <div class="flex justify-center mb-4">
+                <a href="#" class="text-2xl font-bold text-[#64ffda]">Neo-Virex</a>
+            </div>
+            <p class="text-[#8892b0] text-sm mb-4">
+                Cybersecurity Specialist & Tech Enthusiast
+            </p>
+            <p class="text-[#8892b0] text-sm">
+                &copy; 2023 Abraham. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple fade-in animation for sections
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const fadeInObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            fadeElements.forEach(el => {
+                el.style.opacity = 0;
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                fadeInObserver.observe(el);
+            });
+            
+            // Smooth scrolling for navigation
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>
