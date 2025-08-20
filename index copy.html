@@ -540,6 +540,30 @@
         .note-list li strong {
             color: #E1E4ED;
         }
+        
+        /* Smooth header and footer styles */
+        .smooth-header {
+            background-color: rgba(12, 12, 21, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: none;
+            box-shadow: none;
+        }
+        
+        .smooth-footer {
+            background-color: rgba(12, 12, 21, 0.95);
+            border-top: none;
+            box-shadow: none;
+        }
+        
+        /* Compact section styles */
+        .compact-section {
+            padding: 3rem 0;
+        }
+        
+        .compact-text {
+            line-height: 1.4;
+            margin-bottom: 1rem;
+        }
     </style>
 </head>
 <body class="min-h-screen font-inter">
@@ -547,7 +571,7 @@
     <div class="matrix-effect" id="matrixCanvas"></div>
     
     <!-- Header with Profile Section -->
-    <header class="sticky top-0 z-50 bg-cyber-gray/95 backdrop-blur-md border-b border-current shadow-2xl">
+    <header class="sticky top-0 z-50 smooth-header">
         <div class="container mx-auto px-4 py-4">
             <div class="flex items-center justify-between">
                 <!-- Profile Section -->
@@ -578,7 +602,7 @@
             </div>
             
             <!-- Mobile Navigation -->
-            <div id="mobile-nav" class="hidden md:hidden mt-4 py-4 border-t border-current">
+            <div id="mobile-nav" class="hidden md:hidden mt-4 py-4">
                 <div class="flex flex-col space-y-4">
                     <a href="#home" class="text-light-slate hover:text-neon-teal text-center py-2 font-medium transition">Home</a>
                     <a href="#about" class="text-light-slate hover:text-neon-teal text-center py-2 font-medium transition">About</a>
@@ -591,19 +615,19 @@
         </div>
     </header>
     <!-- Hero Section -->
-    <section id="home" class="pt-24 pb-20 profile-container relative">
+    <section id="home" class="pt-24 pb-16 profile-container relative compact-section">
         <div class="container mx-auto px-4 max-w-6xl">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div class="fade-in">
                     <div class="mb-4">
                         <span class="text-neon-teal uppercase tracking-widest text-sm font-medium">Protecting Digital Assets</span>
                     </div>
-                    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
+                    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">
                         Cybersecurity Expert 
                         <br>
                         <span class="inline-block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-neon-teal to-teal-500">& Specialist</span>
                     </h1>
-                    <p class="text-light-slate text-lg max-w-lg mb-10">
+                    <p class="text-light-slate text-lg max-w-lg mb-8 compact-text">
                         I design cybersecurity automation tools and develop secure systems to protect digital assets and enhance organizational resilience.
                     </p>
                     <div class="flex flex-wrap gap-4">
@@ -616,7 +640,7 @@
                     </div>
                     
                     <!-- Hacker Badges -->
-                    <div class="mt-10 flex flex-wrap gap-3">
+                    <div class="mt-8 flex flex-wrap gap-3">
                         <div class="hacker-badge px-4 py-2 rounded-full bg-matrix-dark text-hacker-green border border-hacker-green text-xs font-firacode">
                             <i class="fas fa-certificate mr-2"></i> CEH Certified
                         </div>
@@ -680,31 +704,31 @@
         </div>
     </section>
     <!-- About Section -->
-    <section id="about" class="py-20 bg-cyber-gray">
+    <section id="about" class="compact-section bg-cyber-gray">
         <div class="container mx-auto px-4 max-w-4xl">
-            <div class="text-center mb-16">
+            <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-bold inline-block relative pb-4 section-title">About Me</h2>
-                <div class="section-divider mt-12 mb-8"></div>
+                <div class="section-divider mt-8 mb-6"></div>
             </div>
             
-            <div class="cyber-card bg-metallic rounded-2xl mt-10 p-8 transition hover:border border-neon-teal/30">
-                <h3 class="text-xl font-bold mb-6">My Professional Journey</h3>
-                <p class="text-light-slate mb-6">
+            <div class="cyber-card bg-metallic rounded-2xl p-6 transition hover:border border-neon-teal/30">
+                <h3 class="text-xl font-bold mb-4">My Professional Journey</h3>
+                <p class="text-light-slate compact-text">
                     My passion for cybersecurity was ignited during my Skill Surge Academy training. There I gained hands-on experience with Kali Linux, Metasploit, Wireshark and other professional tools.
                 </p>
-                <p class="text-light-slate">
+                <p class="text-light-slate compact-text">
                     Today, I specialize in creating automated security solutions and helping organizations develop resilient cyber defenses. I approach each new challenge with methodical precision and a passion for continuous learning in the ever-evolving digital security landscape.
                 </p>
                 
                 <!-- Timeline -->
-                <div class="mt-10 space-y-8">
+                <div class="mt-6 space-y-6">
                     <div class="timeline-item">
                         <div class="flex flex-col md:flex-row md:items-center md:justify-between">
                             <h4 class="text-lg font-bold text-neon-teal">Skill Surge Academy</h4>
                             <span class="text-light-slate text-sm">2022 - Present</span>
                         </div>
                         <p class="text-light-slate text-sm mt-1">Cybersecurity Specialist</p>
-                        <p class="text-light-slate text-sm mt-2">Advanced penetration testing and security automation development.</p>
+                        <p class="text-light-slate text-sm mt-1">Advanced penetration testing and security automation development.</p>
                     </div>
                     
                     <div class="timeline-item">
@@ -713,7 +737,7 @@
                             <span class="text-light-slate text-sm">2020 - 2022</span>
                         </div>
                         <p class="text-light-slate text-sm mt-1">IT Support Specialist</p>
-                        <p class="text-light-slate text-sm mt-2">Provided technical support and system administration.</p>
+                        <p class="text-light-slate text-sm mt-1">Provided technical support and system administration.</p>
                     </div>
                     
                     <div class="timeline-item">
@@ -722,41 +746,41 @@
                             <span class="text-light-slate text-sm">2016 - 2020</span>
                         </div>
                         <p class="text-light-slate text-sm mt-1">Computer Science Degree</p>
-                        <p class="text-light-slate text-sm mt-2">Specialized in network security and cryptography.</p>
+                        <p class="text-light-slate text-sm mt-1">Specialized in network security and cryptography.</p>
                     </div>
                 </div>
                 
                 <!-- Three boxes moved here -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
-                    <div class="cyber-card bg-deep-space rounded-2xl p-6 hover:border border-neon-teal/30 transition">
-                        <div class="w-14 h-14 mb-6 bg-black/50 rounded-xl flex items-center justify-center">
-                            <i class="fas fa-shield-alt text-2xl text-neon-teal"></i>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                    <div class="cyber-card bg-deep-space rounded-2xl p-4 hover:border border-neon-teal/30 transition">
+                        <div class="w-12 h-12 mb-4 bg-black/50 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-shield-alt text-xl text-neon-teal"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-4">Ethical Hacking Journey</h3>
-                        <p class="text-light-slate text-sm">
-                            Since joining Skill Surge Academy, I've immersed myself in penetration testing, vulnerability discovery, and cybersecurity frameworks. My goal is securing digital infrastructures.
+                        <h3 class="text-lg font-bold mb-2">Ethical Hacking</h3>
+                        <p class="text-light-slate text-xs">
+                            Penetration testing and vulnerability discovery
                         </p>
                     </div>
                     
-                    <div class="cyber-card bg-deep-space rounded-2xl p-6 hover:border border-neon-teal/30 transition">
-                        <div class="w-14 h-14 mb-6 bg-black/50 rounded-xl flex items-center justify-center">
-                            <i class="fas fa-terminal text-2xl text-neon-teal"></i>
+                    <div class="cyber-card bg-deep-space rounded-2xl p-4 hover:border border-neon-teal/30 transition">
+                        <div class="w-12 h-12 mb-4 bg-black/50 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-terminal text-xl text-neon-teal"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-4">Automation Expertise</h3>
-                        <p class="text-light-slate text-sm">
-                            I design security automation tools in Bash and Python that streamline security tasks and enhance cyber defense capabilities.
+                        <h3 class="text-lg font-bold mb-2">Automation</h3>
+                        <p class="text-light-slate text-xs">
+                            Security tools in Bash and Python
                         </p>
                     </div>
                     
-                    <div class="cyber-card bg-deep-space rounded-2xl p-6 hover:border border-neon-teal/30 transition">
-                        <div class="w-14 h-14 mb-6 bg-black/50 rounded-xl flex items-center justify-center">
-                            <i class="fas fa-chart-line text-2xl text-neon-teal"></i>
+                    <div class="cyber-card bg-deep-space rounded-2xl p-4 hover:border border-neon-teal/30 transition">
+                        <div class="w-12 h-12 mb-4 bg-black/50 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-chart-line text-xl text-neon-teal"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-4">Achievements</h3>
-                        <ul class="text-light-slate text-sm space-y-2 list-disc list-inside">
-                            <li>Top 3% on TryHackMe</li>
-                            <li>Ethical Hacking Tools Mastery</li>
-                            <li>Advent of Cyber Certification</li>
+                        <h3 class="text-lg font-bold mb-2">Achievements</h3>
+                        <ul class="text-light-slate text-xs space-y-1 list-disc list-inside">
+                            <li>Top 3% TryHackMe</li>
+                            <li>Tools Mastery</li>
+                            <li>Cyber Certification</li>
                         </ul>
                     </div>
                 </div>
@@ -764,11 +788,11 @@
         </div>
     </section>
     <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-deep-space">
+    <section id="skills" class="compact-section bg-deep-space">
         <div class="container mx-auto px-4 max-w-5xl">
-            <div class="text-center mb-16">
+            <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-bold inline-block relative pb-4 section-title">Technical Expertise</h2>
-                <div class="section-divider mt-12 mb-8"></div>
+                <div class="section-divider mt-8 mb-6"></div>
             </div>
             
             <!-- Expertise Tabs -->
@@ -1004,22 +1028,22 @@
         </div>
     </section>
     <!-- Experience Section -->
-    <section id="experience" class="py-20 bg-cyber-gray">
+    <section id="experience" class="compact-section bg-cyber-gray">
         <div class="container mx-auto px-4 max-w-4xl">
-            <div class="text-center mb-16">
+            <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-bold inline-block relative pb-4 section-title">Professional Experience</h2>
-                <div class="section-divider mt-12 mb-8"></div>
+                <div class="section-divider mt-8 mb-6"></div>
             </div>
             
-            <div class="space-y-8">
+            <div class="space-y-6">
                 <!-- Experience Item 1 -->
-                <div class="cyber-card bg-metallic rounded-2xl p-8 hover:border border-neon-teal/30 transition">
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                <div class="cyber-card bg-metallic rounded-2xl p-6 hover:border border-neon-teal/30 transition">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
                         <h3 class="text-xl font-bold text-neon-teal">Cybersecurity Specialist</h3>
                         <span class="text-light-slate text-sm">2022 - Present</span>
                     </div>
-                    <p class="text-light-slate mb-4">Skill Surge Academy</p>
-                    <ul class="text-light-slate text-sm space-y-2 list-disc list-inside">
+                    <p class="text-light-slate mb-3">Skill Surge Academy</p>
+                    <ul class="text-light-slate text-sm space-y-1 list-disc list-inside">
                         <li>Conducted penetration tests on web applications and network infrastructure</li>
                         <li>Developed automated security monitoring tools using Python and Bash</li>
                         <li>Implemented security best practices across organizational IT systems</li>
@@ -1027,29 +1051,29 @@
                     </ul>
                     
                     <!-- Projects -->
-                    <div class="mt-6 pt-6 border-t border-current">
-                        <h4 class="text-md font-semibold text-neon-teal mb-3">Key Projects:</h4>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div class="bg-deep-space rounded-lg p-4">
+                    <div class="mt-4 pt-4 border-t border-current">
+                        <h4 class="text-md font-semibold text-neon-teal mb-2">Key Projects:</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                            <div class="bg-deep-space rounded-lg p-3">
                                 <h5 class="font-medium text-platinum">Automated Vulnerability Scanner</h5>
-                                <p class="text-xs text-light-slate mt-1">Python-based tool that identifies security weaknesses in network systems</p>
+                                <p class="text-xs text-light-slate mt-1">Python-based tool that identifies security weaknesses</p>
                             </div>
-                            <div class="bg-deep-space rounded-lg p-4">
+                            <div class="bg-deep-space rounded-lg p-3">
                                 <h5 class="font-medium text-platinum">Phishing Simulation Platform</h5>
-                                <p class="text-xs text-light-slate mt-1">Custom framework for testing employee security awareness</p>
+                                <p class="text-xs text-light-slate mt-1">Custom framework for testing security awareness</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Experience Item 2 -->
-                <div class="cyber-card bg-metallic rounded-2xl p-8 hover:border border-neon-teal/30 transition">
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                <div class="cyber-card bg-metallic rounded-2xl p-6 hover:border border-neon-teal/30 transition">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
                         <h3 class="text-xl font-bold text-neon-teal">IT Support Specialist</h3>
                         <span class="text-light-slate text-sm">2020 - 2022</span>
                     </div>
-                    <p class="text-light-slate mb-4">Tech Solutions Inc.</p>
-                    <ul class="text-light-slate text-sm space-y-2 list-disc list-inside">
+                    <p class="text-light-slate mb-3">Tech Solutions Inc.</p>
+                    <ul class="text-light-slate text-sm space-y-1 list-disc list-inside">
                         <li>Provided technical support for Windows and macOS systems</li>
                         <li>Troubleshooted hardware and software issues</li>
                         <li>Managed user accounts and permissions in Active Directory</li>
@@ -1057,10 +1081,10 @@
                     </ul>
                     
                     <!-- Achievements -->
-                    <div class="mt-6 pt-6 border-t border-current">
-                        <h4 class="text-md font-semibold text-neon-teal mb-3">Notable Achievements:</h4>
-                        <ul class="text-light-slate text-sm space-y-2 list-disc list-inside">
-                            <li>Reduced average ticket resolution time by 35% through process improvements</li>
+                    <div class="mt-4 pt-4 border-t border-current">
+                        <h4 class="text-md font-semibold text-neon-teal mb-2">Notable Achievements:</h4>
+                        <ul class="text-light-slate text-sm space-y-1 list-disc list-inside">
+                            <li>Reduced ticket resolution time by 35% through process improvements</li>
                             <li>Implemented a new ticketing system that improved team productivity</li>
                             <li>Received Employee of the Quarter award for exceptional service</li>
                         </ul>
@@ -1069,11 +1093,11 @@
             </div>
             
             <!-- Certifications -->
-            <div class="cyber-card bg-metallic rounded-2xl mt-10 p-8 transition hover:border border-neon-teal/30">
-                <h3 class="text-xl font-bold mb-6">Certifications & Training</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    <div class="bg-deep-space rounded-lg p-4 flex items-start">
-                        <div class="w-10 h-10 rounded-full bg-black/50 flex items-center justify-center text-neon-teal mr-4">
+            <div class="cyber-card bg-metallic rounded-2xl mt-6 p-6 transition hover:border border-neon-teal/30">
+                <h3 class="text-xl font-bold mb-4">Certifications & Training</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                    <div class="bg-deep-space rounded-lg p-3 flex items-start">
+                        <div class="w-10 h-10 rounded-full bg-black/50 flex items-center justify-center text-neon-teal mr-3">
                             <i class="fas fa-certificate"></i>
                         </div>
                         <div>
@@ -1081,8 +1105,8 @@
                             <p class="text-xs text-light-slate mt-1">EC-Council | 2022</p>
                         </div>
                     </div>
-                    <div class="bg-deep-space rounded-lg p-4 flex items-start">
-                        <div class="w-10 h-10 rounded-full bg-black/50 flex items-center justify-center text-neon-teal mr-4">
+                    <div class="bg-deep-space rounded-lg p-3 flex items-start">
+                        <div class="w-10 h-10 rounded-full bg-black/50 flex items-center justify-center text-neon-teal mr-3">
                             <i class="fas fa-shield-alt"></i>
                         </div>
                         <div>
@@ -1090,8 +1114,8 @@
                             <p class="text-xs text-light-slate mt-1">CompTIA | 2021</p>
                         </div>
                     </div>
-                    <div class="bg-deep-space rounded-lg p-4 flex items-start">
-                        <div class="w-10 h-10 rounded-full bg-black/50 flex items-center justify-center text-neon-teal mr-4">
+                    <div class="bg-deep-space rounded-lg p-3 flex items-start">
+                        <div class="w-10 h-10 rounded-full bg-black/50 flex items-center justify-center text-neon-teal mr-3">
                             <i class="fab fa-linux"></i>
                         </div>
                         <div>
@@ -1104,18 +1128,18 @@
         </div>
     </section>
     <!-- Blog Section -->
-    <section id="blog" class="py-20 bg-deep-space">
+    <section id="blog" class="compact-section bg-deep-space">
         <div class="container mx-auto px-4 max-w-5xl">
-            <div class="text-center mb-16">
+            <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-bold inline-block relative pb-4 section-title">Latest Blogs</h2>
-                <div class="section-divider mt-12 mb-8"></div>
+                <div class="section-divider mt-8 mb-6"></div>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <!-- Blog Card 1 -->
                 <a href="https://neo-virex.vercel.app/" class="group block hover:no-underline">
                     <div class="h-full cyber-card bg-metallic rounded-2xl transition-all duration-300 group-hover:-translate-y-1.5 group-hover:border group-hover:border-neon-teal/30">
-                        <div class="h-48 bg-deep-space rounded-t-2xl overflow-hidden relative">
+                        <div class="h-40 bg-deep-space rounded-t-2xl overflow-hidden relative">
                             <img src="https://picsum.photos/seed/cybersecurity-blog-1/800/400.jpg" alt="CTF Building Fundamentals" class="blog-image">
                             <div class="blog-overlay">
                                 <div class="terminal-code text-lg font-firacode tracking-wide">
@@ -1129,13 +1153,13 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="p-6">
-                            <div class="flex justify-between items-center mb-3">
+                        <div class="p-4">
+                            <div class="flex justify-between items-center mb-2">
                                 <span class="text-xs px-3 py-1 rounded-full bg-deep-space text-neon-teal">Cybersecurity</span>
                                 <span class="text-xs text-light-slate">OCT 24, 2023</span>
                             </div>
-                            <h3 class="text-xl font-bold mb-4 group-hover:text-neon-teal transition">CTF Building Fundamentals</h3>
-                            <p class="text-light-slate text-sm">Best practices for developing security training environments and realistic threat simulations.</p>
+                            <h3 class="text-lg font-bold mb-2 group-hover:text-neon-teal transition">CTF Building Fundamentals</h3>
+                            <p class="text-light-slate text-sm">Best practices for developing security training environments.</p>
                         </div>
                     </div>
                 </a>
@@ -1143,7 +1167,7 @@
                 <!-- Blog Card 2 -->
                 <a href="https://neo-virex.vercel.app/" class="group block hover:no-underline">
                     <div class="h-full cyber-card bg-metallic rounded-2xl transition-all duration-300 group-hover:-translate-y-1.5 group-hover:border group-hover:border-neon-teal/30">
-                        <div class="h-48 bg-deep-space rounded-t-2xl overflow-hidden relative">
+                        <div class="h-40 bg-deep-space rounded-t-2xl overflow-hidden relative">
                             <img src="https://picsum.photos/seed/cybersecurity-blog-2/800/400.jpg" alt="AI-Assisted Pentesting Frameworks" class="blog-image">
                             <div class="blog-overlay">
                                 <div class="terminal-code text-lg font-firacode tracking-wide">
@@ -1157,20 +1181,20 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="p-6">
-                            <div class="flex justify-between items-center mb-3">
+                        <div class="p-4">
+                            <div class="flex justify-between items-center mb-2">
                                 <span class="text-xs px-3 py-1 rounded-full bg-deep-space text-neon-teal">Automation</span>
                                 <span class="text-xs text-light-slate">AUG 12, 2023</span>
                             </div>
-                            <h3 class="text-xl font-bold mb-4 group-hover:text-neon-teal transition">AI-Assisted Pentesting Frameworks</h3>
-                            <p class="text-light-slate text-sm">Exploring how artificial intelligence can enhance penetration testing efficiency through automation and analysis.</p>
+                            <h3 class="text-lg font-bold mb-2 group-hover:text-neon-teal transition">AI-Assisted Pentesting Frameworks</h3>
+                            <p class="text-light-slate text-sm">Exploring AI enhancement for penetration testing efficiency.</p>
                         </div>
                     </div>
                 </a>
             </div>
             
             <!-- View All Button -->
-            <div class="text-center mt-12">
+            <div class="text-center mt-8">
                 <a href="https://neo-virex.vercel.app/" class="inline-block border border-neon-teal text-neon-teal px-8 py-3 rounded-lg hover:bg-neon-teal/10 transition">
                     <i class="fas fa-book-open mr-2"></i> View All Articles
                 </a>
@@ -1178,23 +1202,23 @@
         </div>
     </section>
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-cyber-gray">
+    <section id="contact" class="compact-section bg-cyber-gray">
         <div class="container mx-auto px-4 max-w-4xl">
-            <div class="text-center mb-16">
+            <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-bold inline-block relative pb-4 section-title">Contact Me</h2>
-                <div class="section-divider mt-12 mb-8"></div>
+                <div class="section-divider mt-8 mb-6"></div>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div>
                     <div class="mb-6">
                         <h3 class="text-xl font-bold mb-4">Get in Touch</h3>
-                        <p class="text-light-slate max-w-md">
+                        <p class="text-light-slate max-w-md compact-text">
                             I'm open to discussing cybersecurity projects, automation solutions, or writing opportunities for my blog.
                         </p>
                     </div>
                     
-                    <div class="space-y-6">
+                    <div class="space-y-4">
                         <div class="flex items-start space-x-4">
                             <div class="w-12 h-12 rounded-xl bg-deep-space flex items-center justify-center text-neon-teal">
                                 <i class="fas fa-envelope text-lg"></i>
@@ -1216,7 +1240,7 @@
                         </div>
                     </div>
                     
-                    <div class="mt-10">
+                    <div class="mt-8">
                         <h4 class="font-semibold mb-4">Connect With Me</h4>
                         <div class="flex space-x-5">
                             <a href="https://linkedin.com/in/abr-hamis" class="social-icon text-xl text-light-slate hover:text-neon-teal">
@@ -1254,15 +1278,15 @@
         </div>
     </section>
     <!-- Footer -->
-    <footer class="py-10 border-t border-current">
+    <footer class="smooth-footer py-8">
         <div class="container mx-auto px-4 max-w-4xl">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="flex items-center space-x-4">
-                    <div class="avatar-ring rounded-full w-14 h-14 overflow-hidden bg-metallic flex items-center justify-center">
+                    <div class="avatar-ring rounded-full w-12 h-12 overflow-hidden bg-metallic flex items-center justify-center">
                         <img src="img/main.jpg" alt="Abraham" class="w-full h-full object-cover">
                     </div>
                     <div>
-                        <h1 class="text-xl font-bold text-platinum tracking-tight">Abraham</h1>
+                        <h1 class="text-lg font-bold text-platinum tracking-tight">Abraham</h1>
                         <p class="text-xs text-light-slate">Cybersecurity Specialist</p>
                     </div>
                 </div>
