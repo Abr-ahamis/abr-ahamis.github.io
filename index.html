@@ -1,1485 +1,471 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abraham | Cybersecurity Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="img/favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="img/favicon/favicon.svg" />
-    <link rel="shortcut icon" href="img/favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png" />
-    <link rel="manifest" href="img/favicon/site.webmanifest" />
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        "deep-space": "#0C0C15",
-                        "cyber-gray": "#151522",
-                        "metallic": "#1D2029",
-                        "current": "#303340",
-                        "neon-teal": "#2EE7CB",
-                        "platinum": "#E1E4ED",
-                        "light-slate": "#8A95AA",
-                        "hacker-green": "#00FF41",
-                        "matrix-dark": "#003B00"
-                    },
-                    fontFamily: {
-                        'inter': ['Inter', 'sans-serif'],
-                        'firacode': ['Fira Code', 'monospace']
-                    },
-                    animation: {
-                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'float': 'float 6s ease-in-out infinite',
-                        'text-gradient': 'text-gradient 6s ease infinite',
-                        'terminal-cursor': 'terminal-cursor 1s step-end infinite',
-                        'flip-card': 'flip-card 0.6s cubic-bezier(0.4, 0.0, 0.2, 1)',
-                        'flip-card-back': 'flip-card-back 0.6s cubic-bezier(0.4, 0.0, 0.2, 1)',
-                        'text-art': 'text-art 8s linear infinite'
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-20px)' }
-                        },
-                        'text-gradient': {
-                            '0%, 100%': { 'background-position': '0% 50%' },
-                            '50%': { 'background-position': '100% 50%' }
-                        },
-                        'terminal-cursor': {
-                            'from, to': { opacity: '0' },
-                            '50%': { opacity: '1' }
-                        },
-                        'flip-card': {
-                            '0%': { transform: 'perspective(400px) rotateY(0deg)' },
-                            '40%': { transform: 'perspective(400px) rotateY(-90deg)' },
-                            '60%': { transform: 'perspective(400px) rotateY(-90deg)' },
-                            '100%': { transform: 'perspective(400px) rotateY(0deg)' }
-                        },
-                        'flip-card-back': {
-                            '0%': { transform: 'perspective(400px) rotateY(0deg)' },
-                            '40%': { transform: 'perspective(400px) rotateY(90deg)' },
-                            '60%': { transform: 'perspective(400px) rotateY(90deg)' },
-                            '100%': { transform: 'perspective(400px) rotateY(0deg)' }
-                        },
-                        'text-art': {
-                            '0%': { transform: 'translateX(100%)' },
-                            '100%': { transform: 'translateX(-100%)' }
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body {
-            font-family: 'Inter', 'sans-serif';
-            background-color: #0C0C15;
-            color: #E1E4ED;
-            scroll-behavior: smooth;
-            overflow-x: hidden;
-        }
-        
-        .profile-container::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, rgba(46,231,203,0) 0%, rgba(46,231,203,0.6) 50%, rgba(46,231,203,0) 100%);
-        }
-        
-        .avatar-ring {
-            box-shadow: 0 0 0 3px #2EE7CB, 0 0 25px rgba(46, 231, 203, 0.3);
-        }
-        
-        .section-divider {
-            height: 1px;
-            background: linear-gradient(90deg, rgba(46,231,203,0) 0%, rgba(46,231,203,0.3) 50%, rgba(46,231,203,0) 100%);
-            max-width: 760px;
-            margin: 0 auto 3rem;
-        }
-        
-        .skill-card {
-            border: 1px solid #22242F;
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.3s ease, border-color 0.3s ease;
-        }
-        
-        .skill-card:hover {
-            transform: translateY(-3px);
-            border-color: #2a7066;
-        }
-        
-        .skill-card::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(130deg, rgba(46,231,203,0.08) 0%, rgba(46,231,203,0) 70%);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            pointer-events: none;
-        }
-        
-        .skill-card:hover::after {
-            opacity: 1;
-        }
-        
-        .section-title::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: -8px;
-            width: 60px;
-            height: 2px;
-            background-color: #2EE7CB;
-            border-radius: 3px;
-        }
-        
-        .social-icon {
-            transition: all 0.3s ease;
-        }
-        
-        .social-icon:hover {
-            color: #2EE7CB;
-            transform: translateY(-3px);
-        }
-        
-        .terminal-code {
-            font-family: 'Fira Code', monospace;
-            text-shadow: 0 0 5px rgba(46, 231, 203, 0.3);
-        }
-        
-        .terminal-cursor {
-            display: inline-block;
-            width: 10px;
-            height: 20px;
-            background-color: #2EE7CB;
-            vertical-align: middle;
-            margin-left: 2px;
-            animation: terminal-cursor 1s step-end infinite;
-        }
-        
-        .matrix-effect {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            opacity: 0.1;
-        }
-        
-        .cyberpunk-btn {
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s;
-        }
-        
-        .cyberpunk-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(46, 231, 203, 0.4), transparent);
-            transition: all 0.5s;
-        }
-        
-        .cyberpunk-btn:hover::before {
-            left: 100%;
-        }
-        
-        .hacker-text {
-            font-family: 'Fira Code', monospace;
-            background: linear-gradient(90deg, #2EE7CB, #00FF41, #2EE7CB);
-            background-size: 200% auto;
-            color: transparent;
-            -webkit-background-clip: text;
-            background-clip: text;
-            animation: text-gradient 6s ease infinite;
-        }
-        
-        .glow-text {
-            text-shadow: 0 0 8px rgba(46, 231, 203, 0.6);
-        }
-        
-        .cyber-card {
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s;
-        }
-        
-        .cyber-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(46, 231, 203, 0.1), transparent);
-            transform: rotate(45deg);
-            transition: all 0.6s;
-            opacity: 0;
-        }
-        
-        .cyber-card:hover::before {
-            opacity: 1;
-            top: -20%;
-            left: -20%;
-        }
-        
-        .nav-item {
-            position: relative;
-        }
-        
-        .nav-item::after {
-            content: "";
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: #2EE7CB;
-            transition: width 0.3s ease;
-        }
-        
-        .nav-item:hover::after {
-            width: 100%;
-        }
-        
-        .nav-item:hover {
-            text-shadow: 0 0 8px rgba(46, 231, 203, 0.5);
-        }
-        
-        .timeline-item {
-            position: relative;
-            padding-left: 30px;
-        }
-        
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 8px;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background-color: #2EE7CB;
-            border: 2px solid #151522;
-            z-index: 1;
-        }
-        
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            left: 5px;
-            top: 20px;
-            width: 2px;
-            height: calc(100% - 20px);
-            background-color: #2EE7CB;
-        }
-        
-        .timeline-item:last-child::after {
-            display: none;
-        }
-        
-        .hacker-terminal {
-            background-color: #0A0A12;
-            border: 1px solid #2EE7CB;
-            box-shadow: 0 0 20px rgba(46, 231, 203, 0.2);
-        }
-        
-        .hacker-header {
-            background: linear-gradient(90deg, #0A0A12, #151522, #0A0A12);
-            border-bottom: 1px solid #2EE7CB;
-        }
-        
-        .hacker-body {
-            background-color: rgba(10, 10, 18, 0.8);
-        }
-        
-        .typewriter {
-            overflow: hidden;
-            border-right: 3px solid #2EE7CB;
-            white-space: nowrap;
-            margin: 0 auto;
-            letter-spacing: .15em;
-            animation: 
-                typing 3.5s steps(40, end),
-                blink-caret .75s step-end infinite;
-        }
-        
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
-        
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: #2EE7CB }
-        }
-        
-        .floating-sensors {
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-        
-        .expertise-tabs {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 2rem;
-        }
-        
-        .expertise-tab {
-            padding: 0.75rem 2rem;
-            margin: 0 0.5rem;
-            border-radius: 0.5rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .expertise-tab.active {
-            background-color: rgba(46, 231, 203, 0.1);
-            color: #2EE7CB;
-            box-shadow: 0 0 15px rgba(46, 231, 203, 0.3);
-        }
-        
-        .expertise-tab:not(.active):hover {
-            background-color: rgba(46, 231, 203, 0.05);
-            color: #2EE7CB;
-        }
-        
-        .expertise-content {
-            position: relative;
-            height: 500px;
-            overflow: hidden;
-            perspective: 1000px;
-        }
-        
-        .expertise-panel {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            transition: transform 0.6s ease, opacity 0.6s ease;
-            backface-visibility: hidden;
-            transform-style: preserve-3d;
-        }
-        
-        .expertise-panel.hidden {
-            transform: rotateY(-180deg);
-            opacity: 0;
-        }
-        
-        .expertise-panel.next {
-            transform: rotateY(180deg);
-            opacity: 0;
-        }
-        
-        .expertise-panel.active {
-            transform: rotateY(0deg);
-            opacity: 1;
-        }
-        
-        .cyber-input {
-            background-color: rgba(21, 21, 34, 0.8);
-            border: 1px solid #303340;
-            transition: all 0.3s;
-        }
-        
-        .cyber-input:focus {
-            outline: none;
-            border-color: #2EE7CB;
-            box-shadow: 0 0 0 2px rgba(46, 231, 203, 0.2);
-        }
-        
-        .cyber-checkbox:checked {
-            background-color: #2EE7CB;
-            border-color: #2EE7CB;
-        }
-        
-        .cyber-checkbox:focus {
-            box-shadow: 0 0 0 2px rgba(46, 231, 203, 0.2);
-        }
-        
-        .hacker-badge {
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hacker-badge::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(46, 231, 203, 0.1), transparent);
-            transform: rotate(45deg);
-            transition: all 0.6s;
-            opacity: 0;
-        }
-        
-        .hacker-badge:hover::before {
-            opacity: 1;
-            top: -20%;
-            left: -20%;
-        }
-        
-        .text-art-container {
-            position: relative;
-            overflow: hidden;
-            width: 100%;
-            height: 300px;
-        }
-        
-        .text-art {
-            position: absolute;
-            white-space: nowrap;
-            font-family: 'Fira Code', monospace;
-            font-size: 2.5rem;
-            color: transparent;
-            background: linear-gradient(90deg, #2EE7CB, #00FF41, #2EE7CB);
-            background-clip: text;
-            -webkit-background-clip: text;
-            animation: text-art 8s linear infinite;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-        
-        .blog-image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.7;
-            transition: opacity 0.3s ease;
-        }
-        
-        .blog-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, rgba(12, 12, 21, 0.3), rgba(12, 12, 21, 0.8));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .note-card {
-            background: linear-gradient(135deg, #1D2029 0%, #151522 100%);
-            border-left: 4px solid #2EE7CB;
-            border-radius: 0.5rem;
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .note-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100px;
-            height: 100px;
-            background: radial-gradient(circle at top right, rgba(46, 231, 203, 0.1), transparent 70%);
-        }
-        
-        .note-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: #2EE7CB;
-            display: flex;
-            align-items: center;
-        }
-        
-        .note-title i {
-            margin-right: 0.5rem;
-        }
-        
-        .note-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        
-        .note-list li {
-            margin-bottom: 0.75rem;
-            padding-left: 1.5rem;
-            position: relative;
-            line-height: 1.5;
-        }
-        
-        .note-list li::before {
-            content: '▸';
-            position: absolute;
-            left: 0;
-            color: #2EE7CB;
-        }
-        
-        .note-list li strong {
-            color: #E1E4ED;
-        }
-        
-        /* Smooth header and footer styles */
-        .smooth-header {
-            background-color: rgba(12, 12, 21, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: none;
-            box-shadow: none;
-        }
-        
-        .smooth-footer {
-            background-color: rgba(12, 12, 21, 0.95);
-            border-top: none;
-            box-shadow: none;
-        }
-        
-        /* Compact section styles */
-        .compact-section {
-            padding: 3rem 0;
-        }
-        
-        .compact-text {
-            line-height: 1.4;
-            margin-bottom: 1rem;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Abraham — Cybersecurity Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --bg: #000000;
+      --text: #f8f8f2;
+      --muted: #c0c0c0;
+      --accent: #ff0000;
+      --accent-2: #ff2b2b;
+      --card: rgba(20,20,20,0.6);
+    }
+    html, body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      height: 100%;
+    }
+    .glow {
+      text-shadow: 0 0 6px rgba(255,0,0,0.4);
+    }
+    .scan-line {
+      position: absolute;
+      content: "";
+      width: 3px;
+      background: linear-gradient(to bottom, transparent, var(--accent), transparent);
+      height: 100vh;
+      box-shadow: 0 0 8px rgba(255,0,0,0.6);
+      opacity: 0.6;
+      animation: scan 6s linear infinite;
+    }
+    @keyframes scan {
+      0% { top: 0; }
+      100% { top: 100%; }
+    }
+    .particle {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: var(--accent);
+      border-radius: 50%;
+      filter: drop-shadow(0 0 6px rgba(255,0,0,0.8));
+      opacity: 0.7;
+      animation: drift linear infinite;
+    }
+    @keyframes drift {
+      0% { transform: translateY(0) translateX(0); opacity: 0.2; }
+      50% { opacity: 0.8; }
+      100% { transform: translateY(-100vh) translateX(20vw); opacity: 0.1; }
+    }
+    .noise {
+      position: absolute;
+      pointer-events: none;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="1" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23n)" opacity="0.03"/></svg>');
+      opacity: 0.35;
+      mix-blend-mode: overlay;
+      animation: noiseShift 12s linear infinite;
+    }
+    @keyframes noiseShift {
+      0% { transform: translate(0,0); }
+      100% { transform: translate(2%, -2%); }
+    }
+    .terminal {
+      background: #0a0a0a;
+      border: 1px solid #202020;
+      box-shadow: 0 0 0 1px rgba(255,0,0,0.05) inset, 0 0 24px rgba(255,0,0,0.06);
+    }
+    .term-cursor {
+      display: inline-block;
+      width: 8px;
+      height: 16px;
+      background: #ff2b2b;
+      margin-left: 2px;
+      animation: blink 1s step-end infinite;
+      vertical-align: middle;
+    }
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+    }
+    .tag {
+      border: 1px solid var(--accent);
+      background: rgba(255,0,0,0.05);
+    }
+    .divider-red {
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--accent), transparent);
+    }
+    .btn {
+      border: 1px solid var(--accent);
+      color: var(--text);
+      background: rgba(255,0,0,0.06);
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+    .btn:hover {
+      background: rgba(255,0,0,0.12);
+      transform: translateY(-1px);
+    }
+    .outline-red {
+      outline: 1px solid var(--accent);
+    }
+    .focus-ring:focus {
+      outline: 1px solid var(--accent);
+      outline-offset: 2px;
+    }
+    .shadow-soft {
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    }
+    .hero-underline {
+      position: relative;
+    }
+    .hero-underline::after {
+      content: "";
+      position: absolute;
+      left: 0; bottom: -6px;
+      height: 2px; width: 100%;
+      background: linear-gradient(to right, transparent, var(--accent), transparent);
+      filter: blur(0.5px);
+    }
+  </style>
 </head>
-<body class="min-h-screen font-inter">
-    <!-- Matrix Background Effect -->
-    <div class="matrix-effect" id="matrixCanvas"></div>
-    
-    <!-- Header with Profile Section -->
-    <header class="sticky top-0 z-50 smooth-header">
-        <div class="container mx-auto px-4 py-4">
-            <div class="flex items-center justify-between">
-                <!-- Profile Section -->
-                <div class="flex items-center space-x-4">
-                    <div class="avatar-ring rounded-full w-14 h-14 overflow-hidden bg-metallic flex items-center justify-center">
-                        <img src="img/12.png" alt="Abraham" class="w-full h-full object-cover">
-                    </div>
-                    <div>
-                        <h1 class="text-xl font-bold text-platinum tracking-tight">Abraham</h1>
-                        <p class="text-xs text-light-slate">Cybersecurity Specialist</p>
-                    </div>
-                </div>
-                
-                <!-- Navigation -->
-                <nav class="hidden md:flex space-x-8 items-center">
-                    <a href="#home" class="nav-item text-light-slate hover:text-neon-teal tracking-wider text-sm font-medium transition duration-300">HOME</a>
-                    <a href="#about" class="nav-item text-light-slate hover:text-neon-teal tracking-wider text-sm font-medium transition duration-300">ABOUT</a>
-                    <a href="#skills" class="nav-item text-light-slate hover:text-neon-teal tracking-wider text-sm font-medium transition duration-300">SKILLS</a>
-                    <a href="#experience" class="nav-item text-light-slate hover:text-neon-teal tracking-wider text-sm font-medium transition duration-300">EXPERIENCE</a>
-                    <a href="#blog" class="nav-item text-light-slate hover:text-neon-teal tracking-wider text-sm font-medium transition duration-300">BLOG</a>
-                    <a href="#contact" class="nav-item text-light-slate hover:text-neon-teal tracking-wider text-sm font-medium transition duration-300">CONTACT</a>
-                </nav>
-                
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="md:hidden text-xl text-light-slate">
-                    <i class="fas fa-bars"></i>
-                </button>
+<body class="antialiased selection:bg-red-500 selection:text-white">
+  <div class="noise"></div>
+
+  <div class="fixed inset-0 pointer-events-none">
+    <!-- Left scan lines -->
+    <div class="absolute left-0 top-0 h-full w-1">
+      <div class="scan-line"></div>
+      <div class="scan-line" style="animation-delay: -2s; height: 80vh;"></div>
+      <div class="scan-line" style="animation-delay: -4s; height: 60vh;"></div>
+    </div>
+    <!-- Right scan lines -->
+    <div class="absolute right-0 top-0 h-full w-1">
+      <div class="scan-line" style="animation-direction: reverse; animation-duration: 7s;"></div>
+      <div class="scan-line" style="animation-delay: -1.5s; animation-duration: 5s;"></div>
+      <div class="scan-line" style="animation-delay: -3s; animation-duration: 8s;"></div>
+    </div>
+    <!-- Particles -->
+    <div id="particles" class="absolute inset-0 overflow-hidden"></div>
+  </div>
+
+  <header class="relative z-10">
+    <div class="max-w-6xl mx-auto px-6 py-8">
+      <div class="flex items-center justify-between">
+        <div class="text-sm text-gray-400">© 2025 Abraham</div>
+        <a href="#contact" class="btn px-4 py-2 rounded-md focus-ring">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="relative z-10">
+    <section class="max-w-6xl mx-auto px-6 pt-8 pb-16">
+      <div class="grid lg:grid-cols-3 gap-8 items-center">
+        <div class="lg:col-span-2">
+          <div class="terminal rounded-xl p-6 md:p-8 shadow-soft">
+            <div class="flex items-center gap-3">
+              <div class="w-3 h-3 rounded-full bg-red-500"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500"></div>
+              <span class="text-xs text-gray-400 ml-2">session armed</span>
             </div>
-            
-            <!-- Mobile Navigation -->
-            <div id="mobile-nav" class="hidden md:hidden mt-4 py-4">
-                <div class="flex flex-col space-y-4">
-                    <a href="#home" class="text-light-slate hover:text-neon-teal text-center py-2 font-medium transition">Home</a>
-                    <a href="#about" class="text-light-slate hover:text-neon-teal text-center py-2 font-medium transition">About</a>
-                    <a href="#skills" class="text-light-slate hover:text-neon-teal text-center py-2 font-medium transition">Skills</a>
-                    <a href="#experience" class="text-light-slate hover:text-neon-teal text-center py-2 font-medium transition">Experience</a>
-                    <a href="#blog" class="text-light-slate hover:text-neon-teal text-center py-2 font-medium transition">Blog</a>
-                    <a href="#contact" class="text-light-slate hover:text-neon-teal text-center py-2 font-medium transition">Contact</a>
+            <div class="mt-4 text-gray-300 text-sm leading-relaxed">
+              <div>whoami</div>
+              <div class="text-red-400 glow">abraham@recon:~$</div>
+              <div class="text-gray-300">Abraham</div>
+              <div class="text-gray-300">Cybersecurity Specialist</div>
+              <div class="text-gray-300">Protecting <span class="text-red-400">Digital Assets</span></div>
+              <div class="mt-3">
+                <div class="text-gray-400">status</div>
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                  <span class="text-xs text-gray-300">monitoring edges</span>
                 </div>
+              </div>
             </div>
+          </div>
+
+          <div class="mt-6">
+            <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-center hero-underline">ABRAHAM</h1>
+            <p class="text-center text-gray-300 mt-3 max-w-2xl mx-auto">
+              Cybersecurity Specialist focused on defense-in-depth, network hardening, and resilient incident response. Building automation to keep systems sound.
+            </p>
+            <div class="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="#skills" class="btn px-5 py-3 rounded-md text-center">Skills</a>
+              <a href="#experience" class="btn px-5 py-3 rounded-md text-center">Experience</a>
+              <a href="#blog" class="btn px-5 py-3 rounded-md text-center">Blog</a>
+            </div>
+          </div>
         </div>
-    </header>
-    <!-- Hero Section -->
-    <section id="home" class="pt-24 pb-16 profile-container relative compact-section">
-        <div class="container mx-auto px-4 max-w-6xl">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div class="fade-in">
-                    <div class="mb-4">
-                        <span class="text-neon-teal uppercase tracking-widest text-sm font-medium">Protecting Digital Assets</span>
-                    </div>
-                    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">
-                        Cybersecurity Expert 
-                        <br>
-                        <span class="inline-block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-neon-teal to-teal-500">& Specialist</span>
-                    </h1>
-                    <p class="text-light-slate text-lg max-w-lg mb-8 compact-text">
-                        I design cybersecurity automation tools and develop secure systems to protect digital assets and enhance organizational resilience.
-                    </p>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="#contact" class="cyberpunk-btn inline-block border border-neon-teal text-neon-teal px-8 py-3 rounded-lg hover:bg-neon-teal/10 transition">
-                            <i class="fas fa-envelope mr-2"></i> Get in Touch
-                        </a>
-                        <a href="#skills" class="cyberpunk-btn inline-block bg-neon-teal text-deep-space px-8 py-3 rounded-lg hover:bg-teal-400 transition">
-                            <i class="fas fa-shield-alt mr-2"></i> View Skills
-                        </a>
-                    </div>
-                    
-                    <!-- Hacker Badges -->
-                    <div class="mt-8 flex flex-wrap gap-3">
-                        <div class="hacker-badge px-4 py-2 rounded-full bg-matrix-dark text-hacker-green border border-hacker-green text-xs font-firacode">
-                            <i class="fas fa-certificate mr-2"></i> CEH Certified
-                        </div>
-                        <div class="hacker-badge px-4 py-2 rounded-full bg-matrix-dark text-hacker-green border border-hacker-green text-xs font-firacode">
-                            <i class="fas fa-trophy mr-2"></i> Top 3% TryHackMe
-                        </div>
-                        <div class="hacker-badge px-4 py-2 rounded-full bg-matrix-dark text-hacker-green border border-hacker-green text-xs font-firacode">
-                            <i class="fas fa-code mr-2"></i> Python Expert
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="relative fade-in">
-                    <div class="relative">
-                        <svg width="100%" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" class="floating-sensors">
-                            <defs>
-                                <linearGradient id="cyberGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" stop-color="#0D9488" />
-                                    <stop offset="100%" stop-color="#2EE7CB" />
-                                </linearGradient>
-                                <radialGradient id="radialGlow" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
-                                    <stop offset="0%" stop-color="#2EE7CB" stop-opacity="0.3" />
-                                    <stop offset="100%" stop-color="#2EE7CB" stop-opacity="0" />
-                                </radialGradient>
-                            </defs>
-                            
-                            <!-- Glow effect -->
-                            <circle cx="250" cy="250" r="200" fill="url(#radialGlow)" />
-                            
-                            <!-- Floating hexagons -->
-                            <g fill="none" fill-rule="evenodd" stroke="url(#cyberGradient)" stroke-width="2">
-                                <circle cx="250" cy="250" r="150" stroke-dasharray="22, 4" opacity="0.6" />
-                                <circle cx="250" cy="250" r="100" stroke-dasharray="18, 4" opacity="0.8" />
-                                <circle cx="250" cy="250" r="50" stroke-dasharray="10, 4" opacity="1" />
-                                
-                                <!-- Center hexagon -->
-                                <path d="M220,250 L230,240 L270,240 L280,250 L270,260 L230,260 Z" fill="#0C0C15" stroke="#2EE7CB" stroke-width="3" />
-                                
-                                <!-- Floating triangles -->
-                                <g transform="rotate(45 250 250)">
-                                    <path d="M150,150 L200,150 L175,200 Z" stroke="#2EE7CB" fill="#0C0C15" opacity="0.7" />
-                                    <path d="M350,150 L300,150 L325,200 Z" stroke="#2EE7CB" fill="#0C0C15" opacity="0.7" />
-                                    <path d="M325,300 L350,350 L300,350 Z" stroke="#2EE7CB" fill="#0C0C15" opacity="0.7" />
-                                    <path d="M175,300 L200,350 L150,350 Z" stroke="#2EE7CB" fill="#0C0C15" opacity="0.7" />
-                                </g>
-                            </g>
-                            
-                            <!-- Digital pulse -->
-                            <g transform="rotate(15 250 250)" stroke="#2EE7CB" fill="none" stroke-width="1">
-                                <path d="M120,160 L380,340" stroke-dasharray="5,8" opacity="0.5" />
-                                <path d="M160,120 L340,380" stroke-dasharray="5,8" opacity="0.5" />
-                            </g>
-                            
-                            <!-- Binary code floating -->
-                            <text x="50" y="100" fill="#2EE7CB" opacity="0.4" font-family="Fira Code" font-size="12" transform="rotate(10 250 250)">10101010</text>
-                            <text x="400" y="450" fill="#2EE7CB" opacity="0.4" font-family="Fira Code" font-size="12" transform="rotate(-15 250 250)">11001100</text>
-                        </svg>
-                    </div>
-                </div>
+
+        <div class="hidden lg:block">
+          <div class="card p-6 h-full">
+            <div class="text-gray-400 text-sm">Live Signal</div>
+            <div class="mt-3 flex items-end gap-2 h-24">
+              <div class="w-2 bg-red-500/80" style="height: 12px;"></div>
+              <div class="w-2 bg-red-500/60" style="height: 28px;"></div>
+              <div class="w-2 bg-red-500/90" style="height: 40px;"></div>
+              <div class="w-2 bg-red-500/70" style="height: 22px;"></div>
+              <div class="w-2 bg-red-500/50" style="height: 18px;"></div>
+              <div class="w-2 bg-red-500/90" style="height: 44px;"></div>
+              <div class="w-2 bg-red-500/60" style="height: 26px;"></div>
             </div>
+            <div class="divider-red my-4"></div>
+            <div class="text-xs text-gray-400">
+              Scan loops stable • Threat intel synced • IDS overlays nominal
+            </div>
+          </div>
         </div>
+      </div>
     </section>
-    <!-- About Section -->
-    <section id="about" class="compact-section bg-cyber-gray">
-        <div class="container mx-auto px-4 max-w-4xl">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold inline-block relative pb-4 section-title">About Me</h2>
-                <div class="section-divider mt-8 mb-6"></div>
-            </div>
-            
-            <div class="cyber-card bg-metallic rounded-2xl p-6 transition hover:border border-neon-teal/30">
-                <h3 class="text-xl font-bold mb-4">My Professional Journey</h3>
-                <p class="text-light-slate compact-text">
-                    My passion for cybersecurity was ignited during my Skill Surge Academy training. There I gained hands-on experience with Kali Linux, Metasploit, Wireshark and other professional tools.
-                </p>
-                <p class="text-light-slate compact-text">
-                    Today, I specialize in creating automated security solutions and helping organizations develop resilient cyber defenses. I approach each new challenge with methodical precision and a passion for continuous learning in the ever-evolving digital security landscape.
-                </p>
-                
-                <!-- Timeline -->
-                <div class="mt-6 space-y-6">
-                    <div class="timeline-item">
-                        <div class="flex flex-col md:flex-row md:items-center md:justify-between">
-                            <h4 class="text-lg font-bold text-neon-teal">Skill Surge Academy</h4>
-                            <span class="text-light-slate text-sm">2022 - Present</span>
-                        </div>
-                        <p class="text-light-slate text-sm mt-1">Cybersecurity Specialist</p>
-                        <p class="text-light-slate text-sm mt-1">Advanced penetration testing and security automation development.</p>
-                    </div>
-                    
-                    <div class="timeline-item">
-                        <div class="flex flex-col md:flex-row md:items-center md:justify-between">
-                            <h4 class="text-lg font-bold text-neon-teal">Tech Solutions Inc.</h4>
-                            <span class="text-light-slate text-sm">2020 - 2022</span>
-                        </div>
-                        <p class="text-light-slate text-sm mt-1">IT Support Specialist</p>
-                        <p class="text-light-slate text-sm mt-1">Provided technical support and system administration.</p>
-                    </div>
-                    
-                    <div class="timeline-item">
-                        <div class="flex flex-col md:flex-row md:items-center md:justify-between">
-                            <h4 class="text-lg font-bold text-neon-teal">University of Technology</h4>
-                            <span class="text-light-slate text-sm">2016 - 2020</span>
-                        </div>
-                        <p class="text-light-slate text-sm mt-1">Computer Science Degree</p>
-                        <p class="text-light-slate text-sm mt-1">Specialized in network security and cryptography.</p>
-                    </div>
-                </div>
-                
-                <!-- Three boxes moved here -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
-                    <div class="cyber-card bg-deep-space rounded-2xl p-4 hover:border border-neon-teal/30 transition">
-                        <div class="w-12 h-12 mb-4 bg-black/50 rounded-xl flex items-center justify-center">
-                            <i class="fas fa-shield-alt text-xl text-neon-teal"></i>
-                        </div>
-                        <h3 class="text-lg font-bold mb-2">Ethical Hacking</h3>
-                        <p class="text-light-slate text-xs">
-                            Penetration testing and vulnerability discovery
-                        </p>
-                    </div>
-                    
-                    <div class="cyber-card bg-deep-space rounded-2xl p-4 hover:border border-neon-teal/30 transition">
-                        <div class="w-12 h-12 mb-4 bg-black/50 rounded-xl flex items-center justify-center">
-                            <i class="fas fa-terminal text-xl text-neon-teal"></i>
-                        </div>
-                        <h3 class="text-lg font-bold mb-2">Automation</h3>
-                        <p class="text-light-slate text-xs">
-                            Security tools in Bash and Python
-                        </p>
-                    </div>
-                    
-                    <div class="cyber-card bg-deep-space rounded-2xl p-4 hover:border border-neon-teal/30 transition">
-                        <div class="w-12 h-12 mb-4 bg-black/50 rounded-xl flex items-center justify-center">
-                            <i class="fas fa-chart-line text-xl text-neon-teal"></i>
-                        </div>
-                        <h3 class="text-lg font-bold mb-2">Achievements</h3>
-                        <ul class="text-light-slate text-xs space-y-1 list-disc list-inside">
-                            <li>Top 3% TryHackMe</li>
-                            <li>Tools Mastery</li>
-                            <li>Cyber Certification</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+
+    <section id="about" class="max-w-6xl mx-auto px-6 pb-16">
+      <div class="grid lg:grid-cols-3 gap-8">
+        <div class="lg:col-span-2 card p-6">
+          <h2 class="text-2xl font-semibold">About</h2>
+          <div class="divider-red my-4"></div>
+          <p class="text-gray-300 leading-relaxed">
+            I’ve dedicated my career to defending digital systems. With a focus on practical security engineering and automation,
+            I architect defenses and harden networks across cloud and on-prem environments. My approach is technical,
+            measurable, and iterative—aligning controls with business risk.
+          </p>
+          <div class="mt-4 grid sm:grid-cols-3 gap-4">
+            <div class="text-gray-400 text-sm">Tools</div>
+            <div class="text-gray-300 text-sm">Kali, Wireshark, Metasploit</div>
+            <div class="text-gray-400 text-sm">Languages</div>
+            <div class="text-gray-300 text-sm">Bash, Python</div>
+            <div class="text-gray-400 text-sm">Domains</div>
+            <div class="text-gray-300 text-sm">Network, AppSec</div>
+          </div>
         </div>
+        <div class="card p-6">
+          <div class="text-gray-400 text-sm">Certs</div>
+          <div class="mt-2 flex flex-wrap gap-2">
+            <span class="tag px-2 py-1 rounded text-xs">OSCP</span>
+            <span class="tag px-2 py-1 rounded text-xs">Sec+</span>
+            <span class="tag px-2 py-1 rounded text-xs">GXPN</span>
+          </div>
+          <div class="divider-red my-4"></div>
+          <div class="text-gray-400 text-sm">Ethics</div>
+          <p class="text-gray-300 text-sm mt-1">
+            Practice responsible vulnerability research and always obtain proper authorization.
+          </p>
+        </div>
+      </div>
     </section>
-    <!-- Skills Section -->
-    <section id="skills" class="compact-section bg-deep-space">
-        <div class="container mx-auto px-4 max-w-5xl">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold inline-block relative pb-4 section-title">Technical Expertise</h2>
-                <div class="section-divider mt-8 mb-6"></div>
-            </div>
-            
-            <!-- Expertise Tabs -->
-            <div class="expertise-tabs">
-                <div id="general-tab" class="expertise-tab active bg-cyber-gray">
-                    <h3 class="text-lg font-semibold flex items-center">
-                        <i class="fas fa-laptop-code mr-2"></i> General IT Expertise
-                    </h3>
-                </div>
-                <div id="security-tab" class="expertise-tab bg-cyber-gray">
-                    <h3 class="text-lg font-semibold flex items-center">
-                        <i class="fas fa-shield-virus mr-2"></i> Security-Focused Expertise
-                    </h3>
-                </div>
-            </div>
-            
-            <!-- Expertise Content -->
-            <div class="expertise-content bg-cyber-gray rounded-xl p-6">
-                <!-- General IT Expertise Panel -->
-                <div id="general-panel" class="expertise-panel active">
-                    <!-- Notes Section -->
-                    <div class="note-card">
-                        <h3 class="note-title">
-                            <i class="fas fa-laptop-code"></i> General IT Expertise
-                        </h3>
-                        <ul class="note-list">
-                            <li><strong>Microsoft Word & Excel:</strong> Advanced document creation, formatting, and spreadsheet management</li>
-                            <li><strong>Spreadsheets & Data Analysis:</strong> Complex formulas, pivot tables, and data visualization</li>
-                            <li><strong>Windows Troubleshooting:</strong> System diagnostics, performance optimization, and issue resolution</li>
-                            <li><strong>Help Desk Support:</strong> User assistance, technical guidance, and problem resolution</li>
-                            <li><strong>General IT Tools:</strong> Comprehensive knowledge of common IT software and utilities</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                        <div class="skill-card bg-metallic rounded-xl p-6 flex flex-col items-center">
-                            <div class="w-16 h-16 rounded-lg bg-deep-space flex items-center justify-center mb-4">
-                                <i class="fas fa-file-word text-3xl text-neon-teal"></i>
-                            </div>
-                            <h3 class="text-lg font-semibold mb-1">Microsoft Word</h3>
-                            <p class="text-xs text-neon-teal">Document Creation</p>
-                            <div class="w-full bg-deep-space rounded-full h-1.5 mt-3">
-                                <div class="bg-neon-teal h-1.5 rounded-full" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-card bg-metallic rounded-xl p-6 flex flex-col items-center">
-                            <div class="w-16 h-16 rounded-lg bg-deep-space flex items-center justify-center mb-4">
-                                <i class="fas fa-file-excel text-3xl text-neon-teal"></i>
-                            </div>
-                            <h3 class="text-lg font-semibold mb-1">Microsoft Excel</h3>
-                            <p class="text-xs text-neon-teal">Spreadsheets</p>
-                            <div class="w-full bg-deep-space rounded-full h-1.5 mt-3">
-                                <div class="bg-neon-teal h-1.5 rounded-full" style="width: 80%"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-card bg-metallic rounded-xl p-6 flex flex-col items-center">
-                            <div class="w-16 h-16 rounded-lg bg-deep-space flex items-center justify-center mb-4">
-                                <i class="fab fa-windows text-3xl text-neon-teal"></i>
-                            </div>
-                            <h3 class="text-lg font-semibold mb-1">Windows OS</h3>
-                            <p class="text-xs text-neon-teal">Troubleshooting</p>
-                            <div class="w-full bg-deep-space rounded-full h-1.5 mt-3">
-                                <div class="bg-neon-teal h-1.5 rounded-full" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-card bg-metallic rounded-xl p-6 flex flex-col items-center">
-                            <div class="w-16 h-16 rounded-lg bg-deep-space flex items-center justify-center mb-4">
-                                <i class="fas fa-headset text-3xl text-neon-teal"></i>
-                            </div>
-                            <h3 class="text-lg font-semibold mb-1">Help Desk</h3>
-                            <p class="text-xs text-neon-teal">User Support</p>
-                            <div class="w-full bg-deep-space rounded-full h-1.5 mt-3">
-                                <div class="bg-neon-teal h-1.5 rounded-full" style="width: 88%"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-card bg-metallic rounded-xl p-6 flex flex-col items-center">
-                            <div class="w-16 h-16 rounded-lg bg-deep-space flex items-center justify-center mb-4">
-                                <i class="fas fa-desktop text-3xl text-neon-teal"></i>
-                            </div>
-                            <h3 class="text-lg font-semibold mb-1">Hardware</h3>
-                            <p class="text-xs text-neon-teal">Maintenance</p>
-                            <div class="w-full bg-deep-space rounded-full h-1.5 mt-3">
-                                <div class="bg-neon-teal h-1.5 rounded-full" style="width: 75%"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-card bg-metallic rounded-xl p-6 flex flex-col items-center">
-                            <div class="w-16 h-16 rounded-lg bg-deep-space flex items-center justify-center mb-4">
-                                <i class="fas fa-network-wired text-3xl text-neon-teal"></i>
-                            </div>
-                            <h3 class="text-lg font-semibold mb-1">Networking</h3>
-                            <p class="text-xs text-neon-teal">Basic Configuration</p>
-                            <div class="w-full bg-deep-space rounded-full h-1.5 mt-3">
-                                <div class="bg-neon-teal h-1.5 rounded-full" style="width: 82%"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-card bg-metallic rounded-xl p-6 flex flex-col items-center">
-                            <div class="w-16 h-16 rounded-lg bg-deep-space flex items-center justify-center mb-4">
-                                <i class="fas fa-database text-3xl text-neon-teal"></i>
-                            </div>
-                            <h3 class="text-lg font-semibold mb-1">Data Management</h3>
-                            <p class="text-xs text-neon-teal">Organization</p>
-                            <div class="w-full bg-deep-space rounded-full h-1.5 mt-3">
-                                <div class="bg-neon-teal h-1.5 rounded-full" style="width: 78%"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-card bg-metallic rounded-xl p-6 flex flex-col items-center">
-                            <div class="w-16 h-16 rounded-lg bg-deep-space flex items-center justify-center mb-4">
-                                <i class="fas fa-tools text-3xl text-neon-teal"></i>
-                            </div>
-                            <h3 class="text-lg font-semibold mb-1">System Tools</h3>
-                            <p class="text-xs text-neon-teal">Utilities</p>
-                            <div class="w-full bg-deep-space rounded-full h-1.5 mt-3">
-                                <div class="bg-neon-teal h-1.5 rounded-full" style="width: 85%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Security-Focused Expertise Panel -->
-                <div id="security-panel" class="expertise-panel next">
-                    <!-- Notes Section -->
-                    <div class="note-card">
-                        <h3 class="note-title">
-                            <i class="fas fa-shield-virus"></i> Security-Focused Expertise
-                        </h3>
-                        <ul class="note-list">
-                            <li><strong>Kali Linux & Penetration Testing:</strong> Advanced security auditing and vulnerability assessment</li>
-                            <li><strong>Network Security & Nmap:</strong> Comprehensive network scanning and security analysis</li>
-                            <li><strong>Web Application Security:</strong> OWASP Top 10 vulnerabilities and mitigation strategies</li>
-                            <li><strong>Security Automation:</strong> Bash and Python scripts for security task automation</li>
-                            <li><strong>Cryptography & PKI:</strong> Encryption algorithms and public key infrastructure</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                        <div class="skill-card bg-metallic rounded-xl p-6 flex flex-col items-center">
-                            <div class="w-16 h-16 rounded-lg bg-deep-space flex items-center justify-center mb-4">
-                                <i class="fab fa-linux text-3xl text-neon-teal"></i>
-                            </div>
-                            <h3 class="text-lg font-semibold mb-1">Kali Linux</h3>
-                            <p class="text-xs text-neon-teal">Penetration Testing</p>
-                            <div class="w-full bg-deep-space rounded-full h-1.5 mt-3">
-                                <div class="bg-neon-teal h-1.5 rounded-full" style="width: 95%"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-card bg-metallic rounded-xl p-6 flex flex-col items-center">
-                            <div class="w-16 h-16 rounded-lg bg-deep-space flex items-center justify-center mb-4">
-                                <i class="fas fa-eye text-3xl text-neon-teal"></i>
-                            </div>
-                            <h3 class="text-lg font-semibold mb-1">Wireshark</h3>
-                            <p class="text-xs text-neon-teal">Network Analysis</p>
-                            <div class="w-full bg-deep-space rounded-full h-1.5 mt-3">
-                                <div class="bg-neon-teal h-1.5 rounded-full" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-card bg-metallic rounded-xl p-6 flex flex-col items-center">
-                            <div class="w-16 h-16 rounded-lg bg-deep-space flex items-center justify-center mb-4">
-                                <i class="fas fa-network-wired text-3xl text-neon-teal"></i>
-                            </div>
-                            <h3 class="text-lg font-semibold mb-1">Nmap Scanning</h3>
-                            <p class="text-xs text-neon-teal">Network Security</p>
-                            <div class="w-full bg-deep-space rounded-full h-1.5 mt-3">
-                                <div class="bg-neon-teal h-1.5 rounded-full" style="width: 92%"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-card bg-metallic rounded-xl p-6 flex flex-col items-center">
-                            <div class="w-16 h-16 rounded-lg bg-deep-space flex items-center justify-center mb-4">
-                                <i class="fas fa-bolt text-3xl text-neon-teal"></i>
-                            </div>
-                            <h3 class="text-lg font-semibold mb-1">Hydra</h3>
-                            <p class="text-xs text-neon-teal">Password Testing</p>
-                            <div class="w-full bg-deep-space rounded-full h-1.5 mt-3">
-                                <div class="bg-neon-teal h-1.5 rounded-full" style="width: 88%"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-card bg-metallic rounded-xl p-6 flex flex-col items-center">
-                            <div class="w-16 h-16 rounded-lg bg-deep-space flex items-center justify-center mb-4">
-                                <i class="fas fa-database text-3xl text-neon-teal"></i>
-                            </div>
-                            <h3 class="text-lg font-semibold mb-1">sqlmap</h3>
-                            <p class="text-xs text-neon-teal">SQL Protection</p>
-                            <div class="w-full bg-deep-space rounded-full h-1.5 mt-3">
-                                <div class="bg-neon-teal h-1.5 rounded-full" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-card bg-metallic rounded-xl p-6 flex flex-col items-center">
-                            <div class="w-16 h-16 rounded-lg bg-deep-space flex items-center justify-center mb-4">
-                                <i class="fas fa-code text-3xl text-neon-teal"></i>
-                            </div>
-                            <h3 class="text-lg font-semibold mb-1">Bash Scripting</h3>
-                            <p class="text-xs text-neon-teal">Automation</p>
-                            <div class="w-full bg-deep-space rounded-full h-1.5 mt-3">
-                                <div class="bg-neon-teal h-1.5 rounded-full" style="width: 93%"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-card bg-metallic rounded-xl p-6 flex flex-col items-center">
-                            <div class="w-16 h-16 rounded-lg bg-deep-space flex items-center justify-center mb-4">
-                                <i class="fab fa-python text-3xl text-neon-teal"></i>
-                            </div>
-                            <h3 class="text-lg font-semibold mb-1">Python</h3>
-                            <p class="text-xs text-neon-teal">Security Scripts</p>
-                            <div class="w-full bg-deep-space rounded-full h-1.5 mt-3">
-                                <div class="bg-neon-teal h-1.5 rounded-full" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-card bg-metallic rounded-xl p-6 flex flex-col items-center">
-                            <div class="w-16 h-16 rounded-lg bg-deep-space flex items-center justify-center mb-4">
-                                <i class="fas fa-lock text-3xl text-neon-teal"></i>
-                            </div>
-                            <h3 class="text-lg font-semibold mb-1">Web Security</h3>
-                            <p class="text-xs text-neon-teal">Exploit Prevention</p>
-                            <div class="w-full bg-deep-space rounded-full h-1.5 mt-3">
-                                <div class="bg-neon-teal h-1.5 rounded-full" style="width: 87%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+    <section id="skills" class="max-w-6xl mx-auto px-6 pb-16">
+      <h2 class="text-2xl font-semibold text-center">Skills</h2>
+      <div class="divider-red my-4"></div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="card p-5 text-center">
+          <div class="text-gray-400 text-sm">Network Security</div>
+          <div class="mt-2">Firewalls, IDS, segmentation, threat hunting</div>
+          <div class="mt-3">
+            <span class="tag px-2 py-1 rounded text-xs">TCP/IP</span>
+            <span class="tag px-2 py-1 rounded text-xs">802.1X</span>
+            <span class="tag px-2 py-1 rounded text-xs">Zero Trust</span>
+          </div>
         </div>
+        <div class="card p-5 text-center">
+          <div class="text-gray-400 text-sm">Penetration Testing</div>
+          <div class="mt-2">Recon, exploiting, reporting to remediation</div>
+          <div class="mt-3">
+            <span class="tag px-2 py-1 rounded text-xs">Metasploit</span>
+            <span class="tag px-2 py-1 rounded text-xs">Burp</span>
+            <span class="tag px-2 py-1 rounded text-xs">Beacons</span>
+          </div>
+        </div>
+        <div class="card p-5 text-center">
+          <div class="text-gray-400 text-sm">Automation</div>
+          <div class="mt-2">Scripts, pipelines, telemetry, safe coding</div>
+          <div class="mt-3">
+            <span class="tag px-2 py-1 rounded text-xs">Bash</span>
+            <span class="tag px-2 py-1 rounded text-xs">Python</span>
+            <span class="tag px-2 py-1 rounded text-xs">Ansible</span>
+          </div>
+        </div>
+      </div>
     </section>
-    <!-- Experience Section -->
-    <section id="experience" class="compact-section bg-cyber-gray">
-        <div class="container mx-auto px-4 max-w-4xl">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold inline-block relative pb-4 section-title">Professional Experience</h2>
-                <div class="section-divider mt-8 mb-6"></div>
+
+    <section id="experience" class="max-w-6xl mx-auto px-6 pb-16">
+      <h2 class="text-2xl font-semibold text-center">Experience & Journey</h2>
+      <div class="divider-red my-4"></div>
+      <div class="relative">
+        <!-- Vertical red line -->
+        <div class="absolute left-1/2 top-0 bottom-0 w-0.5 bg-red-500/70"></div>
+        <div class="space-y-8">
+          <div class="relative grid md:grid-cols-3 gap-6">
+            <div class="md:col-span-1 flex justify-end">
+              <div class="w-1 h-10 bg-red-500 rounded-full float-right"></div>
             </div>
-            
-            <div class="space-y-6">
-                <!-- Experience Item 1 -->
-                <div class="cyber-card bg-metallic rounded-2xl p-6 hover:border border-neon-teal/30 transition">
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
-                        <h3 class="text-xl font-bold text-neon-teal">Cybersecurity Specialist</h3>
-                        <span class="text-light-slate text-sm">2022 - Present</span>
-                    </div>
-                    <p class="text-light-slate mb-3">Skill Surge Academy</p>
-                    <ul class="text-light-slate text-sm space-y-1 list-disc list-inside">
-                        <li>Conducted penetration tests on web applications and network infrastructure</li>
-                        <li>Developed automated security monitoring tools using Python and Bash</li>
-                        <li>Implemented security best practices across organizational IT systems</li>
-                        <li>Provided security awareness training to staff members</li>
-                    </ul>
-                    
-                    <!-- Projects -->
-                    <div class="mt-4 pt-4 border-t border-current">
-                        <h4 class="text-md font-semibold text-neon-teal mb-2">Key Projects:</h4>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-                            <div class="bg-deep-space rounded-lg p-3">
-                                <h5 class="font-medium text-platinum">Automated Vulnerability Scanner</h5>
-                                <p class="text-xs text-light-slate mt-1">Python-based tool that identifies security weaknesses</p>
-                            </div>
-                            <div class="bg-deep-space rounded-lg p-3">
-                                <h5 class="font-medium text-platinum">Phishing Simulation Platform</h5>
-                                <p class="text-xs text-light-slate mt-1">Custom framework for testing security awareness</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Experience Item 2 -->
-                <div class="cyber-card bg-metallic rounded-2xl p-6 hover:border border-neon-teal/30 transition">
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
-                        <h3 class="text-xl font-bold text-neon-teal">IT Support Specialist</h3>
-                        <span class="text-light-slate text-sm">2020 - 2022</span>
-                    </div>
-                    <p class="text-light-slate mb-3">Tech Solutions Inc.</p>
-                    <ul class="text-light-slate text-sm space-y-1 list-disc list-inside">
-                        <li>Provided technical support for Windows and macOS systems</li>
-                        <li>Troubleshooted hardware and software issues</li>
-                        <li>Managed user accounts and permissions in Active Directory</li>
-                        <li>Documented IT procedures and created knowledge base articles</li>
-                    </ul>
-                    
-                    <!-- Achievements -->
-                    <div class="mt-4 pt-4 border-t border-current">
-                        <h4 class="text-md font-semibold text-neon-teal mb-2">Notable Achievements:</h4>
-                        <ul class="text-light-slate text-sm space-y-1 list-disc list-inside">
-                            <li>Reduced ticket resolution time by 35% through process improvements</li>
-                            <li>Implemented a new ticketing system that improved team productivity</li>
-                            <li>Received Employee of the Quarter award for exceptional service</li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="md:col-span-2 card p-5">
+              <div class="text-xs text-gray-400">2022–Present</div>
+              <div class="text-lg font-semibold">Security Engineer</div>
+              <div class="text-gray-300 mt-1">Cloud infra hardening, monitoring, and incident response.</div>
             </div>
-            
-            <!-- Certifications -->
-            <div class="cyber-card bg-metallic rounded-2xl mt-6 p-6 transition hover:border border-neon-teal/30">
-                <h3 class="text-xl font-bold mb-4">Certifications & Training</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-                    <div class="bg-deep-space rounded-lg p-3 flex items-start">
-                        <div class="w-10 h-10 rounded-full bg-black/50 flex items-center justify-center text-neon-teal mr-3">
-                            <i class="fas fa-certificate"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-medium text-platinum">Certified Ethical Hacker (CEH)</h4>
-                            <p class="text-xs text-light-slate mt-1">EC-Council | 2022</p>
-                        </div>
-                    </div>
-                    <div class="bg-deep-space rounded-lg p-3 flex items-start">
-                        <div class="w-10 h-10 rounded-full bg-black/50 flex items-center justify-center text-neon-teal mr-3">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-medium text-platinum">CompTIA Security+</h4>
-                            <p class="text-xs text-light-slate mt-1">CompTIA | 2021</p>
-                        </div>
-                    </div>
-                    <div class="bg-deep-space rounded-lg p-3 flex items-start">
-                        <div class="w-10 h-10 rounded-full bg-black/50 flex items-center justify-center text-neon-teal mr-3">
-                            <i class="fab fa-linux"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-medium text-platinum">Kali Linux Certified Professional</h4>
-                            <p class="text-xs text-light-slate mt-1">Offensive Security | 2022</p>
-                        </div>
-                    </div>
-                </div>
+          </div>
+
+          <div class="relative grid md:grid-cols-3 gap-6">
+            <div class="md:col-span-1 flex justify-end">
+              <div class="w-1 h-10 bg-red-500 rounded-full float-right"></div>
             </div>
+            <div class="md:col-span-2 card p-5">
+              <div class="text-xs text-gray-400">2020–2022</div>
+              <div class="text-lg font-semibold">Penetration Tester</div>
+              <div class="text-gray-300 mt-1">External/internal engagements, reporting, and remediation tracking.</div>
+            </div>
+          </div>
+
+          <div class="relative grid md:grid-cols-3 gap-6">
+            <div class="md:col-span-1 flex justify-end">
+              <div class="w-1 h-10 bg-red-500 rounded-full float-right"></div>
+            </div>
+            <div class="md:col-span-2 card p-5">
+              <div class="text-xs text-gray-400">2018–2020</div>
+              <div class="text-lg font-semibold">Security Analyst</div>
+              <div class="text-gray-300 mt-1">SIEM tuning, detections, dashboarding, and access governance.</div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
-    <!-- Blog Section -->
-    <section id="blog" class="compact-section bg-deep-space">
-        <div class="container mx-auto px-4 max-w-5xl">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold inline-block relative pb-4 section-title">Latest Blogs</h2>
-                <div class="section-divider mt-8 mb-6"></div>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Blog Card 1 -->
-                <a href="https://neo-virex.vercel.app/" class="group block hover:no-underline">
-                    <div class="h-full cyber-card bg-metallic rounded-2xl transition-all duration-300 group-hover:-translate-y-1.5 group-hover:border group-hover:border-neon-teal/30">
-                        <div class="h-40 bg-deep-space rounded-t-2xl overflow-hidden relative">
-                            <img src="https://picsum.photos/seed/cybersecurity-blog-1/800/400.jpg" alt="CTF Building Fundamentals" class="blog-image">
-                            <div class="blog-overlay">
-                                <div class="terminal-code text-lg font-firacode tracking-wide">
-                                    <span class="text-cyan-400">$ </span>
-                                    <span class="text-light-slate">view -security logs</span>
-                                </div>
-                            </div>
-                            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                <div class="bg-black/50 w-full h-full flex items-center justify-center">
-                                    <span class="text-neon-teal font-medium">Read Article →</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="p-4">
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="text-xs px-3 py-1 rounded-full bg-deep-space text-neon-teal">Cybersecurity</span>
-                                <span class="text-xs text-light-slate">OCT 24, 2023</span>
-                            </div>
-                            <h3 class="text-lg font-bold mb-2 group-hover:text-neon-teal transition">CTF Building Fundamentals</h3>
-                            <p class="text-light-slate text-sm">Best practices for developing security training environments.</p>
-                        </div>
-                    </div>
-                </a>
-                
-                <!-- Blog Card 2 -->
-                <a href="https://neo-virex.vercel.app/" class="group block hover:no-underline">
-                    <div class="h-full cyber-card bg-metallic rounded-2xl transition-all duration-300 group-hover:-translate-y-1.5 group-hover:border group-hover:border-neon-teal/30">
-                        <div class="h-40 bg-deep-space rounded-t-2xl overflow-hidden relative">
-                            <img src="https://picsum.photos/seed/cybersecurity-blog-2/800/400.jpg" alt="AI-Assisted Pentesting Frameworks" class="blog-image">
-                            <div class="blog-overlay">
-                                <div class="terminal-code text-lg font-firacode tracking-wide">
-                                    <span class="text-purple-400">$ </span>
-                                    <span class="text-light-slate">run pentest_ai</span>
-                                </div>
-                            </div>
-                            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                <div class="bg-black/50 w-full h-full flex items-center justify-center">
-                                    <span class="text-neon-teal font-medium">Read Article →</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="p-4">
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="text-xs px-3 py-1 rounded-full bg-deep-space text-neon-teal">Automation</span>
-                                <span class="text-xs text-light-slate">AUG 12, 2023</span>
-                            </div>
-                            <h3 class="text-lg font-bold mb-2 group-hover:text-neon-teal transition">AI-Assisted Pentesting Frameworks</h3>
-                            <p class="text-light-slate text-sm">Exploring AI enhancement for penetration testing efficiency.</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            
-            <!-- View All Button -->
-            <div class="text-center mt-8">
-                <a href="https://neo-virex.vercel.app/" class="inline-block border border-neon-teal text-neon-teal px-8 py-3 rounded-lg hover:bg-neon-teal/10 transition">
-                    <i class="fas fa-book-open mr-2"></i> View All Articles
-                </a>
-            </div>
+
+    <section id="blog" class="max-w-6xl mx-auto px-6 pb-16">
+      <h2 class="text-2xl font-semibold text-center">Blog Highlights</h2>
+      <div class="divider-red my-4"></div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="card p-5">
+          <div class="text-gray-400 text-sm">Write-up</div>
+          <div class="mt-1 font-semibold">Zero-trust on border routers</div>
+          <div class="mt-2 text-gray-300 text-sm">Evaluating identity and device posture at the edge.</div>
         </div>
+        <div class="card p-5">
+          <div class="text-gray-400 text-sm">Lab</div>
+          <div class="mt-1 font-semibold">BPF-based netfilter tuning</div>
+          <div class="mt-2 text-gray-300 text-sm">Lowering overhead while keeping coverage high.</div>
+        </div>
+        <div class="card p-5">
+          <div class="text-gray-400 text-sm">Research</div>
+          <div class="mt-1 font-semibold">Common SSH pitfalls</div>
+          <div class="mt-2 text-gray-300 text-sm">Permissions, keys, and audit controls.</div>
+        </div>
+      </div>
     </section>
-    <!-- Contact Section -->
-    <section id="contact" class="compact-section bg-cyber-gray">
-        <div class="container mx-auto px-4 max-w-4xl">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold inline-block relative pb-4 section-title">Contact Me</h2>
-                <div class="section-divider mt-8 mb-6"></div>
+
+    <section id="contact" class="max-w-6xl mx-auto px-6 pb-20">
+      <div class="card p-6 md:p-8">
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h3 class="text-xl font-semibold">Contact</h3>
+            <p class="text-gray-300 mt-2">Open to collaboration, learning, and security conversations. Reach out to share ideas, labs, or projects.</p>
+            <div class="mt-4">
+              <div class="text-gray-400 text-sm">Email</div>
+              <a href="mailto:contact@abraham.dev" class="text-red-400 hover:underline">contact@abraham.dev</a>
             </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <div class="mb-6">
-                        <h3 class="text-xl font-bold mb-4">Get in Touch</h3>
-                        <p class="text-light-slate max-w-md compact-text">
-                            I'm open to discussing cybersecurity projects, automation solutions, or writing opportunities for my blog.
-                        </p>
-                    </div>
-                    
-                    <div class="space-y-4">
-                        <div class="flex items-start space-x-4">
-                            <div class="w-12 h-12 rounded-xl bg-deep-space flex items-center justify-center text-neon-teal">
-                                <i class="fas fa-envelope text-lg"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold">Email Me</h4>
-                                <p class="text-light-slate text-sm">abrhameshetu948@gmail.com</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start space-x-4">
-                            <div class="w-12 h-12 rounded-xl bg-deep-space flex items-center justify-center text-neon-teal">
-                                <i class="fas fa-map-marker-alt text-lg"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold">Located In</h4>
-                                <p class="text-light-slate text-sm">Addis Ababa, Ethiopia</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="mt-8">
-                        <h4 class="font-semibold mb-4">Connect With Me</h4>
-                        <div class="flex space-x-5">
-                            <a href="https://linkedin.com/in/abr-hamis" class="social-icon text-xl text-light-slate hover:text-neon-teal">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            <a href="https://github.com/Abr-ahamis" class="social-icon text-xl text-light-slate hover:text-neon-teal">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="https://neo-virex.vercel.app/" class="social-icon text-xl text-light-slate hover:text-neon-teal">
-                                <i class="fas fa-globe"></i>
-                            </a>
-                            <a href="#" class="social-icon text-xl text-light-slate hover:text-neon-teal">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="bg-metallic rounded-2xl p-8 flex flex-col items-center justify-center">
-                    <div class="mb-8">
-                        <i class="fas fa-lock text-5xl text-neon-teal mb-4"></i>
-                        <p class="text-center text-light-slate italic max-w-xs">
-                            "Security is not a product, but a process. It's about building systems people can trust."
-                        </p>
-                    </div>
-                    
-                    <!-- Text Art Animation -->
-                    <div class="text-art-container">
-                        <div class="text-art">
-                            &lt;/SECURITY&gt; &lt;CYBER&gt; &lt;EXPERT&gt; &lt;CODE&gt; &lt;PROTECT&gt; &lt;DEFEND&gt;
-                        </div>
-                    </div>
-                </div>
+            <div class="mt-4">
+              <div class="text-gray-400 text-sm">Social (selective)</div>
+              <div class="mt-1 flex gap-2">
+                <a class="btn px-3 py-1 rounded" href="#" aria-label="Twitter">X</a>
+                <a class="btn px-3 py-1 rounded" href="#" aria-label="GitHub">GH</a>
+                <a class="btn px-3 py-1 rounded" href="#" aria-label="LinkedIn">LI</a>
+              </div>
             </div>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold">Get in touch</h3>
+            <form class="mt-3 space-y-3">
+              <input type="text" placeholder="Your name" class="w-full bg-black/40 border border-white/10 rounded px-3 py-2 focus-ring" />
+              <input type="email" placeholder="Your email" class="w-full bg-black/40 border border-white/10 rounded px-3 py-2 focus-ring" />
+              <textarea rows="4" placeholder="Message" class="w-full bg-black/40 border border-white/10 rounded px-3 py-2 focus-ring"></textarea>
+              <button type="button" class="btn px-4 py-2 rounded">Send</button>
+              <p class="text-xs text-gray-400">No unsolicited offers. Security-focused only.</p>
+            </form>
+          </div>
         </div>
+        <div class="divider-red my-6"></div>
+        <div class="text-center text-gray-400 text-sm">
+          Built with discipline. No gradients. No neon. Just red accents, white space, and order.
+        </div>
+      </div>
     </section>
-    <!-- Footer -->
-    <footer class="smooth-footer py-8">
-        <div class="container mx-auto px-4 max-w-4xl">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="flex items-center space-x-4">
-                    <div class="avatar-ring rounded-full w-12 h-12 overflow-hidden bg-metallic flex items-center justify-center">
-                        <img src="img/12.png" alt="Abraham" class="w-full h-full object-cover">
-                    </div>
-                    <div>
-                        <h1 class="text-lg font-bold text-platinum tracking-tight">Abraham</h1>
-                        <p class="text-xs text-light-slate">Cybersecurity Specialist</p>
-                    </div>
-                </div>
-                
-                <p class="text-light-slate/80 text-sm">
-                    &copy; 2023 Abraham. Securing digital landscapes.
-                </p>
-            </div>
-        </div>
-    </footer>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Mobile menu toggle
-            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-            const mobileNav = document.getElementById('mobile-nav');
-            
-            mobileMenuBtn.addEventListener('click', function() {
-                mobileNav.classList.toggle('hidden');
-            });
-            
-            // Smooth scrolling for navigation links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    mobileNav.classList.add('hidden');
-                    
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            });
-            
-            // Expertise tabs functionality with flip animation
-            const generalTab = document.getElementById('general-tab');
-            const securityTab = document.getElementById('security-tab');
-            const generalPanel = document.getElementById('general-panel');
-            const securityPanel = document.getElementById('security-panel');
-            
-            // Set initial state
-            let currentPanel = 'general';
-            
-            // Function to switch panels with flip animation
-            function switchPanel(panelName) {
-                if (panelName === 'general' && currentPanel !== 'general') {
-                    // Switch to general panel
-                    generalTab.classList.add('active');
-                    securityTab.classList.remove('active');
-                    
-                    // Add flip animation
-                    securityPanel.style.animation = 'flip-card 0.6s cubic-bezier(0.4, 0.0, 0.2, 1)';
-                    
-                    setTimeout(() => {
-                        securityPanel.classList.add('next');
-                        securityPanel.classList.remove('active');
-                        generalPanel.classList.remove('next');
-                        generalPanel.classList.add('active');
-                        securityPanel.style.animation = '';
-                    }, 300);
-                    
-                    currentPanel = 'general';
-                } else if (panelName === 'security' && currentPanel !== 'security') {
-                    // Switch to security panel
-                    securityTab.classList.add('active');
-                    generalTab.classList.remove('active');
-                    
-                    // Add flip animation
-                    generalPanel.style.animation = 'flip-card 0.6s cubic-bezier(0.4, 0.0, 0.2, 1)';
-                    
-                    setTimeout(() => {
-                        generalPanel.classList.add('next');
-                        generalPanel.classList.remove('active');
-                        securityPanel.classList.remove('next');
-                        securityPanel.classList.add('active');
-                        generalPanel.style.animation = '';
-                    }, 300);
-                    
-                    currentPanel = 'security';
-                }
-            }
-            
-            // Add click event listeners to tabs
-            generalTab.addEventListener('click', () => switchPanel('general'));
-            securityTab.addEventListener('click', () => switchPanel('security'));
-            
-            // Add hover effect to tabs
-            generalTab.addEventListener('mouseenter', () => {
-                if (currentPanel !== 'general') {
-                    generalTab.style.boxShadow = '0 0 15px rgba(46, 231, 203, 0.3)';
-                }
-            });
-            
-            generalTab.addEventListener('mouseleave', () => {
-                if (currentPanel !== 'general') {
-                    generalTab.style.boxShadow = '';
-                }
-            });
-            
-            securityTab.addEventListener('mouseenter', () => {
-                if (currentPanel !== 'security') {
-                    securityTab.style.boxShadow = '0 0 15px rgba(46, 231, 203, 0.3)';
-                }
-            });
-            
-            securityTab.addEventListener('mouseleave', () => {
-                if (currentPanel !== 'security') {
-                    securityTab.style.boxShadow = '';
-                }
-            });
-            
-            // Fade-in animation for sections when they come into view
-            const fadeElements = document.querySelectorAll('.fade-in');
-            const observerOptions = {
-                threshold: 0.15
-            };
-            
-            const fadeInObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = 1;
-                        entry.target.style.transform = 'translateY(0)';
-                        fadeInObserver.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
-            
-            fadeElements.forEach(el => {
-                fadeInObserver.observe(el);
-            });
-            
-            // Matrix background effect
-            const canvas = document.getElementById('matrixCanvas');
-            if (canvas) {
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
-                
-                const ctx = canvas.getContext('2d');
-                
-                // Set the font size and calculate how many columns we need
-                const fontSize = 14;
-                const columns = Math.floor(canvas.width / fontSize);
-                
-                // Create an array to keep track of the y position of each drop
-                const drops = [];
-                for (let i = 0; i < columns; i++) {
-                    drops[i] = Math.random() * canvas.height;
-                }
-                
-                // The characters to use (Japanese Katakana for more "hacker" feel)
-                const chars = "01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン";
-                
-                function draw() {
-                    // Black background with opacity to create trail effect
-                    ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-                    ctx.fillRect(0, 0, canvas.width, canvas.height);
-                    
-                    // Set the font and color
-                    ctx.fillStyle = '#2EE7CB';
-                    ctx.font = fontSize + 'px Fira Code';
-                    
-                    // Loop over the drops
-                    for (let i = 0; i < drops.length; i++) {
-                        // Get a random character
-                        const text = chars.charAt(Math.floor(Math.random() * chars.length));
-                        
-                        // Draw the character
-                        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-                        
-                        // Randomly reset the drop to the top
-                        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-                            drops[i] = 0;
-                        }
-                        
-                        // Move the drop down
-                        drops[i]++;
-                    }
-                }
-                
-                // Adjust canvas size when window resizes
-                window.addEventListener('resize', () => {
-                    canvas.width = window.innerWidth;
-                    canvas.height = window.innerHeight;
-                });
-                
-                // Start the animation
-                setInterval(draw, 33);
-            }
-        });
-    </script>
+  </main>
+
+  <footer class="relative z-10">
+    <div class="max-w-6xl mx-auto px-6 pb-10">
+      <div class="text-center text-gray-500 text-sm">
+        Follow the signal. Ignore the noise.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Create particles
+    const particlesContainer = document.getElementById('particles');
+    const count = 60;
+    for (let i = 0; i < count; i++) {
+      const p = document.createElement('div');
+      p.className = 'particle';
+      // Random position and drift
+      const left = Math.random() * 100;
+      const delay = Math.random() * 10;
+      const duration = 10 + Math.random() * 20;
+      p.style.left = left + '%';
+      p.style.bottom = (-10 - Math.random() * 20) + 'vh';
+      p.style.animationDelay = delay + 's';
+      p.style.animationDuration = duration + 's';
+      particlesContainer.appendChild(p);
+    }
+
+    // Fade-in for center content on load
+    const centerObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = 'translateY(0)';
+          centerObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    const fadeBlocks = document.querySelectorAll('.terminal, .card > *:not(.divider-red)');
+    fadeBlocks.forEach(el => {
+      el.style.opacity = 0;
+      el.style.transform = 'translateY(6px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      centerObserver.observe(el);
+    });
+
+    // Subtle scroll-based fade-in for blog/Blog highlight cards
+    const blogCards = document.querySelectorAll('#blog .card');
+    const blogObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.boxShadow = '0 0 0 1px rgba(255,0,0,0.08) inset, 0 10px 30px rgba(0,0,0,0.25)';
+          entry.target.style.transform = 'translateY(0)';
+          entry.target.style.opacity = 1;
+          blogObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    blogCards.forEach(card => {
+      card.style.opacity = 0;
+      card.style.transform = 'translateY(8px)';
+      card.style.boxShadow = '0 0 0 0 rgba(0,0,0,0)';
+      blogObserver.observe(card);
+    });
+
+    // Keep center calm: constrain side animation opacity on large screens
+    const media = window.matchMedia('(min-width: 1024px)');
+    function adjustSides(e) {
+      const sides = document.querySelectorAll('.scan-line, .particle, .noise');
+      if (e.matches) {
+        sides.forEach(s => s.style.opacity = '0.35');
+      } else {
+        sides.forEach(s => s.style.opacity = s.classList.contains('noise') ? '0.35' : '0.6');
+      }
+    }
+    adjustSides(media);
+    media.addEventListener('change', adjustSides);
+  </script>
 </body>
 </html>
