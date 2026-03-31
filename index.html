@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abraham | Terminal Portfolio</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Using Fira Code for that technical terminal feel, paired with Inter for clear body reading -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Minimal Top Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="brand">
+                <a href="#hero" class="nav-logo">~ $ whoami</a>
+            </div>
+            <div class="nav-links">
+                <a href="#projects" class="nav-link">[ projects ]</a>
+                <a href="#about" class="nav-link">[ about ]</a>
+                <a href="#contact" class="nav-link">[ contact ]</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="section-hero">
+            <div class="container hero-split">
+                <!-- Left: Profile -->
+                <div class="hero-left">
+                    <!-- Using a robust local image if available, else standard profile shape -->
+                    <img src="old/image1.png" alt="Neo-virex" class="profile-img" onerror="this.src='https://via.placeholder.com/250x250/2a363e/cbd5e1?text=Neo-virex'">
+                    
+                    <div class="hero-contact-area-left">
+                        <div class="contact-stack">
+                            <div><i class="fa-solid fa-location-dot"></i> Addis Ababa, ET</div>
+                            <div><i class="fa-solid fa-envelope"></i> <a href="mailto:Abrhameshetu948@gmail.com">Abrhameshetu948@gmail.com</a></div>
+                            <div><i class="fa-solid fa-phone"></i> +251 960045028</div>
+                        </div>
+                        <div class="social-icons center-icons">
+                            <a href="#" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                            <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="#" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="#" title="TryHackMe"><i class="fa-solid fa-terminal"></i></a>
+                            <a href="#" title="HackTheBox"><i class="fa-solid fa-cube"></i></a>
+                            <a href="#" title="Discord"><i class="fa-brands fa-discord"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right: Information -->
+                <div class="hero-right">
+                    <h1 class="hero-name">Neo-virex</h1>
+                    <p class="hero-role">Cybersecurity Specialist & Security Researcher</p>
+                    <p class="hero-summary">
+                        <span class="real-name">Abraham Eshetu •</span> Active security researcher and developer engineering custom engagement tools 
+                        (Bunna-CTF, Neo-Recon) and conducting enterprise vulnerability assessments. 
+                        Ranked Top 1% on TryHackMe with a focus on offensive automation.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section-block">
+            <div class="container">
+                <h2 class="section-title">~/projects<span class="cursor-blink">_</span></h2>
+                <p class="section-intro">Recent infrastructure and security deployments.</p>
+
+                <div class="projects-grid">
+                    
+                    <!-- Project Card 1 -->
+                    <article class="project-card">
+                        <div class="project-header">
+                            <h3 class="project-title">Cloud Infrastructure Hardening</h3>
+                            <a href="#" class="project-link" aria-label="View Project">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
+                        </div>
+                        <p class="project-description">
+                            Architected resilient AWS environments, managed WAF rules, and integrated automated SOAR playbook pipelines to drastically reduce incident response times.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">AWS</span>
+                            <span class="tech-tag">SOAR</span>
+                            <span class="tech-tag">Zero Trust</span>
+                        </div>
+                    </article>
+
+                    <!-- Project Card 2 -->
+                    <article class="project-card">
+                        <div class="project-header">
+                            <h3 class="project-title">Enterprise Penetration Testing</h3>
+                            <a href="#" class="project-link" aria-label="View Project">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
+                        </div>
+                        <p class="project-description">
+                            Led internal and external penetration testing engagements for Fortune 500 clients. Discovered critical zero-day vulnerabilities and secured complex endpoints.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Burp Suite</span>
+                            <span class="tech-tag">Metasploit</span>
+                            <span class="tech-tag">Red Teaming</span>
+                        </div>
+                    </article>
+
+                    <!-- Project Card 3 -->
+                    <article class="project-card">
+                        <div class="project-header">
+                            <h3 class="project-title">Automated CI/CD Pipelines</h3>
+                            <a href="#" class="project-link" aria-label="View Project">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
+                        </div>
+                        <p class="project-description">
+                            Streamlined deployment processes by writing automated Docker/Ansible scripts. Architected highly scalable IT networks with 99.99% operational uptime.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">Ansible</span>
+                            <span class="tech-tag">Bash</span>
+                        </div>
+                    </article>
+
+                    <!-- Project Card 4 -->
+                    <article class="project-card">
+                        <div class="project-header">
+                            <h3 class="project-title">SIEM & Threat Detection</h3>
+                            <a href="#" class="project-link" aria-label="View Project">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
+                        </div>
+                        <p class="project-description">
+                            Engineered robust SIEM dashboards. Tuned threat detection models and established rigorous active directory governance to prevent lateral data movement.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Active Directory</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">TCP/IP</span>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section-block">
+            <div class="container">
+                <h2 class="section-title">~/about<span class="cursor-blink">_</span></h2>
+                
+                <div class="about-terminal">
+                    <div class="term-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                        <span class="term-title">bash - 80x24</span>
+                    </div>
+                    <div class="term-body">
+                        <p><span class="prompt">></span> <span class="command">cat bio.txt</span></p>
+                        <p class="output">
+                            I've dedicated my career to defending digital systems and building robust IT scalable environments. Operating at the intersection of practical security engineering and site reliability, I architect defenses across deeply connected cloud and on-premise networks.
+                        </p>
+
+                        <br>
+                        
+                        <p><span class="prompt">></span> <span class="command">tail -n 3 focus.log</span></p>
+                        <p class="output">
+                            [System] Aligning zero-trust structural controls with overarching business objectives.<br>
+                            [Network] Hardening switches, deploying VPNs, and conducting threat hunts.<br>
+                            [Admin] Managing Linux and Windows servers dynamically.
+                        </p>
+                        
+                        <br>
+
+                        <p><span class="prompt">></span> <span class="command">STATUS=OK</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section-block section-contact">
+            <div class="container">
+                <div class="contact-card">
+                    <h2 class="section-title center">~/contact<span class="cursor-blink">_</span></h2>
+                    <p class="terminal-text center">System is ready for a trusted handshake.</p>
+                    
+                    <div class="contact-links">
+                        <a href="mailto:contact@abraham.dev" class="contact-item">
+                            <span class="key">email:</span>
+                            <span class="val">contact@abraham.dev</span>
+                        </a>
+                        <a href="https://github.com/Abraham" class="contact-item" target="_blank">
+                            <span class="key">github:</span>
+                            <span class="val">github.com/Abraham</span>
+                        </a>
+                        <a href="https://linkedin.com/in/abraham" class="contact-item" target="_blank">
+                            <span class="key">linkedin:</span>
+                            <span class="val">linkedin.com/in/abraham</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- UI/UX Pro Max Script Injection -->
+    <script src="js/script.js"></script>
+</body>
+</html>
