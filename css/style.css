@@ -76,44 +76,186 @@ a:hover {
 /* =========================================
    NAVIGATION
    ========================================= */
-#navbar {
-   position: fixed;
+#topbar-wrapper {
+   position: sticky;
    top: 0;
-   width: 100%;
-   background: rgba(54, 69, 79, .92);
-   backdrop-filter: blur(10px);
-   border-bottom: 1px solid var(--border-color);
    z-index: 100;
-   transition: transform var(--transition-smooth)
+   background: rgba(54, 69, 79, .94);
+   backdrop-filter: blur(16px);
+   border-bottom: 1px solid var(--border-color);
 }
 
-.nav-container {
+#topbar {
    max-width: 1200px;
    margin: 0 auto;
-   padding: 1.25rem 2rem;
+   padding: 1rem 1.5rem;
    display: flex;
    justify-content: space-between;
-   align-items: center
+   align-items: center;
+   gap: 1rem;
+   flex-wrap: wrap;
 }
 
-.nav-logo {
-   font-size: 1.1rem;
-   color: var(--text-muted)
+#topbar-title {
+   font-size: 1rem;
+   color: #fff;
+   font-weight: 700;
+   letter-spacing: .08em;
+   text-decoration: none;
 }
 
-.nav-logo:hover {
-   color: var(--text-main)
-}
-
-.nav-links {
+#topbar-nav {
    display: flex;
-   gap: 2rem
+   flex-wrap: wrap;
+   gap: 1rem;
+   justify-content: center;
+   align-items: center;
 }
 
-.nav-link {
-   font-size: .9rem;
+#topbar-nav .nav-link {
+   font-size: .85rem;
    color: var(--text-muted);
-   letter-spacing: .05em
+   letter-spacing: .05em;
+   padding: .35rem .9rem;
+   border-radius: 999px;
+   background: rgba(255, 255, 255, .03);
+   transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+#topbar-nav .nav-link:hover,
+#topbar-nav .nav-link.active {
+   color: #fff;
+   background: rgba(255, 255, 255, .08);
+}
+
+#navbar,
+.nav-container,
+.nav-logo,
+.nav-links {
+   display: none;
+}
+
+.layout-grid {
+   display: grid;
+   grid-template-columns: 280px minmax(0, 1fr) 250px;
+   gap: 1.5rem;
+   padding: 2rem 0 4rem;
+}
+
+#sidebar-container,
+#panel-wrapper {
+   display: flex;
+   flex-direction: column;
+   gap: 1.5rem;
+}
+
+.profile-card,
+.panel-card {
+   background: var(--bg-card);
+   border: 1px solid var(--border-color);
+   border-radius: 16px;
+   padding: 1.5rem;
+}
+
+#avatar {
+   display: inline-block;
+   margin-bottom: 1rem;
+}
+
+.site-title {
+   display: block;
+   font-size: 1.15rem;
+   font-weight: 700;
+   margin-bottom: .35rem;
+   color: #fff;
+   text-decoration: none;
+}
+
+.site-subtitle {
+   color: var(--text-muted);
+   font-size: .95rem;
+   margin-bottom: 1rem;
+}
+
+.profile-links {
+   display: grid;
+   gap: .75rem;
+   margin-bottom: 1.3rem;
+   color: var(--text-muted);
+   font-size: .9rem;
+}
+
+.profile-link {
+   display: flex;
+   gap: .6rem;
+   align-items: center;
+}
+
+.profile-link i {
+   color: var(--text-accent);
+}
+
+.profile-link a {
+   color: var(--text-muted);
+}
+
+.profile-btns {
+   display: grid;
+   gap: .7rem;
+}
+
+.profile-btn {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   padding: .65rem 1rem;
+   color: var(--text-main);
+   background: var(--bg-darker);
+   border: 1px solid var(--border-color);
+   border-radius: 8px;
+   text-decoration: none;
+   transition: all var(--transition-fast);
+}
+
+.profile-btn:hover {
+   background: var(--bg-dark);
+   border-color: var(--border-highlight);
+}
+
+.sidebar-social-icons {
+   display: flex;
+   flex-wrap: wrap;
+   gap: .85rem;
+   justify-content: flex-start;
+   margin-top: .75rem;
+}
+
+.sidebar-social-icons a,
+.panel-social-icons a {
+   color: var(--text-muted);
+   font-size: 1.2rem;
+   transition: color var(--transition-fast);
+}
+
+.sidebar-social-icons a:hover,
+.panel-social-icons a:hover {
+   color: #fff;
+}
+
+#main-panel {
+   width: 100%;
+}
+
+.panel-heading {
+   font-size: 1rem;
+   margin-bottom: .75rem;
+   color: #fff;
+}
+
+.panel-social-icons {
+   display: flex;
+   gap: 1rem;
+   flex-wrap: wrap;
 }
 
 /* =========================================
@@ -687,5 +829,44 @@ a:hover {
 
    .hero-name {
       font-size: 2.5rem
+   }
+}
+
+@media(max-width:1100px) {
+   .layout-grid {
+      grid-template-columns: 1fr;
+   }
+
+   #sidebar-container,
+   #panel-wrapper {
+      width: 100%;
+   }
+
+   #panel-wrapper {
+      position: relative;
+      top: auto;
+   }
+
+   #topbar-nav {
+      justify-content: center;
+   }
+}
+
+@media(max-width:600px) {
+   .profile-btns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+   }
+
+   .profile-btn {
+      width: 100%;
+   }
+
+   .sidebar-social-icons {
+      justify-content: center;
+   }
+
+   #topbar {
+      padding: .85rem 1rem;
    }
 }

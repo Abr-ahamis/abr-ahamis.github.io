@@ -9,7 +9,7 @@
         content="Cybersecurity Specialist, Security Researcher and Developer — Abraham Eshetu (Neo-virex)">
 
     <!-- Preload critical assets -->
-    <link rel="preload" href="main.png" as="image">
+    <link rel="preload" href="media/main.png" as="image">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,21 +32,62 @@
 </head>
 
 <body>
+    <div id="main-wrapper">
+        <div class="container app-shell">
+            <header id="topbar-wrapper">
+                <div id="topbar">
+                    <a id="topbar-title" href="#hero">Neo@virex</a>
+                    <nav id="topbar-nav" aria-label="Primary">
+                        <a href="#hero" class="nav-link active">Home</a>
+                        <a href="#coursework" class="nav-link">Coursework</a>
+                        <a href="#projects" class="nav-link">Projects</a>
+                        <a href="#old-projects" class="nav-link">Old</a>
+                        <a href="#blog" class="nav-link">Blog</a>
+                        <a href="#about" class="nav-link">About</a>
+                    </nav>
+                </div>
+            </header>
 
-    <!-- ═══ NAVIGATION ═══ -->
-    <nav id="navbar">
-        <div class="nav-container">
-            <a href="#hero" class="nav-logo">~ $ Neo-virex</a>
-            <div class="nav-links">
-                <a href="#coursework" class="nav-link">[ coursework ]</a>
-                <a href="#projects" class="nav-link">[ projects ]</a>
-                <a href="#old-projects" class="nav-link">[ old ]</a>
-                <a href="#blog" class="nav-link">[ blog ]</a>
-            </div>
-        </div>
-    </nav>
+            <div class="layout-grid">
+                <aside id="sidebar-container">
+                    <div class="profile-card">
+                        <a href="#hero" id="avatar"><img src="media/main.png" alt="Neo-virex profile picture" width="112" height="112"
+                                onerror="this.src='https://via.placeholder.com/112x112/2a363e/cbd5e1?text=Neo-virex'"></a>
+                        <a class="site-title" href="#hero">Neo@virex</a>
+                        <p class="site-subtitle">Security Researcher. Recon first. Always.</p>
 
-    <main>
+                        <div class="profile-links">
+                            <div class="profile-link"><i class="fa-solid fa-location-dot"></i> Addis Ababa, ET</div>
+                            <div class="profile-link"><i class="fa-solid fa-envelope"></i> <a
+                                    href="mailto:Abrhameshetu948@gmail.com">Abrhameshetu948@gmail.com</a></div>
+                            <div class="profile-link"><i class="fa-solid fa-phone"></i> +251 960045028</div>
+                        </div>
+
+                        <div class="profile-btns">
+                            <a href="#hero" class="profile-btn">Home</a>
+                            <a href="#coursework" class="profile-btn">Coursework</a>
+                            <a href="#projects" class="profile-btn">Projects</a>
+                            <a href="#old-projects" class="profile-btn">Old</a>
+                            <a href="#blog" class="profile-btn">Blog</a>
+                            <a href="#about" class="profile-btn">About</a>
+                        </div>
+
+                        <div class="sidebar-social-icons">
+                            <a href="https://github.com/Abr-ahamis" title="GitHub" aria-label="GitHub" target="_blank"><i
+                                    class="fa-brands fa-github"></i></a>
+                            <a href="https://linkedin.com/in/abr-ahamis" title="LinkedIn" aria-label="LinkedIn" target="_blank"><i
+                                    class="fa-brands fa-linkedin"></i></a>
+                            <a href="https://x.com/abr_ahamis" title="X" aria-label="X" target="_blank"><i
+                                    class="fa-brands fa-x-twitter"></i></a>
+                            <a href="https://tryhackme.com/p/NeoVirex" title="TryHackMe" aria-label="TryHackMe" target="_blank"><i
+                                    class="fa-solid fa-terminal"></i></a>
+                            <a href="https://app.hackthebox.com/public/users/2092363" title="HackTheBox" aria-label="HackTheBox" target="_blank"><i
+                                    class="fa-solid fa-cube"></i></a>
+                        </div>
+                    </div>
+                </aside>
+
+                <main id="main-panel">
 
         <!-- ═══ HERO ═══ -->
         <section id="hero" class="section-hero">
@@ -68,28 +109,26 @@
                         <div class="social-icons center-icons">
                             <a href="https://github.com/Abr-ahamis" title="GitHub" aria-label="GitHub"
                                 target="_blank"><i class="fa-brands fa-github"></i></a>
-                            <a href="#" title="LinkedIn" aria-label="LinkedIn" target="_blank"><i
+                            <a href="https://linkedin.com/in/abr-ahamis" title="LinkedIn" aria-label="LinkedIn" target="_blank"><i
                                     class="fa-brands fa-linkedin"></i></a>
-                            <a href="#" title="X" aria-label="X" target="_blank"><i
+                            <a href="https://x.com/abr_ahamis" title="X" aria-label="X" target="_blank"><i
                                     class="fa-brands fa-x-twitter"></i></a>
-                            <a href="#" title="TryHackMe" aria-label="TryHackMe" target="_blank"><i
+                            <a href="https://tryhackme.com/p/NeoVirex" title="TryHackMe" aria-label="TryHackMe" target="_blank"><i
                                     class="fa-solid fa-terminal"></i></a>
-                            <a href="#" title="HackTheBox" aria-label="HackTheBox" target="_blank"><i
+                            <a href="https://app.hackthebox.com/public/users/2092363" title="HackTheBox" aria-label="HackTheBox" target="_blank"><i
                                     class="fa-solid fa-cube"></i></a>
-                            <a href="#" title="Discord" aria-label="Discord" target="_blank"><i
-                                    class="fa-brands fa-discord"></i></a>
-                            <a href="#blog" title="Blog" aria-label="Blog"><i class="fa-solid fa-rss"></i></a>
+                            <a href="https://neo-virex.vercel.app/" title="Blog" aria-label="Blog"><i class="fa-solid fa-rss"></i></a>
                         </div>
                     </div>
                 </div>
 
                 <!-- RIGHT -->
                 <div class="hero-right">
-                    <h1 class="hero-name">Security Researcher </h1>
+                    <h1 class="hero-name">Security Researcher</h1>
                     <br>
                     <p class="hero-summary">
-                        <span class="real-name">Hi! 👋</span> I'm Abraham (Neo), a cybersecurity l0veR focused on
-                        security-testing and defensive & offensive security. I create automation scripts, CTF
+                        <span class="real-name">Hi! 👋</span> I'm Abraham (Neo), a cybersecurity lover focused on
+                        security testing and defensive & offensive security. I create automation scripts, CTF
                         challenges, and tools to
                         speed up hacking.<br><br>
                         Outside tech, I enjoy running (<strong>23+ medallions</strong>) and writing CTF writeups &amp;
@@ -115,7 +154,7 @@
                         <div class="dense">
                             <h3>Skill Surge Academy</h3>Web &amp; Security Trainee
                         </div>
-                        <p class="small">Cybersecurity Certification — May 2025</p>
+                        <p class="small">Cybersecurity Certification — May 2026</p>
                     </div>
                     <div class="box">
                         <div class="dense">
@@ -133,7 +172,7 @@
                         <div class="dense">
                             <h3>St. Mary's University</h3>BSc Computer Science
                         </div>
-                        <p class="small">Ongoing — Expected graduation 2025.</p>
+                        <p class="small">Ongoing — Expected graduation 2026.</p>
                     </div>
                 </div>
             </div>
@@ -313,62 +352,6 @@
                         </div>
                     </article>
 
-                    <!-- Network.py -->
-                    <article class="project-card">
-                        <div class="project-media">
-                            <video src="media/video/test.mp4" autoplay muted playsinline loop controls
-                                poster="media/img/test.png" aria-label="Network.py demo"></video>
-                        </div>
-                        <div class="project-body">
-                            <div class="project-header">
-                                <h3 class="project-title">Network.py</h3>
-                                <a href="https://github.com/Abr-ahamis/Network.py" class="project-link" target="_blank"
-                                    aria-label="GitHub">
-                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2">
-                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                                        <polyline points="15 3 21 3 21 9" />
-                                        <line x1="10" y1="14" x2="21" y2="3" />
-                                    </svg>
-                                </a>
-                            </div>
-                            <p class="project-description">Python network utility library for packet crafting, port
-                                scanning, and traffic analysis in penetration testing workflows.</p>
-                            <div class="tech-stack">
-                                <span class="tech-tag">Python</span><span class="tech-tag">Scapy</span><span
-                                    class="tech-tag">Sockets</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Image Stego Encryptor -->
-                    <article class="project-card">
-                        <div class="project-media">
-                            <img src="media/img/test.png" alt="Image Stego Encryptor preview" loading="lazy" width="600"
-                                height="280">
-                        </div>
-                        <div class="project-body">
-                            <div class="project-header">
-                                <h3 class="project-title">Image-Stego-Encryptor</h3>
-                                <a href="https://github.com/Abr-ahamis/Image-Stego-Encryptor" class="project-link"
-                                    target="_blank" aria-label="GitHub">
-                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2">
-                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                                        <polyline points="15 3 21 3 21 9" />
-                                        <line x1="10" y1="14" x2="21" y2="3" />
-                                    </svg>
-                                </a>
-                            </div>
-                            <p class="project-description">Hides and extracts secret messages inside image files using
-                                steganography combined with AES encryption.</p>
-                            <div class="tech-stack">
-                                <span class="tech-tag">Python</span><span class="tech-tag">Steganography</span><span
-                                    class="tech-tag">AES</span>
-                            </div>
-                        </div>
-                    </article>
-
                 </div>
             </div>
         </section>
@@ -404,11 +387,11 @@
                     </article>
 
                     <article class="project-card">
-                        <div class="project-media"><img src="media/img/test.png" alt="pcap-extracte" loading="lazy"
+                        <div class="project-media"><img src="media/img/test.png" alt="pcap-extract" loading="lazy"
                                 width="600" height="280"></div>
                         <div class="project-body">
                             <div class="project-header">
-                                <h3 class="project-title">pcap-extracte</h3>
+                                <h3 class="project-title">pcap-extract</h3>
                                 <a href="https://github.com/Abr-ahamis/pcap-extracte" class="project-link"
                                     target="_blank" aria-label="GitHub"><svg width="18" height="18" viewBox="0 0 24 24"
                                         fill="none" stroke="currentColor" stroke-width="2">
@@ -466,132 +449,6 @@
                         </div>
                     </article>
 
-                    <article class="project-card">
-                        <div class="project-media"><img src="media/img/test.png" alt="Encrypting Decrypting"
-                                loading="lazy" width="600" height="280"></div>
-                        <div class="project-body">
-                            <div class="project-header">
-                                <h3 class="project-title">Encrypting &amp; Decrypting</h3>
-                                <a href="https://github.com/Abr-ahamis/Encrypting_-_Decrypting_04" class="project-link"
-                                    target="_blank" aria-label="GitHub"><svg width="18" height="18" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                                        <polyline points="15 3 21 3 21 9" />
-                                        <line x1="10" y1="14" x2="21" y2="3" />
-                                    </svg></a>
-                            </div>
-                            <p class="project-description">Encryption and decryption utility covering common algorithms
-                                (AES, RSA, Caesar) for learning and CTF purposes.</p>
-                            <div class="tech-stack"><span class="tech-tag">Python</span><span
-                                    class="tech-tag">AES</span><span class="tech-tag">RSA</span></div>
-                        </div>
-                    </article>
-
-                    <article class="project-card">
-                        <div class="project-media"><img src="media/img/test.png" alt="Image Encryption" loading="lazy"
-                                width="600" height="280"></div>
-                        <div class="project-body">
-                            <div class="project-header">
-                                <h3 class="project-title">Image Encryption</h3>
-                                <a href="https://github.com/Abr-ahamis/Image_Encryption_03" class="project-link"
-                                    target="_blank" aria-label="GitHub"><svg width="18" height="18" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                                        <polyline points="15 3 21 3 21 9" />
-                                        <line x1="10" y1="14" x2="21" y2="3" />
-                                    </svg></a>
-                            </div>
-                            <p class="project-description">Pixel-level image encryption tool that scrambles image data
-                                using XOR and AES techniques.</p>
-                            <div class="tech-stack"><span class="tech-tag">Python</span><span
-                                    class="tech-tag">PIL</span><span class="tech-tag">XOR</span></div>
-                        </div>
-                    </article>
-
-                    <article class="project-card">
-                        <div class="project-media"><img src="media/img/test.png" alt="Password Checker" loading="lazy"
-                                width="600" height="280"></div>
-                        <div class="project-body">
-                            <div class="project-header">
-                                <h3 class="project-title">Password Checker</h3>
-                                <a href="https://github.com/Abr-ahamis/Password_Checker_02" class="project-link"
-                                    target="_blank" aria-label="GitHub"><svg width="18" height="18" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                                        <polyline points="15 3 21 3 21 9" />
-                                        <line x1="10" y1="14" x2="21" y2="3" />
-                                    </svg></a>
-                            </div>
-                            <p class="project-description">Checks password strength and checks against Have I Been Pwned
-                                database to detect compromised credentials.</p>
-                            <div class="tech-stack"><span class="tech-tag">Python</span><span class="tech-tag">HIBP
-                                    API</span><span class="tech-tag">SHA-1</span></div>
-                        </div>
-                    </article>
-
-                    <article class="project-card">
-                        <div class="project-media"><img src="media/img/test.png" alt="Katoolin" loading="lazy"
-                                width="600" height="280"></div>
-                        <div class="project-body">
-                            <div class="project-header">
-                                <h3 class="project-title">Katoolin</h3>
-                                <a href="https://github.com/Abr-ahamis/Katoolin" class="project-link" target="_blank"
-                                    aria-label="GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                        stroke="currentColor" stroke-width="2">
-                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                                        <polyline points="15 3 21 3 21 9" />
-                                        <line x1="10" y1="14" x2="21" y2="3" />
-                                    </svg></a>
-                            </div>
-                            <p class="project-description">Fork of Katoolin — script to install Kali Linux tools on
-                                Debian/Ubuntu systems for security testing environments.</p>
-                            <div class="tech-stack"><span class="tech-tag">Bash</span><span class="tech-tag">Kali
-                                    Tools</span><span class="tech-tag">Linux</span></div>
-                        </div>
-                    </article>
-
-                    <article class="project-card">
-                        <div class="project-media"><img src="media/img/test.png" alt="TryHackMe writeups" loading="lazy"
-                                width="600" height="280"></div>
-                        <div class="project-body">
-                            <div class="project-header">
-                                <h3 class="project-title">TryHackMe Writeups</h3>
-                                <a href="https://github.com/Abr-ahamis/Tryhackme" class="project-link" target="_blank"
-                                    aria-label="GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                        stroke="currentColor" stroke-width="2">
-                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                                        <polyline points="15 3 21 3 21 9" />
-                                        <line x1="10" y1="14" x2="21" y2="3" />
-                                    </svg></a>
-                            </div>
-                            <p class="project-description">Collection of detailed CTF writeups and room solutions from
-                                TryHackMe — documenting techniques and methodologies.</p>
-                            <div class="tech-stack"><span class="tech-tag">CTF</span><span
-                                    class="tech-tag">Markdown</span><span class="tech-tag">TryHackMe</span></div>
-                        </div>
-                    </article>
-
-                    <article class="project-card">
-                        <div class="project-media"><img src="media/img/test.png" alt="Web Project" loading="lazy"
-                                width="600" height="280"></div>
-                        <div class="project-body">
-                            <div class="project-header">
-                                <h3 class="project-title">Web-project</h3>
-                                <a href="https://github.com/Abr-ahamis/Web-project" class="project-link" target="_blank"
-                                    aria-label="GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                        stroke="currentColor" stroke-width="2">
-                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                                        <polyline points="15 3 21 3 21 9" />
-                                        <line x1="10" y1="14" x2="21" y2="3" />
-                                    </svg></a>
-                            </div>
-                            <p class="project-description">Full-stack web development project built during security
-                                training, demonstrating modern frontend and backend practices.</p>
-                            <div class="tech-stack"><span class="tech-tag">HTML</span><span
-                                    class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span></div>
-                        </div>
-                    </article>
-
                 </div>
             </div>
         </section>
@@ -603,7 +460,7 @@
                 <p class="section-intro">
                     Writeups, research notes and tutorials.
                     <!-- Replace #blog-url with your actual blog link -->
-                    <a href="#" class="inline-link" target="_blank">View all posts <i class="fa-solid fa-arrow-right"
+                    <a href="https://neo-virex.vercel.app/" class="inline-link" target="_blank">View all posts <i class="fa-solid fa-arrow-right"
                             style="font-size:.75rem"></i></a>
                 </p>
 
@@ -613,7 +470,7 @@
                     <article class="blog-card">
                         <div class="blog-meta">
                             <span class="blog-tag">CTF</span>
-                            <span class="blog-date">2025-03-10</span>
+                            <span class="blog-date">2026-03-10</span>
                         </div>
                         <h3 class="blog-title"><a href="#" target="_blank">Building Bunna-CTF: Architecture and Design
                                 Decisions</a></h3>
@@ -628,7 +485,7 @@
                     <article class="blog-card">
                         <div class="blog-meta">
                             <span class="blog-tag">Tools</span>
-                            <span class="blog-date">2025-02-20</span>
+                            <span class="blog-date">2026-02-20</span>
                         </div>
                         <h3 class="blog-title"><a href="#" target="_blank">Neo-Recon: Automating the Recon Phase</a>
                         </h3>
@@ -643,7 +500,7 @@
                     <article class="blog-card">
                         <div class="blog-meta">
                             <span class="blog-tag">Research</span>
-                            <span class="blog-date">2025-01-15</span>
+                            <span class="blog-date">2026-01-15</span>
                         </div>
                         <h3 class="blog-title"><a href="#" target="_blank">Steganography Meets AES:
                                 Image-Stego-Encryptor</a></h3>
@@ -652,20 +509,6 @@
                         <div class="blog-tags">
                             <span class="tech-tag">Steganography</span><span class="tech-tag">AES</span><span
                                 class="tech-tag">Python</span>
-                        </div>
-                    </article>
-
-                    <article class="blog-card">
-                        <div class="blog-meta">
-                            <span class="blog-tag">Writeup</span>
-                            <span class="blog-date">2024-12-01</span>
-                        </div>
-                        <h3 class="blog-title"><a href="#" target="_blank">TryHackMe Top 1% — My Learning Path</a></h3>
-                        <p class="blog-excerpt">How I approached the TryHackMe platform, what rooms I focused on, and
-                            the techniques that helped me break into the top 1%.</p>
-                        <div class="blog-tags">
-                            <span class="tech-tag">CTF</span><span class="tech-tag">TryHackMe</span><span
-                                class="tech-tag">Methodology</span>
                         </div>
                     </article>
 
@@ -702,7 +545,31 @@
             </div>
         </section>
 
-    </main>
+                </main>
+
+                <aside id="panel-wrapper">
+                    <div class="panel-card">
+                        <h3 class="panel-heading">Quick summary</h3>
+                        <p>Cybersecurity researcher, offensive security builder, and automation expert.</p>
+                        <p>Current focus: recon tooling, CTF writeups, and red team automation.</p>
+                    </div>
+                    <div class="panel-card">
+                        <h3 class="panel-heading">Connect</h3>
+                        <div class="panel-social-icons">
+                            <a href="https://github.com/Abr-ahamis" target="_blank" aria-label="GitHub"><i
+                                    class="fa-brands fa-github"></i></a>
+                            <a href="https://linkedin.com/in/abr-ahamis" target="_blank" aria-label="LinkedIn"><i
+                                    class="fa-brands fa-linkedin"></i></a>
+                            <a href="https://x.com/abr_ahamis" target="_blank" aria-label="X"><i
+                                    class="fa-brands fa-x-twitter"></i></a>
+                            <a href="https://tryhackme.com/p/NeoVirex" target="_blank" aria-label="TryHackMe"><i
+                                    class="fa-solid fa-terminal"></i></a>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
 
     <script src="js/script.js" defer></script>
 </body>
