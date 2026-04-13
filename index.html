@@ -34,107 +34,60 @@
 <body>
     <div id="main-wrapper">
         <div class="container app-shell">
-            <header id="topbar-wrapper">
-                <div id="topbar">
-                    <a id="topbar-title" href="#hero">Neo@virex</a>
-                    <nav id="topbar-nav" aria-label="Primary">
-                        <a href="#hero" class="nav-link active">Home</a>
-                        <a href="#coursework" class="nav-link">Coursework</a>
-                        <a href="#projects" class="nav-link">Projects</a>
-                        <a href="#old-projects" class="nav-link">Old</a>
-                        <a href="#blog" class="nav-link">Blog</a>
-                        <a href="#about" class="nav-link">About</a>
-                    </nav>
-                </div>
-            </header>
+
 
             <div class="layout-grid">
-                <aside id="sidebar-container">
-                    <div class="profile-card">
-                        <a href="#hero" id="avatar"><img src="media/main.png" alt="Neo-virex profile picture" width="112" height="112"
-                                onerror="this.src='https://via.placeholder.com/112x112/2a363e/cbd5e1?text=Neo-virex'"></a>
-                        <a class="site-title" href="#hero">Neo@virex</a>
-                        <p class="site-subtitle">Security Researcher. Recon first. Always.</p>
 
-                        <div class="profile-links">
-                            <div class="profile-link"><i class="fa-solid fa-location-dot"></i> Addis Ababa, ET</div>
-                            <div class="profile-link"><i class="fa-solid fa-envelope"></i> <a
-                                    href="mailto:Abrhameshetu948@gmail.com">Abrhameshetu948@gmail.com</a></div>
-                            <div class="profile-link"><i class="fa-solid fa-phone"></i> +251 960045028</div>
-                        </div>
+                <aside id="left-panel">
+                    <div class="hero-left">
+                        <img src="media/main.png" alt="Neo-virex profile picture" class="profile-img" width="140"
+                            height="140"
+                            onerror="this.src='https://via.placeholder.com/140x140/2a363e/cbd5e1?text=Neo-virex'">
 
-                        <div class="profile-btns">
-                            <a href="#hero" class="profile-btn">Home</a>
-                            <a href="#coursework" class="profile-btn">Coursework</a>
-                            <a href="#projects" class="profile-btn">Projects</a>
-                            <a href="#old-projects" class="profile-btn">Old</a>
-                            <a href="#blog" class="profile-btn">Blog</a>
-                            <a href="#about" class="profile-btn">About</a>
-                        </div>
-
-                        <div class="sidebar-social-icons">
-                            <a href="https://github.com/Abr-ahamis" title="GitHub" aria-label="GitHub" target="_blank"><i
-                                    class="fa-brands fa-github"></i></a>
-                            <a href="https://linkedin.com/in/abr-ahamis" title="LinkedIn" aria-label="LinkedIn" target="_blank"><i
-                                    class="fa-brands fa-linkedin"></i></a>
-                            <a href="https://x.com/abr_ahamis" title="X" aria-label="X" target="_blank"><i
-                                    class="fa-brands fa-x-twitter"></i></a>
-                            <a href="https://tryhackme.com/p/NeoVirex" title="TryHackMe" aria-label="TryHackMe" target="_blank"><i
-                                    class="fa-solid fa-terminal"></i></a>
-                            <a href="https://app.hackthebox.com/public/users/2092363" title="HackTheBox" aria-label="HackTheBox" target="_blank"><i
-                                    class="fa-solid fa-cube"></i></a>
+                        <div class="hero-contact-area-left">
+                            <div class="contact-stack">
+                                <div><i class="fa-solid fa-location-dot"></i> Addis Ababa, ET</div>
+                                <div><i class="fa-solid fa-envelope"></i> <a
+                                        href="mailto:Abrhameshetu948@gmail.com">Abrhameshetu948@gmail.com</a></div>
+                                <div><i class="fa-solid fa-phone"></i> +251 960045028</div>
+                            </div>
+                            <div class="sidebar-bottom">
+                                <div class="social-icons-row mb-2">
+                                    <a href="https://github.com/Abr-ahamis" title="GitHub" aria-label="GitHub"
+                                        target="_blank"><i class="fa-brands fa-github"></i></a>
+                                    <a href="https://x.com/abr_ahamis" title="X" aria-label="X" target="_blank"><i
+                                            class="fa-brands fa-x-twitter"></i></a>
+                                </div>
+                                <div class="social-icons-row">
+                                    <a href="https://linkedin.com/in/abr-ahamis" title="LinkedIn" aria-label="LinkedIn" target="_blank"><i
+                                            class="fa-brands fa-linkedin"></i></a>
+                                    <a href="https://tryhackme.com/p/NeoVirex" title="TryHackMe" aria-label="TryHackMe" target="_blank"><i
+                                            class="fa-solid fa-terminal"></i></a>
+                                    <a href="https://app.hackthebox.com/public/users/2092363" title="HackTheBox" aria-label="HackTheBox" target="_blank"><i
+                                            class="fa-solid fa-cube"></i></a>
+                                    <a href="https://neo-virex.vercel.app/" title="Blog" aria-label="Blog"><i class="fa-solid fa-rss"></i></a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </aside>
 
                 <main id="main-panel">
 
-        <!-- ═══ HERO ═══ -->
-        <section id="hero" class="section-hero">
+        <!-- ═══ HERO & RECENT WRAPPER ═══ -->
+        <div class="hero-and-recent-wrapper">
+            <section id="hero" class="section-hero">
             <div class="container hero-split">
-
-                <!-- LEFT -->
-                <div class="hero-left">
-                    <img src="media/main.png" alt="Neo-virex profile picture" class="profile-img" width="250"
-                        height="250"
-                        onerror="this.src='https://via.placeholder.com/250x250/2a363e/cbd5e1?text=Neo-virex'">
-
-                    <div class="hero-contact-area-left">
-                        <div class="contact-stack">
-                            <div><i class="fa-solid fa-location-dot"></i> Addis Ababa, ET</div>
-                            <div><i class="fa-solid fa-envelope"></i> <a
-                                    href="mailto:Abrhameshetu948@gmail.com">Abrhameshetu948@gmail.com</a></div>
-                            <div><i class="fa-solid fa-phone"></i> +251 960045028</div>
-                        </div>
-                        <div class="social-icons center-icons">
-                            <a href="https://github.com/Abr-ahamis" title="GitHub" aria-label="GitHub"
-                                target="_blank"><i class="fa-brands fa-github"></i></a>
-                            <a href="https://linkedin.com/in/abr-ahamis" title="LinkedIn" aria-label="LinkedIn" target="_blank"><i
-                                    class="fa-brands fa-linkedin"></i></a>
-                            <a href="https://x.com/abr_ahamis" title="X" aria-label="X" target="_blank"><i
-                                    class="fa-brands fa-x-twitter"></i></a>
-                            <a href="https://tryhackme.com/p/NeoVirex" title="TryHackMe" aria-label="TryHackMe" target="_blank"><i
-                                    class="fa-solid fa-terminal"></i></a>
-                            <a href="https://app.hackthebox.com/public/users/2092363" title="HackTheBox" aria-label="HackTheBox" target="_blank"><i
-                                    class="fa-solid fa-cube"></i></a>
-                            <a href="https://neo-virex.vercel.app/" title="Blog" aria-label="Blog"><i class="fa-solid fa-rss"></i></a>
-                        </div>
-                    </div>
-                </div>
 
                 <!-- RIGHT -->
                 <div class="hero-right">
                     <h1 class="hero-name">Security Researcher</h1>
                     <br>
                     <p class="hero-summary">
-                        <span class="real-name">Hi! 👋</span> I'm Abraham (Neo), a cybersecurity lover focused on
-                        security testing and defensive & offensive security. I create automation scripts, CTF
-                        challenges, and tools to
-                        speed up hacking.<br><br>
-                        Outside tech, I enjoy running (<strong>23+ medallions</strong>) and writing CTF writeups &amp;
-                        project insights.<br><br>
-                        <span class="real-name">⚡ Fun Facts:</span> I don't drink coffee &bull; I automate everything
-                        &bull; Dream: build a top-tier CTF pentesting toolkit.
+                        <span class="real-name">Hi! 👋</span> I'm Abraham (Neo), a cybersecurity researcher specializing in offensive security, vulnerability research, and tactical automation. I build custom tooling that streamlines exploitation and architectures for advanced CTF challenges.<br><br>
+                        Outside tech, I enjoy running marathons (<strong>23+ medallions</strong>) and documenting my technical research through comprehensive writeups.<br><br>
+                        <span class="real-name">⚡ Fun Facts:</span> I don't drink coffee &bull; I automate workflows relentlessly
+                        &bull; Goal: build industry-leading red team toolkits.
                     </p>
                     <div class="hero-cta-row">
                         <a href="#projects" class="btn-primary">./projects</a>
@@ -144,12 +97,34 @@
             </div>
         </section>
 
+            <aside id="right-panel">
+                <div class="panel-card about-terminal">
+                    <h3 class="panel-heading">Recent Blogs</h3>
+                    <ul id="recent-blogs-list" class="blog-list-sidebar">
+                        <li><a href="https://neo-virex.vercel.app/" target="_blank">Hackthebox: Principal</a></li>
+                        <li><a href="https://neo-virex.vercel.app/" target="_blank">TryHackMe: Operation Endgame</a></li>
+                        <li><a href="https://neo-virex.vercel.app/" target="_blank">TryHackMe: Carrotbane of My Existence</a></li>
+                        <li><a href="https://neo-virex.vercel.app/" target="_blank">TryHackMe: The Great Disappearing Act</a></li>
+                        <li><a href="https://neo-virex.vercel.app/" target="_blank">TryHackMe: Hoppers Origins</a></li>
+                        <li><a href="https://neo-virex.vercel.app/" target="_blank">TryHackMe: Side Quest 2 - Scheme Catcher</a></li>
+                        <li><a href="https://neo-virex.vercel.app/" target="_blank">Hackthebox: Imagery</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+
         <!-- ═══ COURSEWORK & INTERNSHIPS ═══ -->
         <section id="coursework" class="section-block">
             <div class="container">
                 <h2 class="section-title">~/coursework<span class="cursor-blink">_</span></h2>
-                <p class="section-intro">Education and professional training.</p>
+                <p class="section-intro">Academic pursuits, professional certifications, and hands-on lab environments.</p>
                 <div class="scroll-row">
+                    <div class="box">
+                        <div class="dense">
+                            <h3>St. Mary's University</h3>BSc Computer Science
+                        </div>
+                        <p class="small">Ongoing — Expected graduation 2026.</p>
+                    </div>
                     <div class="box">
                         <div class="dense">
                             <h3>Skill Surge Academy</h3>Web &amp; Security Trainee
@@ -167,12 +142,6 @@
                             <h3>TryHackMe</h3>Cybersecurity Learner
                         </div>
                         <p class="small">Top 1% global rank across all learning paths.</p>
-                    </div>
-                    <div class="box">
-                        <div class="dense">
-                            <h3>St. Mary's University</h3>BSc Computer Science
-                        </div>
-                        <p class="small">Ongoing — Expected graduation 2026.</p>
                     </div>
                 </div>
             </div>
@@ -204,8 +173,7 @@
                                     </svg>
                                 </a>
                             </div>
-                            <p class="project-description">Automated reconnaissance and exploitation framework.
-                                Streamlines target enumeration, OSINT gathering, and report generation.</p>
+                            <p class="project-description">Highly scalable automated reconnaissance framework designed to streamline target enumeration and deep OSINT gathering.</p>
                             <div class="tech-stack">
                                 <span class="tech-tag">Python</span><span class="tech-tag">Nmap</span><span
                                     class="tech-tag">OSINT</span>
@@ -232,8 +200,7 @@
                                     </svg>
                                 </a>
                             </div>
-                            <p class="project-description">Attack simulation toolkit for CTF challenge development and
-                                red-team exercises. Includes custom flag systems and scoring.</p>
+                            <p class="project-description">Attack simulation toolkit deployed for CTF challenge development and rigorous red-team exercises, utilizing custom dynamic flag generation.</p>
                             <div class="tech-stack">
                                 <span class="tech-tag">Python</span><span class="tech-tag">Bash</span><span
                                     class="tech-tag">CTF</span>
@@ -259,8 +226,7 @@
                                     </svg>
                                 </a>
                             </div>
-                            <p class="project-description">Offensive security research tool exploring malware behaviour
-                                and evasion techniques in controlled lab environments.</p>
+                            <p class="project-description">Specialized offensive security research tool exploring malware behavior, evasion techniques, and sandbox detection in isolated environments.</p>
                             <div class="tech-stack">
                                 <span class="tech-tag">Python</span><span class="tech-tag">C</span><span
                                     class="tech-tag">Malware Analysis</span>
@@ -287,8 +253,7 @@
                                     </svg>
                                 </a>
                             </div>
-                            <p class="project-description">Privilege escalation scripts and techniques collection for
-                                Linux and Windows, used in CTF and penetration testing.</p>
+                            <p class="project-description">Robust collection of curated privilege escalation scripts and techniques specifically tailored for complex constraints and fast CTF pivoting.</p>
                             <div class="tech-stack">
                                 <span class="tech-tag">Bash</span><span class="tech-tag">Python</span><span
                                     class="tech-tag">Linux</span>
@@ -315,8 +280,7 @@
                                     </svg>
                                 </a>
                             </div>
-                            <p class="project-description">Collection of custom security scripts including AutoScan.py,
-                                BruteForce.sh, and PortWatcher for automated offensive tasks.</p>
+                            <p class="project-description">Tactical suite of custom scripts integrating AutoScan, BruteForce dynamics, and customized PortWatchers for blind offensive maneuvers.</p>
                             <div class="tech-stack">
                                 <span class="tech-tag">Python</span><span class="tech-tag">Bash</span><span
                                     class="tech-tag">Nmap</span>
@@ -343,8 +307,7 @@
                                     </svg>
                                 </a>
                             </div>
-                            <p class="project-description">Educational keylogger implementations in Python and C
-                                demonstrating input capture techniques for security research.</p>
+                            <p class="project-description">Low-level keylogger implementations in Python and C demonstrating nuanced input capture techniques and Windows API interaction for security research.</p>
                             <div class="tech-stack">
                                 <span class="tech-tag">Python</span><span class="tech-tag">C</span><span
                                     class="tech-tag">Windows API</span>
@@ -516,57 +479,8 @@
             </div>
         </section>
 
-        <!-- ═══ ABOUT ═══ -->
-        <section id="about" class="section-block">
-            <div class="container">
-                <h2 class="section-title">~/about<span class="cursor-blink">_</span></h2>
-                <div class="about-terminal">
-                    <div class="term-header">
-                        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-                        <span class="term-title">bash — 80×24</span>
-                    </div>
-                    <div class="term-body">
-                        <p><span class="prompt">></span> <span class="command">cat bio.txt</span></p>
-                        <p class="output">Security researcher and developer at the intersection of offensive security
-                            and infrastructure automation. I build tools, break systems ethically, and document
-                            everything.</p>
-                        <br>
-                        <p><span class="prompt">></span> <span class="command">tail -n 3 focus.log</span></p>
-                        <p class="output">
-                            [Offensive] Custom exploitation tooling and phishing simulations.<br>
-                            [Defensive] Zero-trust architecture and SIEM pipeline tuning.<br>
-                            [Dev] Python, Bash, web platforms, and automation frameworks.
-                        </p>
-                        <br>
-                        <p><span class="prompt">></span> <span class="command">echo $STATUS</span></p>
-                        <p class="output">Available for collaboration and opportunities.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
 
                 </main>
-
-                <aside id="panel-wrapper">
-                    <div class="panel-card">
-                        <h3 class="panel-heading">Quick summary</h3>
-                        <p>Cybersecurity researcher, offensive security builder, and automation expert.</p>
-                        <p>Current focus: recon tooling, CTF writeups, and red team automation.</p>
-                    </div>
-                    <div class="panel-card">
-                        <h3 class="panel-heading">Connect</h3>
-                        <div class="panel-social-icons">
-                            <a href="https://github.com/Abr-ahamis" target="_blank" aria-label="GitHub"><i
-                                    class="fa-brands fa-github"></i></a>
-                            <a href="https://linkedin.com/in/abr-ahamis" target="_blank" aria-label="LinkedIn"><i
-                                    class="fa-brands fa-linkedin"></i></a>
-                            <a href="https://x.com/abr_ahamis" target="_blank" aria-label="X"><i
-                                    class="fa-brands fa-x-twitter"></i></a>
-                            <a href="https://tryhackme.com/p/NeoVirex" target="_blank" aria-label="TryHackMe"><i
-                                    class="fa-solid fa-terminal"></i></a>
-                        </div>
-                    </div>
-                </aside>
             </div>
         </div>
     </div>

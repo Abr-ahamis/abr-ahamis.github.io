@@ -2,18 +2,18 @@
    VARIABLES & THEME
    ========================================= */
 :root {
-   --bg-main: #36454F;
-   --bg-dark: #2a363e;
-   --bg-darker: #1e262c;
-   --bg-card: #2f3d46;
-   --border-color: #4a5c68;
-   --border-highlight: #5b7180;
-   --text-main: #e2e8f0;
+   --bg-main: #05080f;
+   --bg-dark: #090e1a;
+   --bg-darker: #020409;
+   --bg-card: #0a1122;
+   --border-color: #1e293b;
+   --border-highlight: #334155;
+   --text-main: #f8fafc;
    --text-muted: #94a3b8;
-   --text-accent: #cbd5e1;
-   --term-red: #e06c75;
-   --term-yellow: #e5c07b;
-   --term-green: #98c379;
+   --text-accent: #38bdf8;
+   --term-red: #f43f5e;
+   --term-yellow: #eab308;
+   --term-green: #10b981;
    --transition-fast: 0.2s ease-out;
    --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -39,15 +39,12 @@ body {
    -webkit-font-smoothing: antialiased
 }
 
-h1,
-h2,
-h3,
-.nav-logo,
-.prompt,
-.command {
+h1, h2, h3, .nav-logo, .prompt, .command {
    font-family: 'Fira Code', monospace;
-   font-weight: 500
 }
+h1 { font-weight: 800; }
+h2 { font-weight: 700; color: var(--text-main); }
+h3 { font-weight: 600; color: #fff; }
 
 a {
    color: var(--text-main);
@@ -63,9 +60,13 @@ a:hover {
    LAYOUT
    ========================================= */
 .container {
-   max-width: 1000px;
+   max-width: 1200px;
    margin: 0 auto;
-   padding: 0 2rem
+   padding: 0 1rem;
+}
+.inner-container {
+   width: 100%;
+   margin: 0 auto;
 }
 
 .section-block {
@@ -137,9 +138,31 @@ a:hover {
 
 .layout-grid {
    display: grid;
-   grid-template-columns: 280px minmax(0, 1fr) 250px;
-   gap: 1.5rem;
+   grid-template-columns: 250px minmax(0, 850px);
+   justify-content: center;
+   gap: 2.5rem;
    padding: 2rem 0 4rem;
+   align-items: start;
+}
+
+.hero-and-recent-wrapper {
+   display: grid;
+   grid-template-columns: minmax(0, 600px) 250px;
+   gap: 2.5rem;
+   align-items: start;
+   min-height: 95vh;
+}
+
+@media (max-width: 1024px) {
+    .hero-and-recent-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 1024px) {
+    .layout-grid {
+        grid-template-columns: minmax(0, 100%);
+    }
 }
 
 #sidebar-container,
@@ -246,6 +269,11 @@ a:hover {
    width: 100%;
 }
 
+#main-panel .container {
+   padding: 0;
+   max-width: 100%;
+}
+
 .panel-heading {
    font-size: 1rem;
    margin-bottom: .75rem;
@@ -262,12 +290,9 @@ a:hover {
    HERO
    ========================================= */
 .section-hero {
-   min-height: 100vh;
-   display: flex;
-   align-items: center;
    padding-top: 5rem;
    padding-bottom: 2rem;
-   animation: heroFadeUp .8s ease-out forwards
+   animation: heroFadeUp .8s ease-out forwards;
 }
 
 @keyframes heroFadeUp {
@@ -299,11 +324,11 @@ a:hover {
 }
 
 .profile-img {
-   width: 250px;
-   height: 250px;
+   width: 140px;
+   height: 140px;
    object-fit: cover;
    border-radius: 50%;
-   border: 4px solid var(--border-color);
+   border: 3px solid var(--border-color);
    box-shadow: 0 10px 30px rgba(0, 0, 0, .2);
    transition: transform .4s, border-color .4s;
    margin-bottom: 1.5rem
@@ -345,25 +370,35 @@ a:hover {
    text-decoration: underline
 }
 
-.social-icons {
+.sidebar-bottom {
    display: flex;
-   gap: 1rem;
-   font-size: 1.4rem
+   flex-direction: column;
+   align-items: center;
+   width: 100%;
 }
 
-.center-icons {
+.social-icons-row {
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
    justify-content: center;
-   flex-wrap: wrap
+   width: 100%;
+   gap: 0.8rem;
+   font-size: 1.1rem;
 }
 
-.social-icons a {
+.social-icons-row.mb-2 {
+   margin-bottom: 0.8rem;
+}
+
+.social-icons-row a {
    color: var(--text-muted);
-   transition: color var(--transition-fast), transform var(--transition-fast)
+   transition: color var(--transition-fast), transform var(--transition-fast);
 }
 
-.social-icons a:hover {
+.social-icons-row a:hover {
    color: #fff;
-   transform: translateY(-2px)
+   transform: translateY(-2px);
 }
 
 .hero-right {
@@ -374,7 +409,7 @@ a:hover {
 }
 
 .hero-name {
-   font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+   font-size: clamp(1.4rem, 2.5vw, 2.2rem);
    color: #fff;
    line-height: 1.1;
    margin-bottom: .5rem;
@@ -384,16 +419,16 @@ a:hover {
 
 .hero-role {
    font-family: 'Fira Code', monospace;
-   font-size: 1.15rem;
+   font-size: 0.95rem;
    color: var(--text-accent);
-   margin-bottom: 1.5rem
+   margin-bottom: 1.25rem;
 }
 
 .hero-summary {
-   font-size: 1.05rem;
+   font-size: 0.9rem;
    color: var(--text-muted);
-   max-width: 600px;
-   margin-bottom: 2rem;
+   max-width: 550px;
+   margin-bottom: 1.5rem;
    line-height: 1.7
 }
 
@@ -401,7 +436,7 @@ a:hover {
    font-family: 'Fira Code', monospace;
    color: var(--text-accent);
    font-weight: 600;
-   font-size: .95rem
+   font-size: .85rem
 }
 
 .hero-cta-row {
@@ -446,14 +481,15 @@ a:hover {
    SECTION HEADERS
    ========================================= */
 .section-title {
-   font-size: 2rem;
+   font-size: 1.5rem;
    color: #fff;
-   margin-bottom: .5rem
+   margin-bottom: .25rem
 }
 
 .section-intro {
+   font-size: 0.85rem;
    color: var(--text-muted);
-   margin-bottom: 3rem
+   margin-bottom: 2rem
 }
 
 .cursor-blink {
@@ -501,14 +537,15 @@ a:hover {
 
 .box {
    flex: 0 0 180px;
-   background: var(--bg-card);
-   border: 1px solid var(--border-color);
+   background: transparent;
+   border: 1px solid transparent;
    border-radius: 6px;
    padding: 1.25rem;
-   transition: border-color var(--transition-fast), box-shadow var(--transition-fast)
+   transition: background var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast)
 }
 
 .box:hover {
+   background: var(--bg-dark);
    border-color: var(--border-highlight);
    box-shadow: 0 6px 20px rgba(0, 0, 0, .15)
 }
@@ -534,18 +571,26 @@ a:hover {
    ========================================= */
 .projects-grid {
    display: grid;
-   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-   gap: 2rem
+   grid-template-columns: repeat(2, 1fr);
+   gap: 1.5rem;
+   width: calc(100% - 20px);
+}
+
+@media (max-width: 800px) {
+   .projects-grid {
+      grid-template-columns: 1fr;
+   }
 }
 
 .project-card {
-   background: var(--bg-card);
-   border: 1px solid var(--border-color);
+   background: transparent;
+   border: 1px solid transparent;
    border-radius: 6px;
    overflow: hidden;
    display: flex;
    flex-direction: column;
-   transition: transform var(--transition-smooth), border-color var(--transition-smooth), box-shadow var(--transition-smooth)
+   align-items: stretch;
+   transition: background var(--transition-smooth), transform var(--transition-smooth), border-color var(--transition-smooth), box-shadow var(--transition-smooth)
 }
 
 .project-card:hover {
@@ -558,9 +603,13 @@ a:hover {
 /* Project media strip */
 .project-media {
    width: 100%;
+   aspect-ratio: 16 / 9;
+   height: auto;
+   flex-shrink: 0;
+   margin: 0;
+   border-radius: 0;
    background: var(--bg-darker);
    overflow: hidden;
-   max-height: 240px;
    display: flex;
    align-items: center;
    justify-content: center
@@ -569,7 +618,7 @@ a:hover {
 .project-media img,
 .project-media video {
    width: 100%;
-   height: 240px;
+   height: 100%;
    object-fit: cover;
    display: block
 }
@@ -580,7 +629,7 @@ a:hover {
 }
 
 .project-body {
-   padding: 1.5rem;
+   padding: 0.75rem 1rem;
    display: flex;
    flex-direction: column;
    flex-grow: 1
@@ -590,12 +639,13 @@ a:hover {
    display: flex;
    justify-content: space-between;
    align-items: flex-start;
-   margin-bottom: .75rem
+   margin-bottom: .25rem
 }
 
 .project-title {
-   font-size: 1.1rem;
-   color: #fff
+   font-size: 0.85rem;
+   color: #fff;
+   font-weight: 700;
 }
 
 .project-link {
@@ -608,25 +658,26 @@ a:hover {
 
 .project-description {
    color: var(--text-muted);
-   font-size: .9rem;
-   margin-bottom: 1.25rem;
+   font-size: .75rem;
+   margin-bottom: 0.6rem;
+   line-height: 1.4;
    flex-grow: 1
 }
 
 .tech-stack {
    display: flex;
    flex-wrap: wrap;
-   gap: .6rem;
+   gap: .4rem;
    margin-top: auto
 }
 
 .tech-tag {
    font-family: 'Fira Code', monospace;
-   font-size: .75rem;
+   font-size: .6rem;
    color: var(--text-accent);
    background: var(--bg-darker);
-   padding: .2rem .55rem;
-   border-radius: 4px;
+   padding: .1rem .35rem;
+   border-radius: 3px;
    border: 1px solid var(--border-color)
 }
 
@@ -634,11 +685,17 @@ a:hover {
    ABOUT TERMINAL
    ========================================= */
 .about-terminal {
-   background: var(--bg-darker);
-   border: 1px solid var(--border-color);
+   background: transparent;
+   border: 1px solid transparent;
    border-radius: 8px;
    overflow: hidden;
-   box-shadow: 0 20px 40px rgba(0, 0, 0, .2)
+   box-shadow: none;
+   transition: background var(--transition-smooth), border-color var(--transition-smooth);
+}
+
+.about-terminal:hover {
+   background: var(--bg-darker);
+   border-color: var(--border-highlight);
 }
 
 .term-header {
@@ -707,19 +764,54 @@ a:hover {
 }
 
 .blog-card {
-   background: var(--bg-card);
-   border: 1px solid var(--border-color);
+   background: transparent;
+   border: 1px solid transparent;
    border-radius: 6px;
    padding: 1.5rem;
    display: flex;
    flex-direction: column;
    gap: .75rem;
-   transition: border-color var(--transition-fast), box-shadow var(--transition-fast)
+   transition: background var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast)
 }
 
 .blog-card:hover {
+   background: var(--bg-dark);
    border-color: var(--border-highlight);
    box-shadow: 0 6px 24px rgba(0, 0, 0, .15)
+}
+
+/* Sidebar Sticky Profile Styling */
+#left-panel {
+   position: sticky;
+   top: 5rem;
+   margin-top: 5rem;
+}
+
+/* Sidebar Recent Blog List Styling */
+#right-panel {
+   margin-top: 5rem;
+}
+
+.blog-list-sidebar {
+   list-style: none;
+   padding: 0;
+   margin-top: 1rem;
+   display: flex;
+   flex-direction: column;
+   gap: 0.8rem;
+}
+
+.blog-list-sidebar li a {
+   color: var(--text-muted);
+   font-size: 0.75rem;
+   font-family: 'Fira Code', monospace;
+   display: block;
+   transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.blog-list-sidebar li a:hover {
+   color: var(--text-main);
+   transform: translateX(4px);
 }
 
 .blog-meta {
@@ -747,7 +839,7 @@ a:hover {
 }
 
 .blog-title {
-   font-size: 1rem;
+   font-size: 0.9rem;
    color: #fff;
    line-height: 1.4
 }
