@@ -137,18 +137,20 @@ a:hover {
 }
 
 .layout-grid {
-   display: block;
-   padding: 0;
+   display: grid;
+   grid-template-columns: 250px minmax(0, 850px);
+   justify-content: center;
+   gap: 2.5rem;
+   padding: 2rem 0 4rem;
+   align-items: start;
 }
 
 .hero-and-recent-wrapper {
    display: grid;
-   grid-template-columns: 250px minmax(0, 800px) 250px;
+   grid-template-columns: minmax(0, 600px) 250px;
    gap: 2.5rem;
-   justify-content: center;
    align-items: start;
    min-height: 95vh;
-   padding: 2rem 0;
 }
 
 @media (max-width: 1024px) {
@@ -264,8 +266,7 @@ a:hover {
 }
 
 #main-panel {
-   width: 70%;
-   margin: 0 auto;
+   width: 100%;
 }
 
 #main-panel .container {
@@ -477,22 +478,8 @@ a:hover {
 }
 
 /* =========================================
-   SECTION HEADERS & BLOCKS
+   SECTION HEADERS
    ========================================= */
-.section-block {
-   margin-bottom: 6rem;
-}
-
-.section-block .container {
-   max-width: 900px;
-   margin: 0 auto;
-}
-
-@media (max-width: 800px) {
-   .section-block .container {
-      padding: 0 1rem;
-   }
-}
 .section-title {
    font-size: 1.5rem;
    color: #fff;
@@ -586,6 +573,7 @@ a:hover {
    display: grid;
    grid-template-columns: repeat(2, 1fr);
    gap: 1.5rem;
+   width: calc(100% - 20px);
 }
 
 @media (max-width: 800px) {
@@ -792,8 +780,10 @@ a:hover {
    box-shadow: 0 6px 24px rgba(0, 0, 0, .15)
 }
 
-/* Sidebar Profile Styling */
+/* Sidebar Sticky Profile Styling */
 #left-panel {
+   position: sticky;
+   top: 5rem;
    margin-top: 5rem;
 }
 
