@@ -18,6 +18,19 @@
    --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* Light Mode Theme */
+body.light-mode {
+   --bg-main: #e6e6e6;
+   --bg-dark: #d9d9d9;
+   --bg-darker: #cccccc;
+   --bg-card: #f2f2f2;
+   --border-color: #b3b3b3;
+   --border-highlight: #999999;
+   --text-main: #1a1a1a;
+   --text-muted: #4d4d4d;
+   --text-accent: #0066cc;
+}
+
 /* =========================================
    RESET & BASE
    ========================================= */
@@ -44,7 +57,7 @@ h1, h2, h3, .nav-logo, .prompt, .command {
 }
 h1 { font-weight: 800; }
 h2 { font-weight: 700; color: var(--text-main); }
-h3 { font-weight: 600; color: #fff; }
+h3 { font-weight: 600; color: var(--text-main); }
 
 a {
    color: var(--text-main);
@@ -53,7 +66,7 @@ a {
 }
 
 a:hover {
-   color: #fff
+   color: var(--text-accent)
 }
 
 /* =========================================
@@ -99,7 +112,7 @@ a:hover {
 
 #topbar-title {
    font-size: 1rem;
-   color: #fff;
+   color: var(--text-main);
    font-weight: 700;
    letter-spacing: .08em;
    text-decoration: none;
@@ -125,7 +138,7 @@ a:hover {
 
 #topbar-nav .nav-link:hover,
 #topbar-nav .nav-link.active {
-   color: #fff;
+   color: var(--text-main);
    background: rgba(255, 255, 255, .08);
 }
 
@@ -190,7 +203,7 @@ a:hover {
    font-size: 1.15rem;
    font-weight: 700;
    margin-bottom: .35rem;
-   color: #fff;
+   color: var(--text-main);
    text-decoration: none;
 }
 
@@ -262,7 +275,7 @@ a:hover {
 
 .sidebar-social-icons a:hover,
 .panel-social-icons a:hover {
-   color: #fff;
+   color: var(--text-main);
 }
 
 #main-panel {
@@ -277,7 +290,7 @@ a:hover {
 .panel-heading {
    font-size: 1rem;
    margin-bottom: .75rem;
-   color: #fff;
+   color: var(--text-main);
 }
 
 .panel-social-icons {
@@ -366,7 +379,7 @@ a:hover {
 }
 
 .contact-stack a:hover {
-   color: #fff;
+   color: var(--text-main);
    text-decoration: underline
 }
 
@@ -397,7 +410,7 @@ a:hover {
 }
 
 .social-icons-row a:hover {
-   color: #fff;
+   color: var(--text-main);
    transform: translateY(-2px);
 }
 
@@ -410,7 +423,7 @@ a:hover {
 
 .hero-name {
    font-size: clamp(1.4rem, 2.5vw, 2.2rem);
-   color: #fff;
+   color: var(--text-main);
    line-height: 1.1;
    margin-bottom: .5rem;
    letter-spacing: -.02em;
@@ -462,7 +475,7 @@ a:hover {
    background: var(--bg-card);
    border-color: var(--border-highlight);
    transform: translateY(-2px);
-   color: #fff
+   color: var(--text-main)
 }
 
 .btn-ghost {
@@ -482,7 +495,7 @@ a:hover {
    ========================================= */
 .section-title {
    font-size: 1.5rem;
-   color: #fff;
+   color: var(--text-main);
    margin-bottom: .25rem
 }
 
@@ -552,7 +565,7 @@ a:hover {
 
 .box h3 {
    font-size: 1rem;
-   color: #fff;
+   color: var(--text-main);
    margin-bottom: .25rem
 }
 
@@ -644,7 +657,7 @@ a:hover {
 
 .project-title {
    font-size: 0.85rem;
-   color: #fff;
+   color: var(--text-main);
    font-weight: 700;
 }
 
@@ -653,7 +666,7 @@ a:hover {
 }
 
 .project-link:hover {
-   color: #fff
+   color: var(--text-main)
 }
 
 .project-description {
@@ -745,7 +758,7 @@ a:hover {
 }
 
 .command {
-   color: #fff
+   color: var(--text-main)
 }
 
 .output {
@@ -840,12 +853,12 @@ a:hover {
 
 .blog-title {
    font-size: 0.9rem;
-   color: #fff;
+   color: var(--text-main);
    line-height: 1.4
 }
 
 .blog-title a {
-   color: #fff
+   color: var(--text-main)
 }
 
 .blog-title a:hover {
@@ -872,7 +885,7 @@ a:hover {
 }
 
 .inline-link:hover {
-   color: #fff
+   color: var(--text-main)
 }
 
 /* =========================================
@@ -961,4 +974,36 @@ a:hover {
    #topbar {
       padding: .85rem 1rem;
    }
+}
+
+/* =========================================
+   THEME TOGGLE
+   ========================================= */
+.theme-toggle-wrapper {
+   display: flex;
+   justify-content: center;
+   width: 100%;
+   margin-top: 1.2rem;
+}
+
+.theme-toggle {
+   width: 40px;
+   height: 40px;
+   border-radius: 50%;
+   background: var(--bg-card);
+   border: 1px solid var(--border-color);
+   color: var(--text-main);
+   cursor: pointer;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 1.2rem;
+   transition: all var(--transition-fast);
+}
+
+.theme-toggle:hover {
+   background: var(--bg-dark);
+   border-color: var(--border-highlight);
+   transform: scale(1.1);
+}
 }

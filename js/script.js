@@ -5,6 +5,26 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     
+    // 0. Theme Toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    
+    // Apply saved theme on page load
+    if (savedTheme === 'light') {
+        document.body.classList.add('light-mode');
+    }
+    
+    // Theme toggle button handler
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            
+            // Save theme preference
+            const currentTheme = document.body.classList.contains('light-mode') ? 'light' : 'dark';
+            localStorage.setItem('theme', currentTheme);
+        });
+    }
+    
     // 1. Intersection Observer for Fade-In Elements
     const observerOptions = {
         root: null,
@@ -33,6 +53,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let lastScroll = 0;
 
     window.addEventListener('scroll', () => {
+        if (!navbar) return;
+        
         const currentScroll = window.pageYOffset;
         
         // Add subtle shadow when scrolling down
