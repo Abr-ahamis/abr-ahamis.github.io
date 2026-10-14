@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Neo-virex | Portfolio</title>
+    <title>Abraham Eshetu (Neo-virex) — Security Researcher & Developer</title>
     <meta name="description"
-        content="Cybersecurity Specialist, Security Researcher and Developer — Abraham Eshetu (Neo-virex)">
+        content="Offensive Security Researcher, Tactical Automation Engineer and CTF Builder — Abraham Eshetu (Neo-virex)">
 
     <!-- Preload critical assets -->
     <link rel="preload" href="media/main.png" as="image">
@@ -14,7 +14,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;500&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
 
     <!-- FontAwesome 6 -->
@@ -32,317 +32,599 @@
 </head>
 
 <body>
-    <div id="main-wrapper">
-        <div class="container app-shell">
+    <!-- ═══ MAIN CONTENT ═══ -->
+    <main class="page-container">
 
-
-            <div class="layout-grid">
-
-                <aside id="left-panel">
-                    <div class="hero-left">
-                        <img src="media/main.png" alt="Neo-virex profile picture" class="profile-img" width="140"
-                            height="140"
-                            onerror="this.src='https://via.placeholder.com/140x140/2a363e/cbd5e1?text=Neo-virex'">
-
-                        <div class="hero-contact-area-left">
-                            <div class="contact-stack">
-                                <div><i class="fa-solid fa-location-dot"></i> Addis Ababa, ET</div>
-                                <div><i class="fa-solid fa-envelope"></i> <a
-                                        href="mailto:Abrhameshetu948@gmail.com">Abrhameshetu948@gmail.com</a></div>
-                                <div><i class="fa-solid fa-phone"></i> +251 960045028</div>
-                            </div>
-                            <div class="sidebar-bottom">
-                                <div class="social-icons-row mb-2">
-                                    <a href="https://github.com/Abr-ahamis" title="GitHub" aria-label="GitHub"
-                                        target="_blank"><i class="fa-brands fa-github"></i></a>
-                                    <a href="https://x.com/abr_ahamis" title="X" aria-label="X" target="_blank"><i
-                                            class="fa-brands fa-x-twitter"></i></a>
-                                </div>
-                                <div class="social-icons-row">
-                                    <a href="https://linkedin.com/in/abr-ahamis" title="LinkedIn" aria-label="LinkedIn" target="_blank"><i
-                                            class="fa-brands fa-linkedin"></i></a>
-                                    <a href="https://tryhackme.com/p/NeoVirex" title="TryHackMe" aria-label="TryHackMe" target="_blank"><i
-                                            class="fa-solid fa-terminal"></i></a>
-                                    <a href="https://app.hackthebox.com/public/users/2092363" title="HackTheBox" aria-label="HackTheBox" target="_blank"><i
-                                            class="fa-solid fa-cube"></i></a>
-                                    <a href="https://neo-virex.vercel.app/" title="Blog" aria-label="Blog"><i class="fa-solid fa-rss"></i></a>
-                                </div>
-                                <div class="theme-toggle-wrapper">
-                                    <button id="theme-toggle" class="theme-toggle" title="Toggle light/dark mode" aria-label="Toggle theme">
-                                        <i class="fa-solid fa-sun"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
+        <!-- ═══ HERO ═══ -->
+        <section id="hero" class="hero-section">
+            <div class="hero-grid">
+                <!-- Left: Aesthetic Portrait Card -->
+                <div class="hero-portrait-col">
+                    <div class="portrait-card">
+                        <img src="media/main.png" alt="Abraham Eshetu (Neo-virex)" class="portrait-img" width="230"
+                            height="280"
+                            onerror="this.src='https://via.placeholder.com/230x280/1a1e29/94a3b8?text=Neo-virex'">
                     </div>
-                </aside>
+                </div>
 
-                <main id="main-panel">
+                <!-- Right: Bio & Context -->
+                <div class="hero-content-col">
+                    <div class="hero-header-row">
+                        <div class="hero-identity">
+                            <h1 class="hero-name">Abraham Eshetu</h1>
+                            <span class="hero-role-pill">Security Researcher</span>
+                        </div>
+                        <button id="theme-toggle" class="theme-toggle" title="Toggle theme" aria-label="Toggle theme">
+                            <i class="fa-solid fa-sun" id="theme-icon-light"></i>
+                            <i class="fa-solid fa-moon" id="theme-icon-dark" style="display:none;"></i>
+                        </button>
+                    </div>
 
-        <!-- ═══ HERO & RECENT WRAPPER ═══ -->
-        <div class="hero-and-recent-wrapper">
-            <section id="hero" class="section-hero">
-            <div class="container hero-split">
+                    <p class="hero-tagline">Believer · Offensive Security Specialist · Tooling Architect</p>
 
-                <!-- RIGHT -->
-                <div class="hero-right">
-                    <h1 class="hero-name">Security Researcher</h1>
-                    <br>
-                    <p class="hero-summary">
-                        <span class="real-name">Hi! 👋</span> I'm Abraham (Neo), a cybersecurity researcher specializing in offensive security, vulnerability research, and tactical automation. I build custom tooling that streamlines exploitation and architectures for advanced CTF challenges.<br><br>
-                        Outside tech, I enjoy running marathons (<strong>23+ medallions</strong>) and documenting my technical research through comprehensive writeups.<br><br>
-                        <span class="real-name">⚡ Fun Facts:</span> I don't drink coffee &bull; I automate workflows relentlessly
-                        &bull; Goal: build industry-leading red team toolkits.
-                    </p>
-                    <div class="hero-cta-row">
-                        <a href="#projects" class="btn-primary">./projects</a>
-                        <a href="#blog" class="btn-ghost">./blog</a>
+                    <div class="hero-bio">
+                        <p>
+                            Hello! I'm <strong>Abraham (Neo)</strong>, a cybersecurity researcher focused on offensive security, vulnerability exploration, and tactical automation. I specialize in engineering tailored exploitation tooling, dissecting network protocols, and architecting complex CTF challenge systems.
+                        </p>
+                        <p>
+                            Beyond the terminal, I'm an endurance marathon runner (<strong>23+ medals</strong>) and document technical findings through deep-dive writeups.
+                        </p>
+                    </div>
+
+                    <!-- Highlight Pills -->
+                    <div class="hero-highlights">
+                        <span class="highlight-chip"><i class="fa-solid fa-trophy"></i> TryHackMe Top 1%</span>
+                        <span class="highlight-chip"><i class="fa-solid fa-person-running"></i> 23+ Marathons</span>
+                        <span class="highlight-chip"><i class="fa-solid fa-bolt"></i> Workflow Automation</span>
+                    </div>
+
+                    <!-- Social Icons & CTAs -->
+                    <div class="hero-footer-row">
+                        <div class="hero-socials">
+                            <a href="https://github.com/Abr-ahamis" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                            <a href="https://linkedin.com/in/abr-ahamis" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="https://x.com/abr_ahamis" target="_blank" rel="noopener noreferrer" title="X (Twitter)" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="https://tryhackme.com/p/NeoVirex" target="_blank" rel="noopener noreferrer" title="TryHackMe" aria-label="TryHackMe"><i class="fa-solid fa-terminal"></i></a>
+                            <a href="https://app.hackthebox.com/public/users/2092363" target="_blank" rel="noopener noreferrer" title="HackTheBox" aria-label="HackTheBox"><i class="fa-solid fa-cube"></i></a>
+                            <a href="mailto:Abrhameshetu948@gmail.com" title="Email Abraham" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                        </div>
+                        <div class="hero-ctas">
+                            <a href="#projects" class="btn-pill btn-pill-primary">View Projects <i class="fa-solid fa-arrow-down"></i></a>
+                            <a href="https://neo-virex.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-pill btn-pill-outline">Blog <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
 
-            <aside id="right-panel">
-                <div class="panel-card about-terminal">
-                    <h3 class="panel-heading">Recent Blogs</h3>
-                    <ul id="recent-blogs-list" class="blog-list-sidebar">
-                        <li><a href="https://neo-virex.vercel.app/" target="_blank">Hackthebox: Principal</a></li>
-                        <li><a href="https://neo-virex.vercel.app/" target="_blank">TryHackMe: Operation Endgame</a></li>
-                        <li><a href="https://neo-virex.vercel.app/" target="_blank">TryHackMe: Carrotbane of My Existence</a></li>
-                        <li><a href="https://neo-virex.vercel.app/" target="_blank">TryHackMe: The Great Disappearing Act</a></li>
-                        <li><a href="https://neo-virex.vercel.app/" target="_blank">TryHackMe: Hoppers Origins</a></li>
-                        <li><a href="https://neo-virex.vercel.app/" target="_blank">TryHackMe: Side Quest 2 - Scheme Catcher</a></li>
-                        <li><a href="https://neo-virex.vercel.app/" target="_blank">Hackthebox: Imagery</a></li>
-                    </ul>
-                </div>
-            </aside>
-        </div>
-
-        <!-- ═══ COURSEWORK & INTERNSHIPS ═══ -->
-        <section id="coursework" class="section-block">
-            <div class="container">
-                <h2 class="section-title">~/coursework<span class="cursor-blink">_</span></h2>
-                <p class="section-intro">Academic pursuits, professional certifications, and hands-on lab environments.</p>
-                <div class="scroll-row">
-                    <div class="box">
-                        <div class="dense">
-                            <h3>TryHackMe</h3>Cybersecurity Learner
-                        </div>
-                        <p class="small">Top 1% global rank across all learning paths.</p>
-                    </div>
-                    <div class="box">
-                        <div class="dense">
-                            <h3>Hack The Box</h3>Remote Security Tester
-                        </div>
-                        <p class="small">Offensive labs and real-world machine challenges.</p>
-                    </div>
-                    <div class="box">
-                        <div class="dense">
-                            <h3>Skill Surge Academy</h3>Web &amp; Security Trainee
-                        </div>
-                        <p class="small">Cybersecurity Certification — May 2026</p>
-                    </div>
-                    <div class="box">
-                        <div class="dense">
-                            <h3>St. Mary's University</h3>BSc Computer Science
-                        </div>
-                        <p class="small">Ongoing.</p>
-                    </div>
-                </div>
+            <!-- Announcement Banner (Below Profile) -->
+            <div class="profile-announcement-wrap">
+                <a href="#blog" class="announcement-pill">
+                    <span class="announcement-badge">RECENT POST</span>
+                    <span>Latest Security Writeups &amp; Research Notes Published</span>
+                    <i class="fa-solid fa-arrow-right announcement-arrow"></i>
+                </a>
             </div>
         </section>
 
-        <!-- ═══ PROJECTS ═══ -->
-        <section id="projects" class="section-block">
-            <div class="container">
-                <h2 class="section-title">~/projects<span class="cursor-blink">_</span></h2>
-                <p class="section-intro">Core offensive tools, automation frameworks, and web platforms.</p>
-                <div class="projects-grid">
+        <!-- ═══ 1. SPECIALIZATIONS ═══ -->
+        <section id="specializations" class="content-section">
+            <div class="section-title-wrap">
+                <span class="section-title-pill">Specializations</span>
+            </div>
 
-                    <!-- GPSSimulator -->
-                    <article class="project-card">
-                        <div class="project-media">
-                            <video src="media/video/test.mp4" autoplay muted playsinline loop controls
-                                poster="https://neo-virex.vercel.app/images/blogs/GPSSimulator/room-img.png" aria-label="GPSSimulator demo"></video>
-                        </div>
-                        <div class="project-body">
-                            <div class="project-header">
-                                <h3 class="project-title">GPSSimulator</h3>
-                                <a href="https://github.com/Abr-ahamis/GPSSimulator" class="project-link" target="_blank"
-                                    aria-label="GitHub">
-                                    <span style="font-size: 0.65em; margin-right: 6px;">GitHub icon</span>
-                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2">
-                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                                        <polyline points="15 3 21 3 21 9" />
-                                        <line x1="10" y1="14" x2="21" y2="3" />
-                                    </svg>
-                                </a>
+            <!-- Framing container like reference -->
+            <div class="creativity-frame">
+                <div class="creativity-grid">
+
+                    <!-- Card 1: Blog & Research -->
+                    <a href="https://neo-virex.vercel.app/" target="_blank" rel="noopener noreferrer" class="creativity-card group">
+                        <div class="creativity-bg-img" style="background-image: url('media/img/network.png');"></div>
+                        <div class="creativity-overlay"></div>
+                        <div class="creativity-content">
+                            <div class="creativity-icon-bubble">
+                                <i class="fa-solid fa-pen-nib"></i>
                             </div>
-                            <p class="project-description">This is the app that will make you run in your sleep by making you phone think you are moving in your perfare speed it will work by changing you gps in a speed you set up the app it will change in every second per mater or min per kilomater</p>
-                            <div class="tech-stack">
-                                <span class="tech-tag">Java 55.0%</span><span class="tech-tag">Kotlin 44.9%</span><span
-                                    class="tech-tag">Assembly 0.1%</span>
-                            </div>
+                            <h3 class="creativity-title">Security Research &amp; Blog</h3>
+                            <p class="creativity-desc">
+                                Documenting real-world machine writeups, binary analysis walkthroughs, and offensive methodologies on Neo-Virex Blog.
+                            </p>
+                            <span class="creativity-pill-action">Read Writeups <i class="fa-solid fa-arrow-right"></i></span>
                         </div>
-                    </article>
+                    </a>
 
-
-                    <!-- xCore -->
-                    <article class="project-card">
-                        <div class="project-media">
-                            <img src="media/img/xcore.png" alt="Virex preview" loading="lazy" width="600" height="280">
-                        </div>
-                        <div class="project-body">
-                            <div class="project-header">
-                                <h3 class="project-title">xCore</h3>
-                                <a href="https://github.com/Abr-ahamis/xCore" class="project-link" target="_blank"
-                                    aria-label="GitHub">
-                                    <span style="font-size: 0.65em; margin-right: 6px;">GitHub icon</span>
-                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2">
-                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                                        <polyline points="15 3 21 3 21 9" />
-                                        <line x1="10" y1="14" x2="21" y2="3" />
-                                    </svg>
-                                </a>
+                    <!-- Card 2: Security Automation -->
+                    <a href="https://github.com/Abr-ahamis/xCore" target="_blank" rel="noopener noreferrer" class="creativity-card group">
+                        <div class="creativity-bg-img" style="background-image: url('media/img/xcore.png');"></div>
+                        <div class="creativity-overlay"></div>
+                        <div class="creativity-content">
+                            <div class="creativity-icon-bubble">
+                                <i class="fa-solid fa-terminal"></i>
                             </div>
-                            <p class="project-description">is a comprehensive security automation framework designed for reconnaissance, vulnerability scanning, and exploitation. The framework provides a structured approach to security testing with automated tool chaining and intelligent service detection.</p>
-                            <div class="tech-stack">
-                                <span class="tech-tag">Python 100.0%</span>
-                            </div>
+                            <h3 class="creativity-title">Offensive Tooling</h3>
+                            <p class="creativity-desc">
+                                Building autonomous reconnaissance chains, packet manipulators, and custom exploitation tools for red team workflows.
+                            </p>
+                            <span class="creativity-pill-action">Explore Code <i class="fa-solid fa-arrow-right"></i></span>
                         </div>
-                    </article>
+                    </a>
 
-
+                    <!-- Card 3: App Security & CTF Player -->
+                    <a href="https://neo-virex.vercel.app/" target="_blank" rel="noopener noreferrer" class="creativity-card group">
+                        <div class="creativity-bg-img" style="background-image: url('media/img/ctf-bunna.png');"></div>
+                        <div class="creativity-overlay"></div>
+                        <div class="creativity-content">
+                            <div class="creativity-icon-bubble">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <h3 class="creativity-title">App Security &amp; CTF Player</h3>
+                            <p class="creativity-desc">
+                                Competing in high-stakes CTF challenges, reverse engineering binaries, and discovering application security vulnerabilities across diverse environments.
+                            </p>
+                            <span class="creativity-pill-action">Explore Labs &amp; Writeups <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </a>
 
                 </div>
             </div>
         </section>
 
-        <!-- ═══ OLD PROJECTS ═══ -->
-        <section id="old-projects" class="section-block">
-            <div class="container">
-                <h2 class="section-title">~/old-projects<span class="cursor-blink">_</span></h2>
-                <p class="section-intro">Earlier work from the GitHub archive — <a
-                        href="https://github.com/Abr-ahamis?tab=repositories" target="_blank" class="inline-link">view
-                        all repos</a></p>
-                <div class="projects-grid">
+        <!-- ═══ 2. PROJECTS ═══ -->
+        <section id="projects" class="content-section">
+            <div class="section-heading-split">
+                <span class="section-title-pill">Projects</span>
+                <div class="project-filters">
+                    <button class="filter-pill active" data-filter="all">All</button>
+                    <button class="filter-pill" data-filter="security">Security</button>
+                    <button class="filter-pill" data-filter="automation">Automation</button>
+                    <button class="filter-pill" data-filter="ai">AI</button>
+                    <button class="filter-pill" data-filter="tools">Tools</button>
+                </div>
+            </div>
 
+            <!-- Project 1: xCore -->
+            <div class="project-item" data-category="security automation tools">
+                <div class="project-card group">
+                    <div class="project-media-col">
+                        <img src="media/img/xcore.png" alt="xCore Security Automation Framework" loading="lazy">
+                        <span class="media-badge">Python Framework</span>
+                    </div>
+                    <div class="project-body-col">
+                        <div class="project-header">
+                            <h3 class="project-title">xCore Automation Engine</h3>
+                            <div class="project-tech-tags">
+                                <span class="tech-chip">Python</span>
+                                <span class="tech-chip">Recon</span>
+                                <span class="tech-chip">Exploitation</span>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            A comprehensive security automation framework engineered for reconnaissance, vulnerability surface mapping, and tactical exploitation. Features automated tool chaining, service detection, and modular red team capabilities.
+                        </p>
+                        <div class="project-actions">
+                            <a href="https://github.com/Abr-ahamis/xCore" target="_blank" rel="noopener noreferrer" class="project-btn">
+                                <i class="fa-brands fa-github"></i> <span>Source Code</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                    <!-- Network.py -->
-                    <article class="project-card">
-                        <div class="project-media">
-                            <img src="media/img/network.png" alt="Network.py preview" loading="lazy" width="600"
-                                height="auto">
-                        </div>
-                        <div class="project-body">
-                            <div class="project-header">
-                                <h3 class="project-title">Network.py</h3>
-                                <a href="https://github.com/Abr-ahamis/Network.py" class="project-link" target="_blank"
-                                    aria-label="GitHub">
-                                    <span style="font-size: 0.65em; margin-right: 6px;">GitHub icon</span>
-                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2">
-                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                                        <polyline points="15 3 21 3 21 9" />
-                                        <line x1="10" y1="14" x2="21" y2="3" />
-                                    </svg>
-                                </a>
-                            </div>
-                            <p class="project-description">Python-based network security tool designed to perform packet sniffing and Address Resolution Protocol (ARP) spoofing. It enables users to monitor network traffic and manipulate ARP tables to intercept communications between devices on a local network.</p>
-                            <div class="tech-stack">
-                                <span class="tech-tag">Python 100.0%</span><span class="tech-tag">packet-sniffer</span><span
-                                    class="tech-tag"> packet-capture</span>
+            <!-- Project 2: GPSSimulator -->
+            <div class="project-item" data-category="tools automation">
+                <div class="project-card group">
+                    <div class="project-media-col">
+                        <video src="media/video/test.mp4" autoplay muted playsinline loop
+                            poster="https://neo-virex.vercel.app/images/blogs/GPSSimulator/room-img.png"
+                            aria-label="GPSSimulator preview"></video>
+                        <span class="media-badge">Android &amp; Low-Level</span>
+                    </div>
+                    <div class="project-body-col">
+                        <div class="project-header">
+                            <h3 class="project-title">GPSSimulator</h3>
+                            <div class="project-tech-tags">
+                                <span class="tech-chip">Java</span>
+                                <span class="tech-chip">Kotlin</span>
+                                <span class="tech-chip">Assembly</span>
                             </div>
                         </div>
-                    </article>
-                    <!-- Bunna-CTF -->
-                    <article class="project-card">
-                        <div class="project-media">
-                            <img src="media/img/ctf-bunna.png" alt="Bunna-CTF preview" loading="lazy" width="600"
-                                height="280">
+                        <p class="project-description">
+                            A low-level Android location emulation tool that overrides device GPS coordinates in real-time. Simulates natural movement velocity, programmable routes, and pacing for testing location-dependent mobile applications.
+                        </p>
+                        <div class="project-actions">
+                            <a href="https://github.com/Abr-ahamis/GPSSimulator" target="_blank" rel="noopener noreferrer" class="project-btn">
+                                <i class="fa-brands fa-github"></i> <span>Source Code</span>
+                            </a>
                         </div>
-                        <div class="project-body">
-                            <div class="project-header">
-                                <h3 class="project-title">Bunna-CTF</h3>
-                                <a href="https://github.com/Abr-ahamis/Bunna-CTF" class="project-link" target="_blank"
-                                    aria-label="GitHub">
-                                    <span style="font-size: 0.65em; margin-right: 6px;">GitHub icon</span>
-                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2">
-                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                                        <polyline points="15 3 21 3 21 9" />
-                                        <line x1="10" y1="14" x2="21" y2="3" />
-                                    </svg>
-                                </a>
-                            </div>
-                            <p class="project-description">A comprehensive Capture The Flag (CTF) challenge series named “BUNNA”, designed with realistic network segmentation, progressive narrative, and layered technical puzzles covering steganography, web exploitation, privilege escalation, and more.</p>
-                            <div class="tech-stack">
-                                <span class="tech-tag">Linux</span><span class="tech-tag">wordpress</span><span
-                                    class="tech-tag"> Binary Analysis</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3: AI Security & Red Teaming -->
+            <div class="project-item" data-category="ai security tools">
+                <div class="project-card group">
+                    <div class="project-media-col">
+                        <img src="https://neo-virex.github.io/images/ctf/uni-2026/post/zoromegbia/room-img.png" alt="AI Security Testing & Adversarial Research" loading="lazy">
+                        <span class="media-badge">AI &amp; LLM Security</span>
+                    </div>
+                    <div class="project-body-col">
+                        <div class="project-header">
+                            <h3 class="project-title">AI Security &amp; LLM Testing Suite</h3>
+                            <div class="project-tech-tags">
+                                <span class="tech-chip">AI Safety</span>
+                                <span class="tech-chip">Python</span>
+                                <span class="tech-chip">Prompt Injection</span>
                             </div>
                         </div>
-                    </article>
+                        <p class="project-description">
+                            Research tooling engineered to probe and audit Large Language Models and AI systems against adversarial prompts, model extraction, guardrail circumvention, and neural payload execution in competitive CTF environments.
+                        </p>
+                        <div class="project-actions">
+                            <a href="https://neo-virex.vercel.app/posts/University_CTF_Zoromegbia/" target="_blank" rel="noopener noreferrer" class="project-btn project-btn-accent">
+                                <i class="fa-solid fa-brain"></i> <span>View AI Research</span>
+                            </a>
+                            <a href="https://github.com/Abr-ahamis" target="_blank" rel="noopener noreferrer" class="project-btn">
+                                <i class="fa-brands fa-github"></i> <span>Repository</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4: Network.py -->
+            <div class="project-item" data-category="security tools">
+                <div class="project-card group">
+                    <div class="project-media-col">
+                        <img src="media/img/network.png" alt="Network.py Packet Sniffing Tool" loading="lazy">
+                        <span class="media-badge">Network Security</span>
+                    </div>
+                    <div class="project-body-col">
+                        <div class="project-header">
+                            <h3 class="project-title">Network.py</h3>
+                            <div class="project-tech-tags">
+                                <span class="tech-chip">Python</span>
+                                <span class="tech-chip">Scapy</span>
+                                <span class="tech-chip">ARP Spoof</span>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            A raw socket network security utility crafted for packet sniffing, ARP cache poisoning, and bidirectional traffic interception. Built to evaluate local network resilience against man-in-the-middle attacks.
+                        </p>
+                        <div class="project-actions">
+                            <a href="https://github.com/Abr-ahamis/Network.py" target="_blank" rel="noopener noreferrer" class="project-btn">
+                                <i class="fa-brands fa-github"></i> <span>Source Code</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 5: Bunna-CTF -->
+            <div class="project-item" data-category="security">
+                <div class="project-card group">
+                    <div class="project-media-col">
+                        <img src="media/img/ctf-bunna.png" alt="Bunna CTF Simulation Suite" loading="lazy">
+                        <span class="media-badge">Full Attack Lab</span>
+                    </div>
+                    <div class="project-body-col">
+                        <div class="project-header">
+                            <h3 class="project-title">Bunna-CTF Challenge Series</h3>
+                            <div class="project-tech-tags">
+                                <span class="tech-chip">Linux</span>
+                                <span class="tech-chip">Binary Analysis</span>
+                                <span class="tech-chip">PrivEsc</span>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            An end-to-end attack simulation challenge ecosystem. Features multi-layered subnets, steganography puzzles, modern web application flaws, and intricate Linux privilege escalation pathways.
+                        </p>
+                        <div class="project-actions">
+                            <a href="https://github.com/Abr-ahamis/Bunna-CTF" target="_blank" rel="noopener noreferrer" class="project-btn">
+                                <i class="fa-brands fa-github"></i> <span>Source Code</span>
+                            </a>
+                            <a href="https://neo-virex.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-btn project-btn-accent">
+                                <i class="fa-solid fa-book-open"></i> <span>Architecture Post</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom GitHub Link -->
+            <div class="more-link-container">
+                <a href="https://github.com/Abr-ahamis?tab=repositories" target="_blank" rel="noopener noreferrer" class="pill-more-btn">
+                    <span>Explore Archive on GitHub</span>
+                    <i class="fa-brands fa-github"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- ═══ 3. EXPERIENCE ═══ -->
+        <section id="experience" class="content-section">
+            <div class="section-title-wrap">
+                <span class="section-title-pill">Experience</span>
+            </div>
+            <div class="timeline-connector-dashed"></div>
+
+            <!-- Timeline Item 1 -->
+            <div class="timeline-node">
+                <div class="timeline-badge-pill">2025 – Present</div>
+                <div class="timeline-branch">
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <h3 class="timeline-role-title">Independent Security Researcher</h3>
+                            <span class="timeline-company-name">Offensive Security Labs</span>
+                        </div>
+                        <p class="timeline-summary">
+                            Focusing on red team tooling automation, vulnerability research across modern software stacks, and authoring technical walkthroughs for the infosec community.
+                        </p>
+                        <ul class="timeline-checklist">
+                            <li>
+                                <i class="fa-solid fa-chevron-right bullet-icon"></i>
+                                <span>Engineered automated scanning and chained exploitation frameworks (xCore, Network.py)</span>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-chevron-right bullet-icon"></i>
+                                <span>Simulated realistic threat actor techniques in segmented Docker and Active Directory labs</span>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-chevron-right bullet-icon"></i>
+                                <span>Published deep-dive technical writeups analyzing complex machine vulnerabilities</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline Item 2 -->
+            <div class="timeline-node">
+                <div class="timeline-badge-pill">2024 – 2025</div>
+                <div class="timeline-branch">
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <h3 class="timeline-role-title">Cybersecurity Trainee & Analyst</h3>
+                            <span class="timeline-company-name">Skill Surge Academy</span>
+                        </div>
+                        <p class="timeline-summary">
+                            Intensive hands-on practical training spanning web application penetration testing, network monitoring, and defensive triage.
+                        </p>
+                        <ul class="timeline-checklist">
+                            <li>
+                                <i class="fa-solid fa-chevron-right bullet-icon"></i>
+                                <span>Conducted manual and automated audits identifying OWASP Top 10 vulnerabilities</span>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-chevron-right bullet-icon"></i>
+                                <span>Analyzed packet captures to isolate suspicious anomalies and unauthorized intrusions</span>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-chevron-right bullet-icon"></i>
+                                <span>Authored remediation reports emphasizing secure coding and defense-in-depth principles</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline Item 3 -->
+            <div class="timeline-node">
+                <div class="timeline-badge-pill">2023 – Present</div>
+                <div class="timeline-branch">
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <h3 class="timeline-role-title">Ranked CTF Competitor</h3>
+                            <span class="timeline-company-name">TryHackMe & Hack The Box</span>
+                        </div>
+                        <p class="timeline-summary">
+                            Consistent competitive problem-solving across offensive labs, tackling privilege escalation, reverse engineering, and cloud configurations.
+                        </p>
+                        <ul class="timeline-checklist">
+                            <li>
+                                <i class="fa-solid fa-chevron-right bullet-icon"></i>
+                                <span>Reached <strong>Top 1% Global Rank</strong> on TryHackMe through hundreds of solved challenge rooms</span>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-chevron-right bullet-icon"></i>
+                                <span>Solved diverse medium/hard-rated machines on Hack The Box focusing on lateral movement</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- ═══ BLOG ═══ -->
-        <section id="blog" class="section-block">
-            <div class="container">
-                <h2 class="section-title">~/blog<span class="cursor-blink">_</span></h2>
-                <p class="section-intro">
-                    Writeups, research notes and tutorials.
-                    <!-- Replace #blog-url with your actual blog link -->
-                    <a href="https://neo-virex.vercel.app/" class="inline-link" target="_blank">View all posts <i class="fa-solid fa-arrow-right"
-                            style="font-size:.75rem"></i></a>
-                </p>
+        <!-- ═══ 4. EDUCATION & CERTIFICATIONS ═══ -->
+        <section id="education" class="content-section">
+            <div class="section-title-wrap">
+                <span class="section-title-pill">Education &amp; Certifications</span>
+            </div>
+            <div class="timeline-connector-dashed"></div>
 
-                <div class="blog-grid">
-
-                    <!-- Blog Post 1 — replace data with your real posts -->
-                    <article class="blog-card">
-                        <div class="blog-meta">
-                            <span class="blog-tag">CTF</span>
-                            <span class="blog-date">2026-03-10</span>
+            <!-- Education 1: University -->
+            <div class="timeline-node">
+                <div class="timeline-badge-pill">2026 – Present</div>
+                <div class="timeline-branch">
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <h3 class="timeline-role-title"><a href="https://smuc.edu.et/" target="_blank" rel="noopener noreferrer" class="link-hover">St. Mary's University</a></h3>
+                            <span class="timeline-company-name">BSc in Computer Science</span>
                         </div>
-                        <h3 class="blog-title"><a href="https://neo-virex.vercel.app/" target="_blank">Building Bunna-CTF: Architecture and Design
-                                Decisions</a></h3>
-                        <p class="blog-excerpt">How I designed a full attack simulation toolkit from scratch, including
-                            flag generation, challenge categories, and scoring logic.</p>
+                        <p class="timeline-summary">
+                            Rigorous academic curriculum covering data structures, computer networking, operating systems, and discrete mathematics. Cultivating a solid foundational grasp of computer science that informs secure systems research.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education 2: Skill Surge Academy -->
+            <div class="timeline-node">
+                <div class="timeline-badge-pill">2024 – 2025</div>
+                <div class="timeline-branch">
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <h3 class="timeline-role-title">Skill Surge Academy</h3>
+                            <span class="timeline-company-name">Cybersecurity Professional Certification</span>
+                        </div>
+                        <p class="timeline-summary">
+                            Comprehensive program focused on ethical hacking, defensive hardening, network architecture evaluation, and vulnerability management. Program successfully completed in 2025 with official cybersecurity professional certification.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education 3: HackTheBox (HTB) CTF & Pro Labs -->
+            <div class="timeline-node">
+                <div class="timeline-badge-pill">HTB Competitor</div>
+                <div class="timeline-branch">
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <h3 class="timeline-role-title"><a href="https://app.hackthebox.com/public/users/2092363" target="_blank" rel="noopener noreferrer" class="link-hover">HackTheBox (HTB)</a></h3>
+                            <span class="timeline-company-name">Pro Labs, Active Directory &amp; CTF Track</span>
+                        </div>
+                        <p class="timeline-summary">
+                            Extensive offensive security lab practice, solving Linux and Windows machines, exploiting Active Directory enterprise domains (Puppet, Enigma), lateral movement, and advanced post-exploitation methodologies.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education 4: TryHackMe (THM) CTF & Certifications -->
+            <div class="timeline-node">
+                <div class="timeline-badge-pill">Top 1% Global</div>
+                <div class="timeline-branch">
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <h3 class="timeline-role-title"><a href="https://tryhackme.com/p/NeoVirex" target="_blank" rel="noopener noreferrer" class="link-hover">TryHackMe (THM)</a></h3>
+                            <span class="timeline-company-name">Offensive Pentesting &amp; Red Team Certifications</span>
+                        </div>
+                        <p class="timeline-summary">
+                            Achieved and maintained Top 1% Global ranking. Completed rigorous industry pathways including Offensive Pentesting, Jr Penetration Tester, and Red Teaming with hands-on exploitation badges and practical CTF completions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education 5: Continuous Research -->
+            <div class="timeline-node">
+                <div class="timeline-badge-pill">Continuous Learning</div>
+                <div class="timeline-branch">
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <h3 class="timeline-role-title">Offensive Security Labs &amp; Self-Directed Research</h3>
+                            <span class="timeline-company-name">CVE Dissection &amp; Bug Research</span>
+                        </div>
+                        <p class="timeline-summary">
+                            Ongoing exploration of modern CVE disclosures, Active Directory attack graphs, kernel exploitation tutorials, and community CTF retrospectives.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ 5. BLOG / WRITEUPS ═══ -->
+        <section id="blog" class="content-section">
+            <div class="section-heading-split">
+                <div class="section-title-wrap">
+                    <span class="section-title-pill">Recent Writeups</span>
+                    <span class="live-status-pill" title="Synced directly with neo-virex.vercel.app">
+                        <span class="pulse-dot"></span>
+                        <span>Live from Blog</span>
+                    </span>
+                </div>
+                <button id="refresh-blog-btn" class="refresh-pill-btn" aria-label="Check for new writeups" title="Sync latest writeups from neo-virex.vercel.app">
+                    <i class="fa-solid fa-rotate" id="refresh-icon"></i>
+                    <span id="refresh-label">Check for Updates</span>
+                </button>
+            </div>
+            <div class="timeline-connector-dashed"></div>
+
+            <div class="blog-list" id="recent-blogs-container">
+                <!-- Blog 1 -->
+                <a href="https://neo-virex.vercel.app/posts/hackthebox_puppet/" target="_blank" rel="noopener noreferrer" class="blog-card group">
+                    <div class="blog-card-content">
+                        <div class="blog-meta-row">
+                            <span class="blog-chip">HackTheBox</span>
+                            <span class="blog-date">October 2026</span>
+                        </div>
+                        <h3 class="blog-title">HackTheBox — Puppet</h3>
+                        <p class="blog-excerpt">
+                            Password reuse was the key. One reused password led to mailbox access, then to the app creds hidden in email.
+                        </p>
                         <div class="blog-tags">
-                            <span class="tech-tag">CTF</span><span class="tech-tag">Python</span><span
-                                class="tech-tag">Red Team</span>
+                            <span>HackTheBox</span><span>Active Directory</span><span>C2</span><span>PrivEsc</span>
                         </div>
-                    </article>
+                    </div>
+                    <div class="blog-card-media">
+                        <img src="https://neo-virex.github.io/images/hackthebox/hackthebox_puppet/roomimg.webp" alt="HackTheBox — Puppet" class="blog-thumb-img" loading="lazy">
+                    </div>
+                </a>
 
-                    <article class="blog-card">
-                        <div class="blog-meta">
-                            <span class="blog-tag">Tools</span>
-                            <span class="blog-date">2026-02-20</span>
+                <!-- Blog 2 -->
+                <a href="https://neo-virex.vercel.app/posts/hackthebox_Enigma/" target="_blank" rel="noopener noreferrer" class="blog-card group">
+                    <div class="blog-card-content">
+                        <div class="blog-meta-row">
+                            <span class="blog-chip">HackTheBox</span>
+                            <span class="blog-date">July 2026</span>
                         </div>
-                        <h3 class="blog-title"><a href="https://neo-virex.vercel.app/" target="_blank">Neo-Recon: Automating the Recon Phase</a>
-                        </h3>
-                        <p class="blog-excerpt">Deep dive into the Neo-Recon framework — how automated OSINT collection
-                            and port scanning are tied together into one workflow.</p>
+                        <h3 class="blog-title">HackTheBox — Enigma</h3>
+                        <p class="blog-excerpt">
+                            The real path is password reuse across the email accounts + a web-app exploit. So the next move is: reuse The password on the other mailboxes and read email to find internal app creds.
+                        </p>
                         <div class="blog-tags">
-                            <span class="tech-tag">OSINT</span><span class="tech-tag">Python</span><span
-                                class="tech-tag">Automation</span>
+                            <span>HackTheBox</span><span>Linux</span><span>NFS</span><span>Exploit</span>
                         </div>
-                    </article>
+                    </div>
+                    <div class="blog-card-media">
+                        <img src="https://neo-virex.github.io/images/hackthebox/hackthebox_enigma/room-img.png" alt="HackTheBox — Enigma" class="blog-thumb-img" loading="lazy">
+                    </div>
+                </a>
 
+                <!-- Blog 3 -->
+                <a href="https://neo-virex.vercel.app/posts/University_CTF_Zoromegbia/" target="_blank" rel="noopener noreferrer" class="blog-card group">
+                    <div class="blog-card-content">
+                        <div class="blog-meta-row">
+                            <span class="blog-chip">CTF</span>
+                            <span class="blog-date">July 2026</span>
+                        </div>
+                        <h3 class="blog-title">University CTF — Zorromegbia</h3>
+                        <p class="blog-excerpt">
+                            This challenge focused on web and sub-directory exploitation, exposed internal files, and local privilege escalation via a known CVE.
+                        </p>
+                        <div class="blog-tags">
+                            <span>CTF</span><span>Web</span><span>PrivEsc</span><span>Linux</span>
+                        </div>
+                    </div>
+                    <div class="blog-card-media">
+                        <img src="https://neo-virex.github.io/images/ctf/uni-2026/post/zoromegbia/room-img.png" alt="University CTF — Zorromegbia" class="blog-thumb-img" loading="lazy">
+                    </div>
+                </a>
+            </div>
 
-
-                </div>
+            <div class="timeline-connector-dashed centered"></div>
+            <div class="more-link-container">
+                <a href="https://neo-virex.vercel.app/" target="_blank" rel="noopener noreferrer" class="pill-more-btn">
+                    <span>View All Writeups on neo-virex.vercel.app</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
             </div>
         </section>
 
-
-                </main>
+        <!-- ═══ FOOTER ═══ -->
+        <footer class="site-footer">
+            <div class="footer-inner">
+                <div class="footer-left">
+                    <span class="footer-title">NEO-VIREX</span>
+                    <span class="footer-copy">© 2026 Abraham Eshetu. Built with purpose.</span>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/Abr-ahamis" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://linkedin.com/in/abr-ahamis" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://x.com/abr_ahamis" target="_blank" rel="noopener noreferrer" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="mailto:Abrhameshetu948@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                </div>
             </div>
-        </div>
-    </div>
+        </footer>
+
+    </main>
 
     <script src="js/script.js" defer></script>
 </body>
