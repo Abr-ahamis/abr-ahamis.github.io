@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.getElementById('theme-toggle');
     const iconLight = document.getElementById('theme-icon-light');
     const iconDark = document.getElementById('theme-icon-dark');
-    const savedTheme = localStorage.getItem('theme') || 'dark';
+    const savedTheme = localStorage.getItem('theme') || 'light';
 
     function applyTheme(mode) {
         if (mode === 'light') {
